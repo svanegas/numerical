@@ -1,3 +1,0 @@
-INDEX VERSION 1.126+E:\Dropbox\Universidad\Semestre 6\Análisis Numérico\Práctica Numerical\numerical\.metadata\.plugins\org.eclipse.jdt.core
-383722549.index
-4138718448.index
