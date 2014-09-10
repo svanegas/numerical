@@ -1,8 +1,8 @@
-package co.edu.eafit.numerical;
+package co.edu.eafit.dis.numerical.views;
 
+import co.edu.eafit.dis.numerical.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -17,13 +17,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class SplashActivity extends Activity {
 
-	private Intent intent;
 	private DrawerLayout drawerLayout;
 	private ListView drawer;
 	private ActionBarDrawerToggle toggle;
-	private static final String[] opciones = {"Open", "Bisection", "Newton"};
+	private static final String[] opciones = {"Abiertos", "Bisección", "Newton"};
 
 	
 	@Override
@@ -46,19 +45,7 @@ public class MainActivity extends Activity {
 		drawer.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				switch (arg2) {
-				case 1:  //Posición 1 en el vector opciones es Bisection 
-	                intent = new Intent(MainActivity.this,Bisection.class);
-	                MainActivity.this.startActivity(intent);
-					break;
-				case 2:  //Posición 2 en el vector opciones es Newton 
-	                intent = new Intent(MainActivity.this,Newton.class);
-	                MainActivity.this.startActivity(intent);
-					break;					
-				default:
-					break;
-				}
-				//Toast.makeText(SplashActivity.this, "Pulsado: " + opciones[arg2], Toast.LENGTH_SHORT).show();
+				Toast.makeText(SplashActivity.this, "Pulsado: " + opciones[arg2], Toast.LENGTH_SHORT).show();
 				drawerLayout.closeDrawers();
 
 			}

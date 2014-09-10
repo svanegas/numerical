@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package co.edu.eafit.numerical;
+package co.edu.eafit.dis.numerical;
 
 public final class R {
     public static final class attr {

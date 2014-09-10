@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="co.edu.eafit.numerical"
+    package="co.edu.eafit.dis.numerical"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="co.edu.eafit.dis.numerical.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Bisection"
+            android:name="co.edu.eafit.dis.numerical.views.BisectionActivity"
             android:label="@string/title_activity_bisection" >
         </activity>
         <activity
-            android:name=".Newton"
+            android:name="co.edu.eafit.dis.numerical.views.NewtonActivity"
             android:label="@string/title_activity_newton" >
         </activity>
     </application>
