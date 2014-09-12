@@ -30,6 +30,10 @@
             android:name="co.edu.eafit.dis.numerical.views.NewtonActivity"
             android:label="@string/title_activity_newton" >
         </activity>
+        <activity
+            android:name="co.edu.eafit.dis.numerical.views.IncrementalSearchActivity"
+            android:label="@string/title_activity_incremental_search" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+            
+            <EditText
+		        android:id="@+id/input_function"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:singleLine="true"
+		        android:hint="@string/text_hint_input_function"
+		        android:layout_marginTop="20dp"
+		        android:ems="10">
+		        <requestFocus />
+		    </EditText>
+		    
+            <EditText
+                android:id="@+id/input_x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="@string/text_hint_input_x0"
+                android:layout_marginTop="20dp"
+                android:ems="10" >
+            </EditText>
+            
+            <EditText
+                android:id="@+id/input_delta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="@string/text_hint_input_delta"
+                android:layout_marginTop="20dp"
+                android:ems="10" >
+            </EditText>
+            
+            <EditText
+                android:id="@+id/input_max_iterations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="@string/text_hint_input_max_iterations"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                android:ems="10" >
+            </EditText>
+
+            <Button
+                android:id="@+id/calculate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/text_calculate_button" />
+            
+        </LinearLayout>
+        
+    </ScrollView>
+</RelativeLayout>

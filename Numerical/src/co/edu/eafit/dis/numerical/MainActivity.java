@@ -1,23 +1,18 @@
 package co.edu.eafit.dis.numerical;
 
-import co.edu.eafit.dis.numerical.views.BisectionActivity;
-import co.edu.eafit.dis.numerical.views.NewtonActivity;
-import android.annotation.SuppressLint;
+import co.edu.eafit.dis.numerical.views.*;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -25,13 +20,15 @@ public class MainActivity extends Activity {
 	private DrawerLayout drawerLayout;
 	private ListView drawer;
 	private ActionBarDrawerToggle toggle;
-	private static final String[] opciones = {"Open", "Bisection", "Newton"};
+	private static final String[] opciones = {"Incremental search",
+											  "Bisection",
+											  "Newton"};
 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_splash);
+		setContentView(R.layout.activity_main);
 
 		// Rescatamos el Action Bar y activamos el boton Home
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -42,32 +39,43 @@ public class MainActivity extends Activity {
 		drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
 		// Declarar adapter y eventos al hacer click
-		drawer.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, opciones));
+		drawer.setAdapter(new ArrayAdapter<String> (
+							this,
+							android.R.layout.simple_list_item_1,
+							android.R.id.text1,
+							opciones));
 		
-
 		drawer.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+			public void onItemClick(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
 				switch (arg2) {
-				case 1:  //Posición 1 en el vector opciones es Bisection 
-	                intent = new Intent(MainActivity.this,BisectionActivity.class);
-	                MainActivity.this.startActivity(intent);
-					break;
-				case 2:  //Posición 2 en el vector opciones es Newton 
-	                intent = new Intent(MainActivity.this,NewtonActivity.class);
-	                MainActivity.this.startActivity(intent);
-					break;					
-				default:
-					break;
+					case 0:  //Posición 0 en el vector opciones en Incremental
+						intent = new Intent(MainActivity.this,
+											IncrementalSearchActivity.class);
+						MainActivity.this.startActivity(intent);
+						break;
+					case 1:  //Posición 1 en el vector opciones es Bisection 
+		                intent = new Intent(MainActivity.this,
+		                					BisectionActivity.class);
+		                MainActivity.this.startActivity(intent);
+						break;
+					case 2:  //Posición 2 en el vector opciones es Newton 
+		                intent = new Intent(MainActivity.this,
+		                					NewtonActivity.class);
+		                MainActivity.this.startActivity(intent);
+						break;					
+					default:
+						break;
 				}
-				//Toast.makeText(SplashActivity.this, "Pulsado: " + opciones[arg2], Toast.LENGTH_SHORT).show();
 				drawerLayout.closeDrawers();
 
 			}
 		});
 
 		// Sombra del panel Navigation Drawer
-		drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+		drawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
+									 GravityCompat.START);
 
 		// Integracion boton oficial
 		toggle = new ActionBarDrawerToggle(
@@ -76,16 +84,17 @@ public class MainActivity extends Activity {
 				R.drawable.ic_drawer, // Icono que va a utilizar
 				R.string.app_name, // Descripcion al abrir el drawer
 				R.string.hello_world // Descripcion al cerrar el drawer
-				){
+		) {
 			public void onDrawerClosed(View view) {
 				// Drawer cerrado
-				getActionBar().setTitle(getResources().getString(R.string.app_name));
+				getActionBar().setTitle(getResources()
+										.getString(R.string.app_name));
 				invalidateOptionsMenu();
 			}
 
 			public void onDrawerOpened(View drawerView) {
 				// Drawer abierto
-				getActionBar().setTitle("Métodos");
+				getActionBar().setTitle("Methods");
 				invalidateOptionsMenu(); 
 			}
 		};

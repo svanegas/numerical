@@ -7,29 +7,30 @@ import de.congrace.exp4j.ExpressionBuilder;
 public class FunctionsEvaluator {
 	
 	private static final String TAG = FunctionsEvaluator.class.getName();
-	private static FunctionsEvaluator evaluator = null;
+	private static FunctionsEvaluator instance = null;
 	private static Calculable cal;
 	
-	private FunctionsEvaluator () {
-		evaluator = new FunctionsEvaluator();
+	protected FunctionsEvaluator () {
+		
 	}
 	
 	public static FunctionsEvaluator getInstance() {
-		if (evaluator == null) evaluator = new FunctionsEvaluator();
-		return evaluator;
+		if (instance == null) instance = new FunctionsEvaluator();
+		return instance;
 	}
 	
-	public static void setFunction(String function) {
+	public void setFunction(String function) throws Exception{
 		try {
 			cal = new ExpressionBuilder(function)
 									.withVariableNames("x").build();
 		} catch (Exception e) {
 			Log.e(TAG, "Cannot instantiate Calculator with the function: "
 					+ function);
+			throw new Exception("The function " + function + " is invalid");
 		}
 	}
 	
-	public static void setFunction(String function, double xValue) {
+	public void setFunction(String function, double xValue) throws Exception {
 		try {
 			cal = new ExpressionBuilder(function)
 									.withVariableNames("x")
@@ -37,14 +38,15 @@ public class FunctionsEvaluator {
 		} catch (Exception e) {
 			Log.e(TAG, "Cannot instantiate Calculator with the function: "
 					+ function);
+			throw new Exception("The function " + function + " is invalid");
 		}
 	}
 	
-	public static void setXValue(double xValue) {
+	public void setXValue(double xValue) {
 		cal.setVariable("x", xValue);
 	}
 	
-	public static double calculate(double xValue) {
+	public double calculate(double xValue) {
 		cal.setVariable("x", xValue);
 		return cal.calculate();
 	}

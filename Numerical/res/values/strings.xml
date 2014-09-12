@@ -6,5 +6,17 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_bisection">Bisection</string>
     <string name="title_activity_newton">Newton</string>
-
+    <string name="title_activity_incremental_search">Incremental Search</string>
+    
+    <!-- General -->
+    <string name="root_found">A root was found in %1$f</string>
+    <string name="interval_root_found">A root exists in interval [%1$f, %2$f]</string>
+    
+    <!-- Incremental search strings -->
+    <string name="text_hint_input_function">Enter f(x)</string>
+    <string name="text_hint_input_x0">Enter initial value (x0)</string>
+    <string name="text_hint_input_delta">Enter delta value</string>
+    <string name="text_hint_input_max_iterations">Enter iterations</string>
+    <string name="text_calculate_button">Calculate!</string>
+    
 </resources>
