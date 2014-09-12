@@ -8,9 +8,14 @@
     <string name="title_activity_newton">Newton</string>
     <string name="title_activity_incremental_search">Incremental Search</string>
     
+    <!-- FunctionsEvaluator -->
+    <string name="invalid_function_exception">The function %1$s is invalid</string>
+    
     <!-- General -->
-    <string name="root_found">A root was found in %1$f</string>
-    <string name="interval_root_found">A root exists in interval [%1$f, %2$f]</string>
+    <string name="root_found">A root was found in %1$.2f</string>
+    <string name="interval_root_found">A root exists in interval [%1$.2f; %2$.2f]</string>
+    <string name="input_required_error">This field is required</string>
+    <string name="not_a_number_error">This field must be a number</string>
     
     <!-- Incremental search strings -->
     <string name="text_hint_input_function">Enter f(x)</string>

@@ -1,17 +1,18 @@
 package co.edu.eafit.dis.numerical.methods;
 
+import android.content.Context;
 import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 
 public class IncrementalSearch {
 
 	private FunctionsEvaluator functionEvaluator = null;
 	
-	public IncrementalSearch() {
-		functionEvaluator = FunctionsEvaluator.getInstance();
+	public IncrementalSearch(Context c) {
+		functionEvaluator = FunctionsEvaluator.getInstance(c);
 	}
 	
-	public IncrementalSearch(String function) throws Exception {
-		functionEvaluator = FunctionsEvaluator.getInstance();
+	public IncrementalSearch(Context c, String function) throws Exception {
+		functionEvaluator = FunctionsEvaluator.getInstance(c);
 		try {
 			this.setFunction(function);
 		} catch (Exception e) {
@@ -21,10 +22,14 @@ public class IncrementalSearch {
 	
 	public double [] evaluate(double x0, double delta, double nIter) 
 			throws Exception {
+		//interval contiene el menor, mayor del intervalo donde hay una raíz.
+		//Si son iguales los valores de interval quiere decir que en ese valor
+		//exacto hay una raíz.
 		double[] interval = new double[2];
 		double fx0 = functionEvaluator.calculate(x0);
 		if (fx0 == 0.0) {
 			interval[0] = interval[1] = x0;
+			//Hay una raíz en x0
 		}
 		else {
 			double x1 = x0 + delta;
@@ -37,10 +42,11 @@ public class IncrementalSearch {
 				fx1 = functionEvaluator.calculate(x1);
 				currentIteration++;
 			}
-			if (fx1 == 0.0) interval[0] = interval[1] = x1;
+			if (fx1 == 0.0) interval[0] = interval[1] = x1; //x1 una raíz
 			else if (fx0 * fx1 < 0) {
 				interval[0] = x0;
 				interval[1] = x1;
+				//Hay una raíz desde x0 hasta x1
 			}
 			else {
 				throw new Exception("Incremental search exceeded number " +

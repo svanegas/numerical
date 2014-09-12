@@ -2,8 +2,12 @@ package co.edu.eafit.dis.numerical.views;
 
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.IncrementalSearch;
+import co.edu.eafit.dis.numerical.utils.InputChecker;
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,7 +30,11 @@ public class IncrementalSearchActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_incremental_search);
 		
-		incremental = new IncrementalSearch();
+		//Activar el botón de ir atrás en el action bar
+		getActionBar().setHomeButtonEnabled(true);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		incremental = new IncrementalSearch(this);
 		
 		inputFunction = (EditText) findViewById(R.id.input_function);
 		inputX0 = (EditText) findViewById(R.id.input_x0);
@@ -42,7 +50,70 @@ public class IncrementalSearchActivity extends Activity {
 		});
 	}
 	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case android.R.id.home:
+	        	finish();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
 	private void calculate() {
+		inputMaxIterations.setError(null);
+		inputDelta.setError(null);
+		inputX0.setError(null);
+		inputFunction.setError(null);
+		
+		//Revisar si los datos ingresados están completos, se revisa desde el
+		//final hasta el inicial, para obtener el focus en el campo inválido
+		//de más arriba.
+		String fieldRequired = getResources()
+						.getString(R.string.input_required_error);
+		boolean fieldsCompleted = true;
+		
+		//Revisar si los campos están vacíos
+		if (inputMaxIterations.getText().toString().trim().isEmpty()) {
+			inputMaxIterations.setError(fieldRequired);
+			inputMaxIterations.requestFocus();
+			fieldsCompleted = false;
+		}
+		if (inputDelta.getText().toString().trim().isEmpty()) {
+			inputDelta.setError(fieldRequired);
+			inputDelta.requestFocus();
+			fieldsCompleted = false;
+		}
+		if (inputX0.getText().toString().trim().isEmpty()) {
+			inputX0.setError(fieldRequired);
+			inputX0.requestFocus();
+			fieldsCompleted = false;
+		}
+		if (inputFunction.getText().toString().trim().isEmpty()) {
+			inputFunction.setError(fieldRequired);
+			inputFunction.requestFocus();
+			fieldsCompleted = false;
+		}
+		if (!fieldsCompleted) return;
+		
+		
+		//Revisar que los que deberían ser números si lo sean
+		String notANumberError = getResources()
+						.getString(R.string.not_a_number_error);
+		boolean correctFields = true;
+		if (!InputChecker.isDouble(inputX0.getText().toString())) {
+			inputX0.setError(notANumberError);
+			inputX0.requestFocus();
+			correctFields = false;
+		}
+		if (!InputChecker.isDouble(inputDelta.getText().toString())) {
+			inputDelta.setError(notANumberError);
+			inputDelta.requestFocus();
+			correctFields = false;
+		}
+		if (!correctFields) return;
+		
 		//Obtener valores de los inputs
 		String function = inputFunction.getText().toString();
 		String x0Text = inputX0.getText().toString();
@@ -50,24 +121,28 @@ public class IncrementalSearchActivity extends Activity {
 		int maxIterations = Integer.parseInt(inputMaxIterations
 										.getText().toString());
 		
-		//TODO Hacer validaciones de los datos ingresados.
-		
 		double x0 = Double.valueOf(x0Text);
 		double delta = Double.valueOf(deltaText);
 		
+		//Try para revisar si la función está bien escrita
 		try {
 			incremental.setFunction(function);
 		} catch (Exception ex) {
-			Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+			inputFunction.setError(ex.getMessage());
+			inputFunction.requestFocus();
 			return;
 		}
+		
+		//Intentar evaluar con los datos recogidos
 		try {
 			double [] result = incremental.evaluate(x0, delta, maxIterations);
 			if (result[0] == result[1]) {
+				//Se encontró una raíz
 				String rootFound = getString(R.string.root_found, result[0]); 
 				Toast.makeText(this, rootFound, Toast.LENGTH_SHORT).show();
 			}
 			else {
+				//Se encontró un intervalo
 				String intervalFound = getString(R.string.interval_root_found,
 												 result[0],
 												 result[1]); 
