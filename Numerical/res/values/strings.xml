@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Numerical</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_bisection">Bisection</string>
-    <string name="title_activity_newton">Newton</string>
-    <string name="title_activity_incremental_search">Incremental Search</string>
-    
-    <!-- Errors / Exceptions -->
-    <string name="invalid_function_exception">The function %1$s is invalid</string>
-    <string name="error_exceeded_iterations">%1$s exceeded number of iterations</string>
-    <string name="error_ivalid_interval">The interval is invalid</string>
-    
-    <!-- General -->
-    <string name="root_found">A root was found in %1$f</string>
-    <string name="interval_root_found">A root exists in interval [%1$f; %2$f]</string>
-    <string name="root_found_tol">%1$f is an aproximation to root with tolerance %2$s</string>
-    <string name="input_required_error">This field is required</string>
-    <string name="not_a_number_error">This field must be a number</string>
-    <string name="text_hint_input_max_iterations">Enter iterations</string>
-    <string name="text_hint_input_function">Enter f(x)</string>
-    <string name="text_hint_input_tol">Enter tolerance e.g.5E-6</string>
-    <string name="text_calculate_button">Calculate!</string>
-    
-    <!-- Incremental search strings -->
-    <string name="text_hint_input_x0">Enter initial value (x0)</string>
-    <string name="text_hint_input_delta">Enter delta value</string>
+  <string name="app_name">Numerical</string>
+  <string name="action_settings">Settings</string>
+  <string name="hello_world">Hello world!</string>
+  <string name="title_activity_bisection">Bisection</string>
+  <string name="title_activity_newton">Newton</string>
+  <string name="title_activity_incremental_search">Incremental Search</string>
+  <string name="title_activity_false_position">False Position</string>
 
-    
-    <!-- Bisection strings -->
-    <string name="text_hint_input_xi">Enter lower value (xi)</string>
-    <string name="text_hint_input_xs">Enter higher value (xs)</string>
-    
-    
+  <!-- Errors / Exceptions -->
+  <string name="invalid_function_exception">The function %1$s is invalid</string>
+  <string name="error_exceeded_iterations">%1$s exceeded number of iterations</string>
+  <string name="error_ivalid_interval">The interval is invalid</string>
+
+  <!-- General -->
+  <string name="root_found">A root was found in %1$f</string>
+  <string name="interval_root_found">A root exists in interval [%1$f; %2$f]</string>
+  <string name="root_found_tol">%1$f is an aproximation to root with tolerance %2$s</string>
+  <string name="input_required_error">This field is required</string>
+  <string name="not_a_number_error">This field must be a number</string>
+  <string name="text_hint_input_max_iterations">Enter iterations</string>
+  <string name="text_hint_input_function">Enter f(x)</string>
+  <string name="text_hint_input_tol">Enter tolerance e.g.5E-6</string>
+  <string name="text_calculate_button">Calculate</string>
+
+  <!-- Incremental search strings -->
+  <string name="text_hint_input_x0">Enter initial value (x0)</string>
+  <string name="text_hint_input_delta">Enter delta value</string>
+
+  <!-- Bisection strings -->
+  <string name="text_hint_input_xi">Enter lower value (xi)</string>
+  <string name="text_hint_input_xs">Enter higher value (xs)</string>
+
 </resources>

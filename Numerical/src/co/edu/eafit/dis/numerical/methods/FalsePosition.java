@@ -1,22 +1,20 @@
 package co.edu.eafit.dis.numerical.methods;
 
 import android.content.Context;
-import android.util.Log;
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 
-public class Bisection {
+public class FalsePosition {
   
-  private static final String TAG = Bisection.class.getSimpleName();
   private FunctionsEvaluator functionEvaluator = null;
   private Context c = null;
   
-  public Bisection (Context c){
+  public FalsePosition (Context c){
     functionEvaluator = FunctionsEvaluator.getInstance(c);
     this.c = c;
   }
   
-  public Bisection(Context c, String function) throws Exception {
+  public FalsePosition(Context c, String function) throws Exception {
     functionEvaluator = FunctionsEvaluator.getInstance(c);
     this.c = c;
     try {
@@ -37,7 +35,6 @@ public class Bisection {
     throws Exception {
     double fxi = functionEvaluator.calculate(xi);
     double fxs = functionEvaluator.calculate(xs);
-    Log.i(TAG, "fxi: " + fxi + " y fxs: " + fxs);
     double[] result = new double[2];
     if (fxi == 0) {
       result[0] = xi;
@@ -50,7 +47,7 @@ public class Bisection {
       return result;   //xs es raíz
     } 
     else if (fxi * fxs < 0) {
-      double xm = (xi + xs) / 2.0;
+      double xm = xi - ((fxi * (xs - xi)) / (fxs - fxi));
       double fxm = functionEvaluator.calculate(xm);
       int cont = 1;
       double error = tol + 1.0;
@@ -66,7 +63,7 @@ public class Bisection {
         }
         
         double xaux = xm;
-        xm = (xi + xs) / 2.0;
+        xm = xi - ((fxi * (xs - xi)) / (fxs - fxi));
         fxm = functionEvaluator.calculate(xm);
         error = Math.abs(xm - xaux);
         cont++;       
@@ -83,7 +80,7 @@ public class Bisection {
       } 
       else {
         String methodName = c.getResources()
-            .getString(R.string.title_activity_bisection);
+            .getString(R.string.title_activity_false_position);
         String errorMessage = c.getString(
               R.string.error_exceeded_iterations,
               methodName); 
@@ -105,4 +102,5 @@ public class Bisection {
       throw new Exception(e.getMessage());
     }
   }
+
 }

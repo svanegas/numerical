@@ -1,21 +1,23 @@
 package co.edu.eafit.dis.numerical.views;
 
 import co.edu.eafit.dis.numerical.R;
-import co.edu.eafit.dis.numerical.methods.Bisection;
-import co.edu.eafit.dis.numerical.methods.IncrementalSearch;
+import co.edu.eafit.dis.numerical.R.layout;
+import co.edu.eafit.dis.numerical.R.menu;
+import co.edu.eafit.dis.numerical.methods.FalsePosition;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
-import android.app.Activity;
 import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class BisectionActivity extends Activity {
-  
+public class FalsePositionActivity extends Activity {
+
   //Lógica
-  private Bisection bisection;
+  private FalsePosition falsePosition;
   
   // Vista
   private EditText inputFunction;
@@ -28,12 +30,12 @@ public class BisectionActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_bisection);
+    setContentView(R.layout.activity_false_position);
     
     //Activar el botón de ir atrás en el action bar
     getActionBar().setDisplayHomeAsUpEnabled(true);
     
-    bisection = new Bisection(this);
+    falsePosition = new FalsePosition(this);
     
     inputFunction = (EditText) findViewById(R.id.input_function);
     inputXi = (EditText) findViewById(R.id.input_xi);
@@ -49,7 +51,7 @@ public class BisectionActivity extends Activity {
       }
     });   
   }
-  
+
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
@@ -60,7 +62,6 @@ public class BisectionActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
   }
-  
   
   private void calculate() {
     inputMaxIterations.setError(null);
@@ -140,7 +141,7 @@ public class BisectionActivity extends Activity {
     
     //Try para revisar si la función está bien escrita
     try {
-      bisection.setFunction(function);
+      falsePosition.setFunction(function);
     } catch (Exception ex) {
       inputFunction.setError(ex.getMessage());
       inputFunction.requestFocus();
@@ -149,7 +150,8 @@ public class BisectionActivity extends Activity {
     
     //Intentar evaluar con los datos recogidos
     try {
-      double [] result = bisection.evaluate(xi, xs, tol, maxIterations);
+      double [] result = falsePosition.evaluate(xi, xs, tol,
+                            maxIterations);
       if (result[1] == -1) {
         //Se encontró una raíz exacta
         String rootFound = getString(R.string.root_found, result[0]); 
