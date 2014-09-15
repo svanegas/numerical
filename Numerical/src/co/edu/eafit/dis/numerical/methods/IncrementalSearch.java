@@ -1,18 +1,22 @@
 package co.edu.eafit.dis.numerical.methods;
 
 import android.content.Context;
+import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 
 public class IncrementalSearch {
 
 	private FunctionsEvaluator functionEvaluator = null;
+	private Context c;
 	
 	public IncrementalSearch(Context c) {
 		functionEvaluator = FunctionsEvaluator.getInstance(c);
+		this.c = c;
 	}
 	
 	public IncrementalSearch(Context c, String function) throws Exception {
 		functionEvaluator = FunctionsEvaluator.getInstance(c);
+		this.c = c;
 		try {
 			this.setFunction(function);
 		} catch (Exception e) {
@@ -49,8 +53,12 @@ public class IncrementalSearch {
 				//Hay una raíz desde x0 hasta x1
 			}
 			else {
-				throw new Exception("Incremental search exceeded number " +
-						"of iterations");
+				String methodName = c.getResources()
+						.getString(R.string.title_activity_incremental_search);
+				String errorMessage = c.getString(
+							R.string.error_exceeded_iterations,
+							methodName); 
+				throw new Exception(errorMessage);
 			}
 		}
 		return interval;

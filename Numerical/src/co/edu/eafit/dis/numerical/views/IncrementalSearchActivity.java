@@ -31,7 +31,6 @@ public class IncrementalSearchActivity extends Activity {
 		setContentView(R.layout.activity_incremental_search);
 		
 		//Activar el botón de ir atrás en el action bar
-		getActionBar().setHomeButtonEnabled(true);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		incremental = new IncrementalSearch(this);
@@ -152,4 +151,5 @@ public class IncrementalSearchActivity extends Activity {
 			Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
 		}
 	}
+
 }

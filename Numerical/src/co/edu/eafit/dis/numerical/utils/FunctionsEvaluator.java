@@ -23,7 +23,7 @@ public class FunctionsEvaluator {
 	
 	public static FunctionsEvaluator getInstance(Context c) {
 		if (instance == null) instance = new FunctionsEvaluator();
-		instance.c = c;
+		instance.setContext(c);
 		return instance;
 	}
 	
@@ -43,5 +43,9 @@ public class FunctionsEvaluator {
 	public double calculate(double xValue) {
 		cal.setVariable("x", xValue);
 		return cal.calculate();
+	}
+	
+	public void setContext(Context c) {
+		this.c = c;
 	}
 }
