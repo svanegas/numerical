@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
   private static final String[] opciones = {"Incremental search",
                                             "Bisection",
                                             "False Position",
+                                            "FixedPosition",
                                             "Newton"};
   
   @Override
@@ -66,11 +67,16 @@ public class MainActivity extends Activity {
                                 FalsePositionActivity.class);
             MainActivity.this.startActivity(intent);
             break;
-          case 3:  //Posición 3 en el vector opciones es Newton 
-            intent = new Intent(MainActivity.this,
-                                NewtonActivity.class);
-            MainActivity.this.startActivity(intent);
-            break;  
+          case 3:  //Posición 3 en el vector opciones es SetPosition 
+           	  intent = new Intent(MainActivity.this,
+        			  FixedPointActivity.class);
+        	  MainActivity.this.startActivity(intent);
+        	  break;
+          case 4:  //Posición 4 en el vector opciones es Newton 
+              intent = new Intent(MainActivity.this,
+                                  NewtonActivity.class);
+              MainActivity.this.startActivity(intent);
+              break;
           default:
             break;
         }
