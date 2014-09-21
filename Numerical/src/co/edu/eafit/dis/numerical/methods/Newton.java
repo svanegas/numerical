@@ -6,29 +6,29 @@ import android.util.Log;
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 
-public class FixedPoint {
+public class Newton {
   
   private FunctionsEvaluator functionEvaluator = null;
-  private FunctionsEvaluator gFunctionEvaluator = null;
+  private FunctionsEvaluator derivedFunctionEvaluator = null;
   private Context c = null;
-  String function = null;
-  String gFunction = null;
+  private String function = null;
+  private String derivedFunction = null;
   
-  public FixedPoint (Context c){
+  public Newton (Context c){
     functionEvaluator = FunctionsEvaluator.getInstance(c);
-    gFunctionEvaluator = FunctionsEvaluator.getInstance(c);
+    derivedFunctionEvaluator = FunctionsEvaluator.getInstance(c);
     this.c = c;
   }
   
-  public FixedPoint(Context c, String function, String gFunction) throws Exception {
+  public Newton(Context c, String function, String dFunction) throws Exception {
     functionEvaluator = FunctionsEvaluator.getInstance(c);
-    gFunctionEvaluator = FunctionsEvaluator.getInstance(c);
+    derivedFunctionEvaluator = FunctionsEvaluator.getInstance(c);
     this.c = c;
     this.function = function;
-    this.gFunction = gFunction;
+    derivedFunction = dFunction;
     try {
       this.setFunction(function);
-      this.setGfunction(gFunction);
+      this.setDerivedFunction(dFunction);
     } catch (Exception e) {
       throw new Exception(e.getMessage());
     }
@@ -41,41 +41,49 @@ public class FixedPoint {
    * decir que se encontró la raíz exactca, de lo contrario dicha posición
    * contendrá el valor de la tolerancia.
    */
-  public double[] evaluate(double xa, double tol, double niter)
+  public double[] evaluate(double x0, double tol, double niter)
     throws Exception {
-	Log.i("Function", function);
-	Log.i("GFunction", gFunction);
 	functionEvaluator.setFunction(function);
-    double fx = functionEvaluator.calculate(xa);
+    double fx = functionEvaluator.calculate(x0);
+    derivedFunctionEvaluator.setFunction(derivedFunction);
+    double dfx = derivedFunctionEvaluator.calculate(x0);
+    Log.i("Function", String.valueOf(fx));
+    Log.i("DerivedFunction", String.valueOf(dfx));
     double[] result = new double[2];
+    double x1=0;
     if (fx == 0) {
-      result[0] = xa;
+      result[0] = x0;
       result[1] = -1;
-      return result;   //xi es raíz
+      return result;   //x0 es raíz
     }
     int cont=0;
     double error = tol + 1.0;
-    while((fx!=0)&&(error>tol)&&(cont<niter)){
-    	gFunctionEvaluator.setFunction(gFunction);
-    	double xn = gFunctionEvaluator.calculate(xa);
+    while((fx!=0)&&(dfx!=0)&&(error>tol)&&(cont<niter)){
+    	x1 = (x0 - (fx/dfx));
     	functionEvaluator.setFunction(function);
-    	fx = functionEvaluator.calculate(xn);
-    	error = Math.abs(xn - xa);
-    	xa = xn;
+    	fx = functionEvaluator.calculate(x1);
+    	derivedFunctionEvaluator.setFunction(derivedFunction);
+    	dfx = derivedFunctionEvaluator.calculate(x1);
+    	error = Math.abs(x1 - x0);
+    	x0 = x1;
     	cont++;
     }
-    if(fx==0){
-    	result[0] = xa;//xa es raiz exacta
+    if(fx == 0){
+    	result[0] = x0;//x0 es raiz exacta
     	result[1] = -1;//Indica que es exacta
     	return result;
     }else if(error < tol){
-    	result[0] = xa;//xa es aproximacion a raiz
+    	result[0] = x1;//x1 es aproximacion a raiz
     	result[1] = tol; //Se indica el valor de la tolerancia
     	return result;
     }
-    else{
+    else if(dfx == 0){
+    	result[0] = x1;//x1 es una posible raiz
+    	result[1] = tol; //Se indica el valor de la tolerancia
+    	return result;
+    }else {
         String methodName = c.getResources()
-                .getString(R.string.title_activity_fixed_point);
+                .getString(R.string.title_activity_newton);
         String errorMessage = c.getString(
                   R.string.error_exceeded_iterations,
                   methodName); 
@@ -94,10 +102,10 @@ public class FixedPoint {
     }
   }
   
-  public void setGfunction(String function) throws Exception {
+  public void setDerivedFunction(String function) throws Exception {
 	    try {
-	      gFunctionEvaluator.setFunction(function);
-	      this.gFunction = function;
+	      derivedFunctionEvaluator.setFunction(function);
+	      derivedFunction = function;
 	    } catch (Exception e) {
 	      throw new Exception(e.getMessage());
 	    }
