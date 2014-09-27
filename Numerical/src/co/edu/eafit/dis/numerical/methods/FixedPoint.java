@@ -11,8 +11,8 @@ public class FixedPoint {
   private FunctionsEvaluator functionEvaluator = null;
   private FunctionsEvaluator gFunctionEvaluator = null;
   private Context c = null;
-  String function = null;
-  String gFunction = null;
+  private String function = null;
+  private String gFunction = null;
   
   public FixedPoint (Context c){
     functionEvaluator = FunctionsEvaluator.getInstance(c);
@@ -43,9 +43,9 @@ public class FixedPoint {
    */
   public double[] evaluate(double xa, double tol, double niter)
     throws Exception {
-	Log.i("Function", function);
-	Log.i("GFunction", gFunction);
-	functionEvaluator.setFunction(function);
+    Log.i("Function", function);
+    Log.i("GFunction", gFunction);
+    functionEvaluator.setFunction(function);
     double fx = functionEvaluator.calculate(xa);
     double[] result = new double[2];
     if (fx == 0) {
@@ -56,22 +56,22 @@ public class FixedPoint {
     int cont=0;
     double error = tol + 1.0;
     while((fx!=0)&&(error>tol)&&(cont<niter)){
-    	gFunctionEvaluator.setFunction(gFunction);
-    	double xn = gFunctionEvaluator.calculate(xa);
-    	functionEvaluator.setFunction(function);
-    	fx = functionEvaluator.calculate(xn);
-    	error = Math.abs(xn - xa);
-    	xa = xn;
-    	cont++;
+      gFunctionEvaluator.setFunction(gFunction);
+      double xn = gFunctionEvaluator.calculate(xa);
+      functionEvaluator.setFunction(function);
+      fx = functionEvaluator.calculate(xn);
+      error = Math.abs(xn - xa);
+      xa = xn;
+      cont++;
     }
     if(fx==0){
-    	result[0] = xa;//xa es raiz exacta
-    	result[1] = -1;//Indica que es exacta
-    	return result;
+      result[0] = xa;//xa es raiz exacta
+      result[1] = -1;//Indica que es exacta
+      return result;
     }else if(error < tol){
-    	result[0] = xa;//xa es aproximacion a raiz
-    	result[1] = tol; //Se indica el valor de la tolerancia
-    	return result;
+      result[0] = xa;//xa es aproximacion a raiz
+      result[1] = tol; //Se indica el valor de la tolerancia
+      return result;
     }
     else{
         String methodName = c.getResources()
@@ -95,12 +95,12 @@ public class FixedPoint {
   }
   
   public void setGfunction(String function) throws Exception {
-	    try {
-	      gFunctionEvaluator.setFunction(function);
-	      this.gFunction = function;
-	    } catch (Exception e) {
-	      throw new Exception(e.getMessage());
-	    }
+      try {
+        gFunctionEvaluator.setFunction(function);
+        this.gFunction = function;
+      } catch (Exception e) {
+        throw new Exception(e.getMessage());
+      }
   }
 
 }

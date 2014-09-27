@@ -8,7 +8,9 @@
     <string name="title_activity_newton">Newton</string>
     <string name="title_activity_incremental_search">Incremental Search</string>
     <string name="title_activity_false_position">False Position</string>
-    <string name="title_activity_fixed_point">FixedPoint</string>
+    <string name="title_activity_fixed_point">Fixed Point</string>
+    <string name="title_activity_secant">Secant</string>
+    <string name="title_action_bar_methods">Methods</string>
 
     <!-- Errors / Exceptions -->
     <string name="invalid_function_exception">The function %1$s is invalid</string>
@@ -35,12 +37,14 @@
     <string name="text_hint_input_xs">Enter higher value (xs)</string>
     
     
-    <!-- FixedPoint strings -->
+    <!-- Fixed Point strings -->
     <string name="text_hint_input_gx_function">Enter g(x)</string>
     <string name="text_hint_input_xa">Enter initial value (xa)</string>
     
     <!-- Newton strings -->
-    <string name="text_hint_input_derived_function">Enter fd(x)</string>
+    <string name="text_hint_input_derived_function">Enter f \'(x)</string>
     
+    <!-- Secant strings -->
+    <string name="text_hint_input_x1">Enter initial value (x1)</string>
 
 </resources>

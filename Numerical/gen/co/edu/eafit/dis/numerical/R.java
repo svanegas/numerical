@@ -16,7 +16,7 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f07000e;
+        public static final int action_settings=0x7f07000f;
         public static final int calculate_button=0x7f070005;
         public static final int drawer=0x7f07000c;
         public static final int drawer_layout=0x7f07000a;
@@ -27,6 +27,7 @@ public final class R {
         public static final int input_max_iterations=0x7f070004;
         public static final int input_tol=0x7f070003;
         public static final int input_x0=0x7f070008;
+        public static final int input_x1=0x7f07000e;
         public static final int input_xa=0x7f070007;
         public static final int input_xi=0x7f070001;
         public static final int input_xs=0x7f070002;
@@ -39,53 +40,59 @@ public final class R {
         public static final int activity_incremental_search=0x7f030003;
         public static final int activity_main=0x7f030004;
         public static final int activity_newton=0x7f030005;
+        public static final int activity_secant=0x7f030006;
     }
     public static final class menu {
         public static final int bisection=0x7f060000;
         public static final int false_position=0x7f060001;
-        public static final int set_point=0x7f060002;
+        public static final int fixed_point=0x7f060002;
         public static final int splash=0x7f060003;
     }
     public static final class string {
         public static final int action_settings=0x7f040001;
         public static final int app_name=0x7f040000;
-        public static final int error_exceeded_iterations=0x7f040009;
-        public static final int error_ivalid_interval=0x7f04000a;
+        public static final int error_exceeded_iterations=0x7f04000b;
+        public static final int error_ivalid_interval=0x7f04000c;
         public static final int hello_world=0x7f040002;
-        public static final int input_required_error=0x7f04000e;
-        public static final int interval_root_found=0x7f04000c;
+        public static final int input_required_error=0x7f040010;
+        public static final int interval_root_found=0x7f04000e;
         /**  Errors / Exceptions 
          */
-        public static final int invalid_function_exception=0x7f040008;
-        public static final int not_a_number_error=0x7f04000f;
+        public static final int invalid_function_exception=0x7f04000a;
+        public static final int not_a_number_error=0x7f040011;
         /**  General 
          */
-        public static final int root_found=0x7f04000b;
-        public static final int root_found_tol=0x7f04000d;
-        public static final int text_calculate_button=0x7f040013;
-        public static final int text_hint_input_delta=0x7f040015;
+        public static final int root_found=0x7f04000d;
+        public static final int root_found_tol=0x7f04000f;
+        public static final int text_calculate_button=0x7f040015;
+        public static final int text_hint_input_delta=0x7f040017;
         /**  Newton strings 
          */
-        public static final int text_hint_input_derived_function=0x7f04001a;
-        public static final int text_hint_input_function=0x7f040011;
-        /**  FixedPoint strings 
+        public static final int text_hint_input_derived_function=0x7f04001c;
+        public static final int text_hint_input_function=0x7f040013;
+        /**  Fixed Point strings 
          */
-        public static final int text_hint_input_gx_function=0x7f040018;
-        public static final int text_hint_input_max_iterations=0x7f040010;
-        public static final int text_hint_input_tol=0x7f040012;
+        public static final int text_hint_input_gx_function=0x7f04001a;
+        public static final int text_hint_input_max_iterations=0x7f040012;
+        public static final int text_hint_input_tol=0x7f040014;
         /**  Incremental search strings 
          */
-        public static final int text_hint_input_x0=0x7f040014;
-        public static final int text_hint_input_xa=0x7f040019;
+        public static final int text_hint_input_x0=0x7f040016;
+        /**  Secant strings 
+         */
+        public static final int text_hint_input_x1=0x7f04001d;
+        public static final int text_hint_input_xa=0x7f04001b;
         /**  Bisection strings 
          */
-        public static final int text_hint_input_xi=0x7f040016;
-        public static final int text_hint_input_xs=0x7f040017;
+        public static final int text_hint_input_xi=0x7f040018;
+        public static final int text_hint_input_xs=0x7f040019;
+        public static final int title_action_bar_methods=0x7f040009;
         public static final int title_activity_bisection=0x7f040003;
         public static final int title_activity_false_position=0x7f040006;
         public static final int title_activity_fixed_point=0x7f040007;
         public static final int title_activity_incremental_search=0x7f040005;
         public static final int title_activity_newton=0x7f040004;
+        public static final int title_activity_secant=0x7f040008;
     }
     public static final class style {
         /** 

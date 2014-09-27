@@ -27,8 +27,8 @@
       android:layout_height="wrap_content"
       android:singleLine="true"
       android:hint="@string/text_hint_input_gx_function"
+      android:layout_marginTop="20dp"
       android:ems="10">
-      <requestFocus />
     </EditText>
     
     <EditText

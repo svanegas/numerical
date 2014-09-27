@@ -1,6 +1,5 @@
 package co.edu.eafit.dis.numerical;
 
-import co.edu.eafit.dis.numerical.methods.FalsePosition;
 import co.edu.eafit.dis.numerical.views.*;
 import android.app.Activity;
 import android.content.Intent;
@@ -21,11 +20,7 @@ public class MainActivity extends Activity {
   private DrawerLayout drawerLayout;
   private ListView drawer;
   private ActionBarDrawerToggle toggle;
-  private static final String[] opciones = {"Incremental search",
-                                            "Bisection",
-                                            "False Position",
-                                            "FixedPosition",
-                                            "Newton"};
+  private static String[] opciones;
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +35,21 @@ public class MainActivity extends Activity {
     drawer = (ListView) findViewById(R.id.drawer);
     drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+    // Definir el arreglo de opciones
+    opciones = new String[6];
+    opciones[0] = getResources()
+    		.getString(R.string.title_activity_incremental_search);
+    opciones[1] = getResources()
+    		.getString(R.string.title_activity_bisection);
+    opciones[2] = getResources()
+    		.getString(R.string.title_activity_false_position);
+    opciones[3] = getResources()
+    		.getString(R.string.title_activity_fixed_point);
+    opciones[4] = getResources()
+    		.getString(R.string.title_activity_newton);
+    opciones[5] = getResources()
+        .getString(R.string.title_activity_secant);
+    
     // Declarar adapter y eventos al hacer click
     drawer.setAdapter(new ArrayAdapter<String> (
                       this,
@@ -67,7 +77,7 @@ public class MainActivity extends Activity {
                                 FalsePositionActivity.class);
             MainActivity.this.startActivity(intent);
             break;
-          case 3:  //Posición 3 en el vector opciones es SetPosition 
+          case 3:  //Posición 3 en el vector opciones es Punto fijo 
            	  intent = new Intent(MainActivity.this,
         			  FixedPointActivity.class);
         	  MainActivity.this.startActivity(intent);
@@ -77,6 +87,11 @@ public class MainActivity extends Activity {
                                   NewtonActivity.class);
               MainActivity.this.startActivity(intent);
               break;
+          case 5:  //Posición 5 en el vector opciones es Secante 
+            intent = new Intent(MainActivity.this,
+                                SecantActivity.class);
+            MainActivity.this.startActivity(intent);
+            break;
           default:
             break;
         }
@@ -105,7 +120,8 @@ public class MainActivity extends Activity {
 
       public void onDrawerOpened(View drawerView) {
         // Drawer abierto
-        getActionBar().setTitle("Methods");
+        getActionBar().setTitle(getResources()
+        		.getString(R.string.title_action_bar_methods));
         invalidateOptionsMenu(); 
       }
     };

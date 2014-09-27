@@ -43,7 +43,7 @@ public class Newton {
    */
   public double[] evaluate(double x0, double tol, double niter)
     throws Exception {
-	functionEvaluator.setFunction(function);
+    functionEvaluator.setFunction(function);
     double fx = functionEvaluator.calculate(x0);
     derivedFunctionEvaluator.setFunction(derivedFunction);
     double dfx = derivedFunctionEvaluator.calculate(x0);
@@ -59,28 +59,28 @@ public class Newton {
     int cont=0;
     double error = tol + 1.0;
     while((fx!=0)&&(dfx!=0)&&(error>tol)&&(cont<niter)){
-    	x1 = (x0 - (fx/dfx));
-    	functionEvaluator.setFunction(function);
-    	fx = functionEvaluator.calculate(x1);
-    	derivedFunctionEvaluator.setFunction(derivedFunction);
-    	dfx = derivedFunctionEvaluator.calculate(x1);
-    	error = Math.abs(x1 - x0);
-    	x0 = x1;
-    	cont++;
+      x1 = (x0 - (fx/dfx));
+      functionEvaluator.setFunction(function);
+      fx = functionEvaluator.calculate(x1);
+      derivedFunctionEvaluator.setFunction(derivedFunction);
+      dfx = derivedFunctionEvaluator.calculate(x1);
+      error = Math.abs(x1 - x0);
+      x0 = x1;
+      cont++;
     }
     if(fx == 0){
-    	result[0] = x0;//x0 es raiz exacta
-    	result[1] = -1;//Indica que es exacta
-    	return result;
+      result[0] = x0;//x0 es raiz exacta
+      result[1] = -1;//Indica que es exacta
+      return result;
     }else if(error < tol){
-    	result[0] = x1;//x1 es aproximacion a raiz
-    	result[1] = tol; //Se indica el valor de la tolerancia
-    	return result;
+      result[0] = x1;//x1 es aproximacion a raiz
+      result[1] = tol; //Se indica el valor de la tolerancia
+      return result;
     }
     else if(dfx == 0){
-    	result[0] = x1;//x1 es una posible raiz
-    	result[1] = tol; //Se indica el valor de la tolerancia
-    	return result;
+      result[0] = x1;//x1 es una posible raiz
+      result[1] = tol; //Se indica el valor de la tolerancia
+      return result;
     }else {
         String methodName = c.getResources()
                 .getString(R.string.title_activity_newton);
@@ -103,12 +103,12 @@ public class Newton {
   }
   
   public void setDerivedFunction(String function) throws Exception {
-	    try {
-	      derivedFunctionEvaluator.setFunction(function);
-	      derivedFunction = function;
-	    } catch (Exception e) {
-	      throw new Exception(e.getMessage());
-	    }
+      try {
+        derivedFunctionEvaluator.setFunction(function);
+        derivedFunction = function;
+      } catch (Exception e) {
+        throw new Exception(e.getMessage());
+      }
   }
 
 }

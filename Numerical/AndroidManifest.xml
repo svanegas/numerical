@@ -42,6 +42,10 @@
             android:name=".views.FixedPointActivity"
             android:label="@string/title_activity_fixed_point" >
         </activity>
+        <activity
+            android:name=".views.SecantActivity"
+            android:label="@string/title_activity_secant" >
+        </activity>
     </application>
 
 </manifest>
