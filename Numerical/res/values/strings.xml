@@ -10,17 +10,19 @@
     <string name="title_activity_false_position">False Position</string>
     <string name="title_activity_fixed_point">Fixed Point</string>
     <string name="title_activity_secant">Secant</string>
+    <string name="title_activity_multiple_roots">Multiple Roots</string>
     <string name="title_action_bar_methods">Methods</string>
 
     <!-- Errors / Exceptions -->
     <string name="invalid_function_exception">The function %1$s is invalid</string>
     <string name="error_exceeded_iterations">%1$s exceeded number of iterations</string>
     <string name="error_ivalid_interval">The interval is invalid</string>
+    <string name="error_unsolvable_function">The function %1$s is unsolvable</string>
 
     <!-- General -->
-    <string name="root_found">A root was found in %1$f</string>
-    <string name="interval_root_found">A root exists in interval [%1$f; %2$f]</string>
-    <string name="root_found_tol">%1$f is an aproximation to root with tolerance %2$s</string>
+    <string name="root_found">A root was found in %1$10E</string>
+    <string name="interval_root_found">A root exists in interval [%1$10E; %2$10E]</string>
+    <string name="root_found_tol">%1$10E is an aproximation to root with tolerance %2$s</string>
     <string name="input_required_error">This field is required</string>
     <string name="not_a_number_error">This field must be a number</string>
     <string name="text_hint_input_max_iterations">Enter iterations</string>
@@ -46,5 +48,8 @@
     
     <!-- Secant strings -->
     <string name="text_hint_input_x1">Enter initial value (x1)</string>
+    
+    <!-- Multiple roots strings -->
+    <string name="text_hint_input_2_derived_function">Enter f \'\'(x)</string>
 
 </resources>

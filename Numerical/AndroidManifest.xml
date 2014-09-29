@@ -46,6 +46,10 @@
             android:name=".views.SecantActivity"
             android:label="@string/title_activity_secant" >
         </activity>
+        <activity
+            android:name=".views.MultipleRootsActivity"
+            android:label="@string/title_activity_multiple_roots" >
+        </activity>
     </application>
 
 </manifest>
