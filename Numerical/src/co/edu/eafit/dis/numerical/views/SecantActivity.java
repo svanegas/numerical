@@ -4,6 +4,7 @@ import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.Secant;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -143,24 +144,38 @@ public class SecantActivity extends Activity {
       return;
     }
     
+    Intent resultsIntent = new Intent(SecantActivity.this,
+        ResultsActivity.class);
+    String methodNameKey = getResources()
+        .getString(R.string.text_key_method_name);
+    String methodName = getResources()
+        .getString(R.string.title_activity_newton);
+    String resultsKey = getResources().getString(R.string.text_key_results);
+    String resultsText;
     //Intentar evaluar con los datos recogidos
     try {
       double [] result = secant.evaluate(x0, x1, tol, maxIterations);
       if (result[1] == -1) {
         //Se encontró una raíz exacta
         String rootFound = getString(R.string.root_found, result[0]); 
-        Toast.makeText(this, rootFound, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, rootFound, Toast.LENGTH_SHORT).show();
+        resultsText = rootFound;
       }
       else {
         //Se encontró una raíz con una tolerancia
         String intervalFound = getString(R.string.root_found_tol,
                                          result[0],
                                          tolText); 
-        Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
+        resultsText = intervalFound;
       }
     } catch (Exception e) {
-      Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+      //Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+      resultsText = e.getMessage();
     }
+    resultsIntent.putExtra(methodNameKey, methodName);
+    resultsIntent.putExtra(resultsKey, resultsText);
+    SecantActivity.this.startActivity(resultsIntent);
   }
 
 }

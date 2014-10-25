@@ -34,9 +34,12 @@ public class IncrementalSearch {
     //Se inicializa la tabla de resultados
     ResultsTable.clearTable();
     ResultsTable.Row headers = results.new Row();
-    headers.addCell(c.getResources().getString(R.string.text_results_table_iteration));
-    headers.addCell(c.getResources().getString(R.string.text_results_table_x_value));
-    headers.addCell(c.getResources().getString(R.string.text_results_table_fx_value));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_iteration));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_x_value));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_fxi_value));
     ResultsTable.addRow(headers);
     //interval contiene el menor, mayor del intervalo donde hay una raíz.
     //Si son iguales los valores de interval quiere decir que en ese valor

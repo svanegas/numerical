@@ -14,6 +14,7 @@ public class ResultsActivity extends Activity {
   private TextView methodTitle;
   private TextView results;
   private Button showResultsTable;
+  private String methodName;
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class ResultsActivity extends Activity {
     results = (TextView) findViewById(R.id.results_text_view);
     showResultsTable = (Button) findViewById(R.id.show_table_button);
     
-    String methodName = getIntent().getExtras().getString(getResources()
+    methodName = getIntent().getExtras().getString(getResources()
           .getString(R.string.text_key_method_name));
     String resultsText = getIntent().getExtras().getString(getResources()
           .getString(R.string.text_key_results));
@@ -50,8 +51,6 @@ public class ResultsActivity extends Activity {
         ResultsTableActivity.class);
     String methodNameKey = getResources()
         .getString(R.string.text_key_method_name);
-    String methodName = getResources()
-        .getString(R.string.title_activity_incremental_search);
     resultsTableIntent.putExtra(methodNameKey, methodName);
     ResultsActivity.this.startActivity(resultsTableIntent);
   }

@@ -4,6 +4,7 @@ package co.edu.eafit.dis.numerical.methods;
 import android.content.Context;
 import android.util.Log;
 import co.edu.eafit.dis.numerical.R;
+import co.edu.eafit.dis.numerical.methods.ResultsTable.Row;
 import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 
 public class MultipleRoots {
@@ -15,10 +16,13 @@ public class MultipleRoots {
   private String function = null;
   private String derived1Function = null;
   private String derived2Function = null;
+  private ResultsTable results;
   
   public MultipleRoots (Context c){
     functionEvaluator = FunctionsEvaluator.getInstance(c);
     this.c = c;
+    results = ResultsTable.getInstance();
+    ResultsTable.setUpNewTable(c, 7);
   }
   
   public MultipleRoots(Context c, String function, String dFunction,
@@ -28,6 +32,8 @@ public class MultipleRoots {
     this.function = function;
     this.derived1Function = dFunction;
     this.derived2Function = d2Function;
+    results = ResultsTable.getInstance();
+    ResultsTable.setUpNewTable(c, 7);
     try {
       this.setFunction(function);
     } catch (Exception e) {
@@ -44,12 +50,38 @@ public class MultipleRoots {
    */
   public double[] evaluate(double x0, double tol, double niter)
     throws Exception {
+    ResultsTable.clearTable();
+    ResultsTable.Row headers = results.new Row();
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_iteration));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_xn_value));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_fxn_value));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_dfxn_value));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_d2fxn_value));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_absolute_error));
+    headers.addCell(c.getResources()
+        .getString(R.string.text_results_table_relative_error));
+    ResultsTable.addRow(headers);
     functionEvaluator.setFunction(function);
     double fx = functionEvaluator.calculate(x0);
     functionEvaluator.setFunction(derived1Function);
     double d1fx = functionEvaluator.calculate(x0);
     functionEvaluator.setFunction(derived2Function);
     double d2fx = functionEvaluator.calculate(x0);
+    ResultsTable.Row firstRow = results.new Row();
+    firstRow.addCell("0");
+    firstRow.addCell(String.valueOf(x0));
+    firstRow.addCell(String.valueOf(fx));
+    firstRow.addCell(String.valueOf(d1fx));
+    firstRow.addCell(String.valueOf(d2fx));
+    firstRow.addCell("-");
+    firstRow.addCell("-");
+    ResultsTable.addRow(firstRow);
     double[] result = new double[2];
     if (fx == 0) {
       result[0] = x0;
@@ -58,6 +90,7 @@ public class MultipleRoots {
     }
     int cont = 0;
     double error = tol + 1.0;
+    double relativeError = Math.abs(error / x0);
     double x1 = 0;
     while (fx != 0 && (d1fx != 0 || d2fx != 0) && error > tol && cont < niter) {
       x1 = x0 - ((fx * d1fx) / ((d1fx * d1fx) - (fx * d2fx)));
@@ -68,8 +101,18 @@ public class MultipleRoots {
       functionEvaluator.setFunction(derived2Function);
       d2fx = functionEvaluator.calculate(x1);
       error = Math.abs(x1 - x0);
+      relativeError = Math.abs(error / x1);
       x0 = x1;
       cont++;
+      ResultsTable.Row row = results.new Row();
+      row.addCell(String.valueOf(cont));
+      row.addCell(String.valueOf(x0));
+      row.addCell(String.valueOf(fx));
+      row.addCell(String.valueOf(d1fx));
+      row.addCell(String.valueOf(d2fx));
+      row.addCell(String.valueOf(error));
+      row.addCell(String.valueOf(relativeError));
+      ResultsTable.addRow(row);
     }
     if(fx == 0) {
       result[0] = x0;//x0 es raiz exacta

@@ -60,7 +60,23 @@
     <string name="text_button_show_table">Show results table</string>
     <string name="text_key_results">results_text</string>
     <string name="text_key_method_name">method_name</string>
+    <string name="text_results_table_absolute_error">Absolute Error</string>
+    <string name="text_results_table_relative_error">Relative Error</string>
     <string name="text_results_table_iteration">Iteration</string>
     <string name="text_results_table_x_value">X value</string>
     <string name="text_results_table_fx_value">f(X)</string>
+    <string name="text_results_table_xi_value">Low value (Xi)</string>
+    <string name="text_results_table_fxi_value">f(Xi)</string>
+    <string name="text_results_table_xs_value">High value (Xs)</string>
+    <string name="text_results_table_fxs_value">f(Xs)</string>
+    <string name="text_results_table_xm_value">Middle value (Xm)</string>
+    <string name="text_results_table_fxm_value">f(Xm)</string>
+    <string name="text_results_table_xn_value">Xn</string>
+    <string name="text_results_table_fxn_value">f(Xn)</string>
+    <string name="text_results_table_dfxn_value">f \'(Xn)</string>
+    <string name="text_results_table_d2fxn_value">f \'\'(Xn)</string>
+    <string name="text_results_table_x0_value">X0 value</string>
+    <string name="text_results_table_fx0_value">f(X0)</string>
+    <string name="text_results_table_x1_value">X1 value</string>
+    <string name="text_results_table_fx1_value">f(X1)</string>
 </resources>
