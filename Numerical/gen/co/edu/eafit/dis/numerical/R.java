@@ -10,30 +10,46 @@ package co.edu.eafit.dis.numerical;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int blue_section_title=0x7f040000;
+        public static final int gray_method_title=0x7f040001;
+        public static final int header_table_results_row=0x7f040004;
+        public static final int light_blue_table_results_row=0x7f040002;
+        public static final int light_gray_table_results_row=0x7f040003;
+    }
     public static final class drawable {
         public static final int drawer_shadow=0x7f020000;
         public static final int ic_drawer=0x7f020001;
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f070011;
-        public static final int calculate_button=0x7f070005;
-        public static final int drawer=0x7f07000c;
-        public static final int drawer_layout=0x7f07000a;
-        public static final int input_1derived_function=0x7f07000d;
-        public static final int input_2derived_function=0x7f07000e;
-        public static final int input_delta=0x7f070009;
-        public static final int input_derived_function=0x7f07000f;
-        public static final int input_function=0x7f070000;
-        public static final int input_gx_function=0x7f070006;
-        public static final int input_max_iterations=0x7f070004;
-        public static final int input_tol=0x7f070003;
-        public static final int input_x0=0x7f070008;
-        public static final int input_x1=0x7f070010;
-        public static final int input_xa=0x7f070007;
-        public static final int input_xi=0x7f070001;
-        public static final int input_xs=0x7f070002;
-        public static final int texto=0x7f07000b;
+        public static final int action_settings=0x7f08001a;
+        public static final int calculate_button=0x7f080007;
+        public static final int drawer=0x7f08000e;
+        public static final int drawer_layout=0x7f08000c;
+        public static final int horizontal_scroll=0x7f080017;
+        public static final int input_1derived_function=0x7f08000f;
+        public static final int input_2derived_function=0x7f080010;
+        public static final int input_delta=0x7f08000b;
+        public static final int input_derived_function=0x7f080011;
+        public static final int input_function=0x7f080002;
+        public static final int input_gx_function=0x7f080008;
+        public static final int input_max_iterations=0x7f080006;
+        public static final int input_tol=0x7f080005;
+        public static final int input_x0=0x7f08000a;
+        public static final int input_x1=0x7f080019;
+        public static final int input_xa=0x7f080009;
+        public static final int input_xi=0x7f080003;
+        public static final int input_xs=0x7f080004;
+        public static final int method_title=0x7f080001;
+        public static final int results_table_layout=0x7f080018;
+        public static final int results_text_view=0x7f080013;
+        public static final int results_title=0x7f080012;
+        public static final int section_title=0x7f080000;
+        public static final int show_table_button=0x7f080014;
+        public static final int table_results_title=0x7f080015;
+        public static final int texto=0x7f08000d;
+        public static final int vertical_scroll=0x7f080016;
     }
     public static final class layout {
         public static final int activity_bisection=0x7f030000;
@@ -43,64 +59,79 @@ public final class R {
         public static final int activity_main=0x7f030004;
         public static final int activity_multiple_roots=0x7f030005;
         public static final int activity_newton=0x7f030006;
-        public static final int activity_secant=0x7f030007;
+        public static final int activity_results=0x7f030007;
+        public static final int activity_results_table=0x7f030008;
+        public static final int activity_secant=0x7f030009;
     }
     public static final class menu {
-        public static final int bisection=0x7f060000;
-        public static final int false_position=0x7f060001;
-        public static final int fixed_point=0x7f060002;
-        public static final int splash=0x7f060003;
+        public static final int bisection=0x7f070000;
+        public static final int false_position=0x7f070001;
+        public static final int fixed_point=0x7f070002;
+        public static final int splash=0x7f070003;
     }
     public static final class string {
-        public static final int action_settings=0x7f040001;
-        public static final int app_name=0x7f040000;
-        public static final int error_exceeded_iterations=0x7f04000c;
-        public static final int error_ivalid_interval=0x7f04000d;
-        public static final int error_unsolvable_function=0x7f04000e;
-        public static final int hello_world=0x7f040002;
-        public static final int input_required_error=0x7f040012;
-        public static final int interval_root_found=0x7f040010;
+        public static final int action_settings=0x7f050001;
+        public static final int app_name=0x7f050000;
+        public static final int error_exceeded_iterations=0x7f05000f;
+        public static final int error_ivalid_interval=0x7f050010;
+        public static final int error_table_results_empty=0x7f050012;
+        public static final int error_table_results_exceeded_columns=0x7f050013;
+        public static final int error_unsolvable_function=0x7f050011;
+        public static final int hello_world=0x7f050002;
+        public static final int input_required_error=0x7f050017;
+        public static final int interval_root_found=0x7f050015;
         /**  Errors / Exceptions 
          */
-        public static final int invalid_function_exception=0x7f04000b;
-        public static final int not_a_number_error=0x7f040013;
+        public static final int invalid_function_exception=0x7f05000e;
+        public static final int not_a_number_error=0x7f050018;
         /**  General 
          */
-        public static final int root_found=0x7f04000f;
-        public static final int root_found_tol=0x7f040011;
-        public static final int text_calculate_button=0x7f040017;
+        public static final int root_found=0x7f050014;
+        public static final int root_found_tol=0x7f050016;
+        public static final int section_one_variable_equations=0x7f05000d;
+        /**  Results 
+         */
+        public static final int text_button_show_table=0x7f050026;
+        public static final int text_calculate_button=0x7f05001c;
         /**  Multiple roots strings 
          */
-        public static final int text_hint_input_2_derived_function=0x7f040020;
-        public static final int text_hint_input_delta=0x7f040019;
+        public static final int text_hint_input_2_derived_function=0x7f050025;
+        public static final int text_hint_input_delta=0x7f05001e;
         /**  Newton strings 
          */
-        public static final int text_hint_input_derived_function=0x7f04001e;
-        public static final int text_hint_input_function=0x7f040015;
+        public static final int text_hint_input_derived_function=0x7f050023;
+        public static final int text_hint_input_function=0x7f05001a;
         /**  Fixed Point strings 
          */
-        public static final int text_hint_input_gx_function=0x7f04001c;
-        public static final int text_hint_input_max_iterations=0x7f040014;
-        public static final int text_hint_input_tol=0x7f040016;
+        public static final int text_hint_input_gx_function=0x7f050021;
+        public static final int text_hint_input_max_iterations=0x7f050019;
+        public static final int text_hint_input_tol=0x7f05001b;
         /**  Incremental search strings 
          */
-        public static final int text_hint_input_x0=0x7f040018;
+        public static final int text_hint_input_x0=0x7f05001d;
         /**  Secant strings 
          */
-        public static final int text_hint_input_x1=0x7f04001f;
-        public static final int text_hint_input_xa=0x7f04001d;
+        public static final int text_hint_input_x1=0x7f050024;
+        public static final int text_hint_input_xa=0x7f050022;
         /**  Bisection strings 
          */
-        public static final int text_hint_input_xi=0x7f04001a;
-        public static final int text_hint_input_xs=0x7f04001b;
-        public static final int title_action_bar_methods=0x7f04000a;
-        public static final int title_activity_bisection=0x7f040003;
-        public static final int title_activity_false_position=0x7f040006;
-        public static final int title_activity_fixed_point=0x7f040007;
-        public static final int title_activity_incremental_search=0x7f040005;
-        public static final int title_activity_multiple_roots=0x7f040009;
-        public static final int title_activity_newton=0x7f040004;
-        public static final int title_activity_secant=0x7f040008;
+        public static final int text_hint_input_xi=0x7f05001f;
+        public static final int text_hint_input_xs=0x7f050020;
+        public static final int text_key_method_name=0x7f050028;
+        public static final int text_key_results=0x7f050027;
+        public static final int text_results_table_fx_value=0x7f05002b;
+        public static final int text_results_table_iteration=0x7f050029;
+        public static final int text_results_table_x_value=0x7f05002a;
+        public static final int title_action_bar_methods=0x7f05000a;
+        public static final int title_activity_bisection=0x7f050003;
+        public static final int title_activity_false_position=0x7f050006;
+        public static final int title_activity_fixed_point=0x7f050007;
+        public static final int title_activity_incremental_search=0x7f050005;
+        public static final int title_activity_multiple_roots=0x7f050009;
+        public static final int title_activity_newton=0x7f050004;
+        public static final int title_activity_results=0x7f05000c;
+        public static final int title_activity_results_table=0x7f05000b;
+        public static final int title_activity_secant=0x7f050008;
     }
     public static final class style {
         /** 
@@ -124,10 +155,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f060001;
     }
 }

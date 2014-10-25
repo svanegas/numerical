@@ -1,12 +1,12 @@
 package co.edu.eafit.dis.numerical.views;
 
+import co.edu.eafit.dis.numerical.MainActivity;
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.IncrementalSearch;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -132,24 +132,38 @@ public class IncrementalSearchActivity extends Activity {
       return;
     }
     
+    Intent resultsIntent = new Intent(IncrementalSearchActivity.this,
+        ResultsActivity.class);
+    String methodNameKey = getResources()
+        .getString(R.string.text_key_method_name);
+    String methodName = getResources()
+        .getString(R.string.title_activity_incremental_search);
+    String resultsKey = getResources().getString(R.string.text_key_results);
+    String resultsText;
     //Intentar evaluar con los datos recogidos
     try {
       double [] result = incremental.evaluate(x0, delta, maxIterations);
       if (result[0] == result[1]) {
         //Se encontró una raíz
         String rootFound = getString(R.string.root_found, result[0]); 
-        Toast.makeText(this, rootFound, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, rootFound, Toast.LENGTH_SHORT).show();
+        resultsText = rootFound;
       }
       else {
         //Se encontró un intervalo
         String intervalFound = getString(R.string.interval_root_found,
                                          result[0],
-                                         result[1]); 
-        Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
+                                         result[1]);
+        //Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
+        resultsText = intervalFound;
       }
+      
     } catch (Exception e) {
-      Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+      //Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+      resultsText = e.getMessage();
     }
+    resultsIntent.putExtra(methodNameKey, methodName);
+    resultsIntent.putExtra(resultsKey, resultsText);
+    IncrementalSearchActivity.this.startActivity(resultsIntent);
   }
-
 }

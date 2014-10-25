@@ -12,12 +12,17 @@
     <string name="title_activity_secant">Secant</string>
     <string name="title_activity_multiple_roots">Multiple Roots</string>
     <string name="title_action_bar_methods">Methods</string>
+    <string name="title_activity_results_table">Table Results</string>
+    <string name="title_activity_results">Results</string>
+    <string name="section_one_variable_equations">One Variable Equations</string>
 
     <!-- Errors / Exceptions -->
     <string name="invalid_function_exception">The function %1$s is invalid</string>
     <string name="error_exceeded_iterations">%1$s exceeded number of iterations</string>
     <string name="error_ivalid_interval">The interval is invalid</string>
     <string name="error_unsolvable_function">The function %1$s is unsolvable</string>
+    <string name="error_table_results_empty">The table of results is empty</string>
+    <string name="error_table_results_exceeded_columns">The row is full, you cannot add more columns</string>
 
     <!-- General -->
     <string name="root_found">A root was found in %1$10E</string>
@@ -38,7 +43,6 @@
     <string name="text_hint_input_xi">Enter lower value (xi)</string>
     <string name="text_hint_input_xs">Enter higher value (xs)</string>
     
-    
     <!-- Fixed Point strings -->
     <string name="text_hint_input_gx_function">Enter g(x)</string>
     <string name="text_hint_input_xa">Enter initial value (xa)</string>
@@ -52,4 +56,11 @@
     <!-- Multiple roots strings -->
     <string name="text_hint_input_2_derived_function">Enter f \'\'(x)</string>
 
+    <!-- Results -->
+    <string name="text_button_show_table">Show results table</string>
+    <string name="text_key_results">results_text</string>
+    <string name="text_key_method_name">method_name</string>
+    <string name="text_results_table_iteration">Iteration</string>
+    <string name="text_results_table_x_value">X value</string>
+    <string name="text_results_table_fx_value">f(X)</string>
 </resources>

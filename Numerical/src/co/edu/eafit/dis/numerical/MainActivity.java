@@ -80,19 +80,20 @@ public class MainActivity extends Activity {
             MainActivity.this.startActivity(intent);
             break;
           case 3:  //Posición 3 en el vector opciones es Punto fijo 
-           	  intent = new Intent(MainActivity.this,
-        			  FixedPointActivity.class);
-        	  MainActivity.this.startActivity(intent);
-        	  break;
+            intent = new Intent(MainActivity.this,
+                                FixedPointActivity.class);
+            MainActivity.this.startActivity(intent);
+            break;
           case 4:  //Posición 4 en el vector opciones es Newton 
-              intent = new Intent(MainActivity.this,
-                                  NewtonActivity.class);
-              MainActivity.this.startActivity(intent);
-              break;
+            intent = new Intent(MainActivity.this,
+                                NewtonActivity.class);
+            MainActivity.this.startActivity(intent);
+            break;
           case 5:  //Posición 5 en el vector opciones es Secante 
             intent = new Intent(MainActivity.this,
                                 SecantActivity.class);
             MainActivity.this.startActivity(intent);
+            break;
           case 6:  //Posición 6 en el vector opciones es Raíces Múltiples
             intent = new Intent(MainActivity.this,
                                 MultipleRootsActivity.class);
