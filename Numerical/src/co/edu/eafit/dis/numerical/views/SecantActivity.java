@@ -149,7 +149,7 @@ public class SecantActivity extends Activity {
     String methodNameKey = getResources()
         .getString(R.string.text_key_method_name);
     String methodName = getResources()
-        .getString(R.string.title_activity_newton);
+        .getString(R.string.title_activity_secant);
     String resultsKey = getResources().getString(R.string.text_key_results);
     String resultsText;
     //Intentar evaluar con los datos recogidos
