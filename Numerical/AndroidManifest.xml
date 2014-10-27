@@ -59,6 +59,10 @@
             android:label="@string/title_activity_results_table"
             android:screenOrientation="landscape" >
         </activity>
+        <activity
+            android:name="co.edu.eafit.dis.numerical.views.GaussianEliminationActivity"
+            android:label="@string/title_activity_gaussian_elimination" >
+        </activity>
     </application>
 
 </manifest>

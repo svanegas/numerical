@@ -15,6 +15,7 @@
     <string name="title_activity_results_table">Table Results</string>
     <string name="title_activity_results">Results</string>
     <string name="section_one_variable_equations">One Variable Equations</string>
+    <string name="title_activity_gaussian_elimination">Gaussian Elimination</string>
 
     <!-- Errors / Exceptions -->
     <string name="invalid_function_exception">The function %1$s is invalid</string>
@@ -42,19 +43,31 @@
     <!-- Bisection strings -->
     <string name="text_hint_input_xi">Enter lower value (xi)</string>
     <string name="text_hint_input_xs">Enter higher value (xs)</string>
-    
+
     <!-- Fixed Point strings -->
     <string name="text_hint_input_gx_function">Enter g(x)</string>
     <string name="text_hint_input_xa">Enter initial value (xa)</string>
-    
+
     <!-- Newton strings -->
     <string name="text_hint_input_derived_function">Enter f \'(x)</string>
-    
+
     <!-- Secant strings -->
     <string name="text_hint_input_x1">Enter initial value (x1)</string>
-    
+
     <!-- Multiple roots strings -->
     <string name="text_hint_input_2_derived_function">Enter f \'\'(x)</string>
+    
+    <!-- Gaussian elimination strings -->
+    <string name="text_without_pivot">Without pivot</string>
+    <string name="text_parcial_pivot">Parcial pivot</string>
+    <string name="text_total_pivot">Total pivot</string>
+    <string name="text_select_a_method">Select a method:</string>
+    
+    <string-array name="gaussian_array">
+        <item>Without pivot</item>
+        <item>Parcial pivot</item>
+        <item>Total pivot</item>
+    </string-array>
 
     <!-- Results -->
     <string name="text_button_show_table">Show results table</string>
@@ -78,5 +91,6 @@
     <string name="text_results_table_x0_value">X0 value</string>
     <string name="text_results_table_fx0_value">f(X0)</string>
     <string name="text_results_table_x1_value">X1 value</string>
-    <string name="text_results_table_fx1_value">f(X1)</string>
+    <string name="text_results_table_fx1_value">f(X1)</string>    
+
 </resources>

@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
     drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
     // Definir el arreglo de opciones
-    opciones = new String[7];
+    opciones = new String[8];
     opciones[0] = getResources()
     		.getString(R.string.title_activity_incremental_search);
     opciones[1] = getResources()
@@ -51,6 +51,8 @@ public class MainActivity extends Activity {
         .getString(R.string.title_activity_secant);
     opciones[6] = getResources()
         .getString(R.string.title_activity_multiple_roots);
+    opciones[7] = getResources()
+            .getString(R.string.title_activity_gaussian_elimination);
     
     // Declarar adapter y eventos al hacer click
     drawer.setAdapter(new ArrayAdapter<String> (
@@ -99,6 +101,11 @@ public class MainActivity extends Activity {
                                 MultipleRootsActivity.class);
             MainActivity.this.startActivity(intent);
             break;
+          case 7:  //Posición 7 en el vector opciones es Raíces Múltiples
+              intent = new Intent(MainActivity.this,
+                                  GaussianEliminationActivity.class);
+              MainActivity.this.startActivity(intent);
+              break;            
           default:
             break;
         }
