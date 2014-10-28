@@ -1,30 +1,29 @@
 package co.edu.eafit.dis.numerical.methods;
 
 import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
-import co.edu.eafit.dis.numerical.utils.FuntionSolver;
 
-public class LUfactorization {
+public class LUFactorization {
 
-	private static final String TAG = FunctionsEvaluator.class.getName();
-	
-	public double[] LUFactorizationWithCrout(double[][] A, double[] b){
-		int matrixSize = A[0].length;
-		double [][] L = new double[matrixSize][matrixSize];
-		double [][] U = new double[matrixSize][matrixSize];
-		for(int i = 0; i < matrixSize; ++i){
-			for(int j = 0; j < matrixSize; ++j){
-				if(i < j){
-					U[i][j] = Double.POSITIVE_INFINITY;
-					L[i][j] = 0;
-				} else if(i > j){
-					U[i][j] = 0;
-					L[i][j] = Double.POSITIVE_INFINITY;
-				} else if(i == j){
-					U[i][j] = 1;
-					L[i][j] = Double.POSITIVE_INFINITY;
-				}
-			}
-		}
+  private static final String TAG = FunctionsEvaluator.class.getName();
+  
+  public double[] LUFactorizationWithCrout(double[][] A, double[] b){
+    int matrixSize = A[0].length;
+    double [][] L = new double[matrixSize][matrixSize];
+    double [][] U = new double[matrixSize][matrixSize];
+    for(int i = 0; i < matrixSize; ++i){
+      for(int j = 0; j < matrixSize; ++j){
+        if(i < j){
+          U[i][j] = Double.POSITIVE_INFINITY;
+          L[i][j] = 0;
+        } else if(i > j){
+          U[i][j] = 0;
+          L[i][j] = Double.POSITIVE_INFINITY;
+        } else if(i == j){
+          U[i][j] = 1;
+          L[i][j] = Double.POSITIVE_INFINITY;
+        }
+      }
+    }
         for(int i = 1; i < matrixSize+1; ++i){
             //TODO save State
             double suma = 0;
@@ -43,13 +42,13 @@ public class LUfactorization {
             }
             //TODO Guardar estado
         }
-        double[] z = FuntionSolver.regresiveSustitution(L, b);
-        double[] x = FuntionSolver.progresiveSustitution(U, z);
+        double[] z = VariableSolver.regresiveSustitution(L, b);
+        double[] x = VariableSolver.progresiveSustitution(U, z);
         return x;
-	}
-	
-	public double[] LUFactorizationWithDoolittle(double[][] A, double[] b){
-		int n = A[0].length;
+  }
+  
+  public double[] LUFactorizationWithDoolittle(double[][] A, double[] b){
+    int n = A[0].length;
         double [][] L = new double[n][n];
         double [][] U = new double[n][n];
         for(int i=0;i<n;i++){
@@ -84,14 +83,14 @@ public class LUfactorization {
             } 
             //TODO Guardar estado
         }
-        double[] z = FuntionSolver.progresiveSustitution(L, b);
-        double[] x = FuntionSolver.regresiveSustitution(U, z);
+        double[] z = VariableSolver.progresiveSustitution(L, b);
+        double[] x = VariableSolver.regresiveSustitution(U, z);
         return x;
-	}
-	
-	public double[] LUFactorizationWithCholesky(double[][] A, double[] b){
-		int n = A[0].length;
-		double [][] L = new double[n][n];
+  }
+  
+  public double[] LUFactorizationWithCholesky(double[][] A, double[] b){
+    int n = A[0].length;
+    double [][] L = new double[n][n];
         double [][] U = new double[n][n];
         for(int i = 0; i < n; ++i){
             for(int j = 0; j < n; ++j){
@@ -126,8 +125,8 @@ public class LUfactorization {
             } 
             //TODO Guardar estado
         }
-        double[] z = FuntionSolver.progresiveSustitution(L, b);
-        double[] x = FuntionSolver.regresiveSustitution(U, z);
+        double[] z = VariableSolver.progresiveSustitution(L, b);
+        double[] x = VariableSolver.regresiveSustitution(U, z);
         return x;
-	}
+  }
 }

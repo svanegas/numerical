@@ -27,7 +27,6 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-<<<<<<< HEAD
         public static final int action_settings=0x7f090032;
         public static final int calculate_button=0x7f090007;
         public static final int current_stage=0x7f09002b;
@@ -39,14 +38,6 @@ public final class R {
         public static final int horizontal_scroll_lower_matrix=0x7f090022;
         public static final int horizontal_scroll_matrix=0x7f09001d;
         public static final int horizontal_scroll_upper_matrix=0x7f090027;
-=======
-        public static final int action_settings=0x7f09001c;
-        public static final int calculate_button=0x7f090007;
-        public static final int drawer=0x7f090010;
-        public static final int drawer_layout=0x7f09000e;
-        public static final int gaussian_spinner=0x7f09000b;
-        public static final int horizontal_scroll=0x7f090019;
->>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
         public static final int input_1derived_function=0x7f090011;
         public static final int input_2derived_function=0x7f090012;
         public static final int input_delta=0x7f09000d;
@@ -56,7 +47,6 @@ public final class R {
         public static final int input_max_iterations=0x7f090006;
         public static final int input_tol=0x7f090005;
         public static final int input_x0=0x7f09000c;
-<<<<<<< HEAD
         public static final int input_x1=0x7f090031;
         public static final int input_xa=0x7f090009;
         public static final int input_xi=0x7f090003;
@@ -88,22 +78,6 @@ public final class R {
         public static final int vertical_scroll_lower_matrix=0x7f090021;
         public static final int vertical_scroll_matrix=0x7f09001c;
         public static final int vertical_scroll_upper_matrix=0x7f090026;
-=======
-        public static final int input_x1=0x7f09001b;
-        public static final int input_xa=0x7f090009;
-        public static final int input_xi=0x7f090003;
-        public static final int input_xs=0x7f090004;
-        public static final int method_title=0x7f090001;
-        public static final int results_table_layout=0x7f09001a;
-        public static final int results_text_view=0x7f090015;
-        public static final int results_title=0x7f090014;
-        public static final int section_title=0x7f090000;
-        public static final int show_table_button=0x7f090016;
-        public static final int table_results_title=0x7f090017;
-        public static final int textView_select=0x7f09000a;
-        public static final int texto=0x7f09000f;
-        public static final int vertical_scroll=0x7f090018;
->>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
     }
     public static final class layout {
         public static final int activity_bisection=0x7f030000;
@@ -115,14 +89,9 @@ public final class R {
         public static final int activity_multiple_roots=0x7f030006;
         public static final int activity_newton=0x7f030007;
         public static final int activity_results=0x7f030008;
-<<<<<<< HEAD
         public static final int activity_results_matrixes=0x7f030009;
         public static final int activity_results_table=0x7f03000a;
         public static final int activity_secant=0x7f03000b;
-=======
-        public static final int activity_results_table=0x7f030009;
-        public static final int activity_secant=0x7f03000a;
->>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
     }
     public static final class menu {
         public static final int bisection=0x7f080000;
@@ -133,7 +102,6 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-<<<<<<< HEAD
         public static final int error_exceeded_iterations=0x7f050014;
         public static final int error_ivalid_interval=0x7f050015;
         public static final int error_matrixes_failed_setup=0x7f050019;
@@ -225,85 +193,6 @@ public final class R {
         public static final int title_activity_gaussian_elim_total=0x7f05000c;
         public static final int title_activity_gaussian_elim_without=0x7f05000a;
         public static final int title_activity_gaussian_elimination=0x7f050012;
-=======
-        public static final int error_exceeded_iterations=0x7f050010;
-        public static final int error_ivalid_interval=0x7f050011;
-        public static final int error_table_results_empty=0x7f050013;
-        public static final int error_table_results_exceeded_columns=0x7f050014;
-        public static final int error_unsolvable_function=0x7f050012;
-        public static final int hello_world=0x7f050002;
-        public static final int input_required_error=0x7f050018;
-        public static final int interval_root_found=0x7f050016;
-        /**  Errors / Exceptions 
-         */
-        public static final int invalid_function_exception=0x7f05000f;
-        public static final int not_a_number_error=0x7f050019;
-        /**  General 
-         */
-        public static final int root_found=0x7f050015;
-        public static final int root_found_tol=0x7f050017;
-        public static final int section_one_variable_equations=0x7f05000d;
-        /**  Results 
-         */
-        public static final int text_button_show_table=0x7f05002b;
-        public static final int text_calculate_button=0x7f05001d;
-        /**  Multiple roots strings 
-         */
-        public static final int text_hint_input_2_derived_function=0x7f050026;
-        public static final int text_hint_input_delta=0x7f05001f;
-        /**  Newton strings 
-         */
-        public static final int text_hint_input_derived_function=0x7f050024;
-        public static final int text_hint_input_function=0x7f05001b;
-        /**  Fixed Point strings 
-         */
-        public static final int text_hint_input_gx_function=0x7f050022;
-        public static final int text_hint_input_max_iterations=0x7f05001a;
-        public static final int text_hint_input_tol=0x7f05001c;
-        /**  Incremental search strings 
-         */
-        public static final int text_hint_input_x0=0x7f05001e;
-        /**  Secant strings 
-         */
-        public static final int text_hint_input_x1=0x7f050025;
-        public static final int text_hint_input_xa=0x7f050023;
-        /**  Bisection strings 
-         */
-        public static final int text_hint_input_xi=0x7f050020;
-        public static final int text_hint_input_xs=0x7f050021;
-        public static final int text_key_method_name=0x7f05002d;
-        public static final int text_key_results=0x7f05002c;
-        public static final int text_parcial_pivot=0x7f050028;
-        public static final int text_results_table_absolute_error=0x7f05002e;
-        public static final int text_results_table_d2fxn_value=0x7f05003c;
-        public static final int text_results_table_dfxn_value=0x7f05003b;
-        public static final int text_results_table_fx0_value=0x7f05003e;
-        public static final int text_results_table_fx1_value=0x7f050040;
-        public static final int text_results_table_fx_value=0x7f050032;
-        public static final int text_results_table_fxi_value=0x7f050034;
-        public static final int text_results_table_fxm_value=0x7f050038;
-        public static final int text_results_table_fxn_value=0x7f05003a;
-        public static final int text_results_table_fxs_value=0x7f050036;
-        public static final int text_results_table_iteration=0x7f050030;
-        public static final int text_results_table_relative_error=0x7f05002f;
-        public static final int text_results_table_x0_value=0x7f05003d;
-        public static final int text_results_table_x1_value=0x7f05003f;
-        public static final int text_results_table_x_value=0x7f050031;
-        public static final int text_results_table_xi_value=0x7f050033;
-        public static final int text_results_table_xm_value=0x7f050037;
-        public static final int text_results_table_xn_value=0x7f050039;
-        public static final int text_results_table_xs_value=0x7f050035;
-        public static final int text_select_a_method=0x7f05002a;
-        public static final int text_total_pivot=0x7f050029;
-        /**  Gaussian elimination strings 
-         */
-        public static final int text_without_pivot=0x7f050027;
-        public static final int title_action_bar_methods=0x7f05000a;
-        public static final int title_activity_bisection=0x7f050003;
-        public static final int title_activity_false_position=0x7f050006;
-        public static final int title_activity_fixed_point=0x7f050007;
-        public static final int title_activity_gaussian_elimination=0x7f05000e;
->>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
         public static final int title_activity_incremental_search=0x7f050005;
         public static final int title_activity_multiple_roots=0x7f050009;
         public static final int title_activity_newton=0x7f050004;

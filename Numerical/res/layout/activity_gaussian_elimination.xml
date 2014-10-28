@@ -14,16 +14,11 @@
         android:id="@+id/textView_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"   
-<<<<<<< HEAD
         android:layout_marginBottom="20dp"
-=======
-	    android:layout_marginBottom="20dp"
->>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
         android:layout_marginTop="20dp"
         android:textSize="20sp"     
         android:text="@string/text_select_a_method" />
 
-<<<<<<< HEAD
   <Spinner
       android:id="@+id/gaussian_spinner"
       android:layout_width="wrap_content"
@@ -31,15 +26,6 @@
       android:ems="10"      
       android:layout_marginBottom="20dp" />
   
-=======
-	<Spinner
-	    android:id="@+id/gaussian_spinner"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:ems="10"	    
-	    android:layout_marginBottom="20dp" />
-	
->>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
     <Button
         android:id="@+id/calculate_button"
         android:layout_width="wrap_content"
@@ -51,8 +37,4 @@
 
   </LinearLayout>
   
-<<<<<<< HEAD
 </ScrollView>
-=======
-</ScrollView>
->>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
