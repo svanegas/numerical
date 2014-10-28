@@ -4,6 +4,7 @@ import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.Bisection;
 import co.edu.eafit.dis.numerical.methods.IncrementalSearch;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
+import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,7 +49,26 @@ public class BisectionActivity extends Activity {
       public void onClick(View v) {
         calculate();
       }
-    });   
+    });
+    fillFieldsWithStoredData();
+  }
+  
+  private void fillFieldsWithStoredData() {
+    PreferencesManager.setup(this);
+    inputFunction.setText(PreferencesManager.getFx());
+    inputXi.setText(PreferencesManager.getX0());
+    inputXs.setText(PreferencesManager.getXs());
+    inputTol.setText(PreferencesManager.getTolerance());
+    inputMaxIterations.setText(PreferencesManager.getMaxIterations());
+  }
+  
+  private void storeDataFromFields() {
+    PreferencesManager.saveFx(inputFunction.getText().toString());
+    PreferencesManager.saveX0(inputXi.getText().toString());
+    PreferencesManager.saveXs(inputXs.getText().toString());
+    PreferencesManager.saveTolerance(inputTol.getText().toString());
+    PreferencesManager
+      .saveMaxIterations(inputMaxIterations.getText().toString());
   }
   
   @Override
@@ -147,6 +167,9 @@ public class BisectionActivity extends Activity {
       inputFunction.requestFocus();
       return;
     }
+    
+    //Datos correctos, guardarlos en PreferencesManager
+    storeDataFromFields();
     
     Intent resultsIntent = new Intent(BisectionActivity.this,
         ResultsActivity.class);

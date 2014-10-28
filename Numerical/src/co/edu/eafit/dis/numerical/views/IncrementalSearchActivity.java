@@ -4,6 +4,7 @@ import co.edu.eafit.dis.numerical.MainActivity;
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.IncrementalSearch;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
+import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,6 +48,23 @@ public class IncrementalSearchActivity extends Activity {
         calculate();
       }
     });
+    fillFieldsWithStoredData();
+  }
+  
+  private void fillFieldsWithStoredData() {
+    PreferencesManager.setup(this);
+    inputFunction.setText(PreferencesManager.getFx());
+    inputX0.setText(PreferencesManager.getX0());
+    inputDelta.setText(PreferencesManager.getDelta());
+    inputMaxIterations.setText(PreferencesManager.getMaxIterations());
+  }
+  
+  private void storeDataFromFields() {
+    PreferencesManager.saveFx(inputFunction.getText().toString());
+    PreferencesManager.saveX0(inputX0.getText().toString());
+    PreferencesManager.saveDelta(inputDelta.getText().toString());
+    PreferencesManager
+      .saveMaxIterations(inputMaxIterations.getText().toString());
   }
   
   @Override
@@ -131,6 +149,9 @@ public class IncrementalSearchActivity extends Activity {
       inputFunction.requestFocus();
       return;
     }
+    
+    //Datos correctos, guardarlos en PreferencesManager
+    storeDataFromFields();
     
     Intent resultsIntent = new Intent(IncrementalSearchActivity.this,
         ResultsActivity.class);

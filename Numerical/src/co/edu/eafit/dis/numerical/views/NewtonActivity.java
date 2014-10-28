@@ -5,6 +5,7 @@ import co.edu.eafit.dis.numerical.R.layout;
 import co.edu.eafit.dis.numerical.R.menu;
 import co.edu.eafit.dis.numerical.methods.Newton;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
+import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -50,7 +51,26 @@ public class NewtonActivity extends Activity {
       public void onClick(View v) {
         calculate();
       }
-    });   
+    });
+    fillFieldsWithStoredData();
+  }
+  
+  private void fillFieldsWithStoredData() {
+    PreferencesManager.setup(this);
+    inputFunction.setText(PreferencesManager.getFx());
+    inputDerivedFunction.setText(PreferencesManager.getD1fx());
+    inputX0.setText(PreferencesManager.getX0());
+    inputTol.setText(PreferencesManager.getTolerance());
+    inputMaxIterations.setText(PreferencesManager.getMaxIterations());
+  }
+  
+  private void storeDataFromFields() {
+    PreferencesManager.saveFx(inputFunction.getText().toString());
+    PreferencesManager.saveD1fx(inputDerivedFunction.getText().toString());
+    PreferencesManager.saveX0(inputX0.getText().toString());
+    PreferencesManager.saveTolerance(inputTol.getText().toString());
+    PreferencesManager
+      .saveMaxIterations(inputMaxIterations.getText().toString());
   }
 
   @Override
@@ -149,6 +169,8 @@ public class NewtonActivity extends Activity {
       inputDerivedFunction.requestFocus();
       return;
     }
+    
+    storeDataFromFields();
     
     Intent resultsIntent = new Intent(NewtonActivity.this,
         ResultsActivity.class);

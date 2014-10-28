@@ -5,6 +5,7 @@ import co.edu.eafit.dis.numerical.R.layout;
 import co.edu.eafit.dis.numerical.R.menu;
 import co.edu.eafit.dis.numerical.methods.FalsePosition;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
+import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -50,9 +51,28 @@ public class FalsePositionActivity extends Activity {
       public void onClick(View v) {
         calculate();
       }
-    });   
+    });
+    fillFieldsWithStoredData();
   }
 
+  private void fillFieldsWithStoredData() {
+    PreferencesManager.setup(this);
+    inputFunction.setText(PreferencesManager.getFx());
+    inputXi.setText(PreferencesManager.getX0());
+    inputXs.setText(PreferencesManager.getXs());
+    inputTol.setText(PreferencesManager.getTolerance());
+    inputMaxIterations.setText(PreferencesManager.getMaxIterations());
+  }
+  
+  private void storeDataFromFields() {
+    PreferencesManager.saveFx(inputFunction.getText().toString());
+    PreferencesManager.saveX0(inputXi.getText().toString());
+    PreferencesManager.saveXs(inputXs.getText().toString());
+    PreferencesManager.saveTolerance(inputTol.getText().toString());
+    PreferencesManager
+      .saveMaxIterations(inputMaxIterations.getText().toString());
+  }
+  
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
@@ -148,6 +168,8 @@ public class FalsePositionActivity extends Activity {
       inputFunction.requestFocus();
       return;
     }
+    
+    storeDataFromFields();
     
     Intent resultsIntent = new Intent(FalsePositionActivity.this,
         ResultsActivity.class);

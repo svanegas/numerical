@@ -3,6 +3,7 @@ package co.edu.eafit.dis.numerical.views;
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.Secant;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
+import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,7 +48,26 @@ public class SecantActivity extends Activity {
       public void onClick(View v) {
         calculate();
       }
-    });   
+    });
+    fillFieldsWithStoredData();
+  }
+  
+  private void fillFieldsWithStoredData() {
+    PreferencesManager.setup(this);
+    inputFunction.setText(PreferencesManager.getFx());
+    inputX0.setText(PreferencesManager.getX0());
+    inputX1.setText(PreferencesManager.getXi());
+    inputTol.setText(PreferencesManager.getTolerance());
+    inputMaxIterations.setText(PreferencesManager.getMaxIterations());
+  }
+  
+  private void storeDataFromFields() {
+    PreferencesManager.saveFx(inputFunction.getText().toString());
+    PreferencesManager.saveX0(inputX0.getText().toString());
+    PreferencesManager.saveXi(inputX1.getText().toString());
+    PreferencesManager.saveTolerance(inputTol.getText().toString());
+    PreferencesManager
+      .saveMaxIterations(inputMaxIterations.getText().toString());
   }
 
   @Override
@@ -143,6 +163,8 @@ public class SecantActivity extends Activity {
       inputFunction.requestFocus();
       return;
     }
+    
+    storeDataFromFields();
     
     Intent resultsIntent = new Intent(SecantActivity.this,
         ResultsActivity.class);

@@ -3,6 +3,7 @@ package co.edu.eafit.dis.numerical.views;
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.MultipleRoots;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
+import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -54,7 +55,28 @@ public class MultipleRootsActivity extends Activity {
       public void onClick(View v) {
         calculate();
       }
-    });   
+    });
+    fillFieldsWithStoredData();
+  }
+  
+  private void fillFieldsWithStoredData() {
+    PreferencesManager.setup(this);
+    inputFunction.setText(PreferencesManager.getFx());
+    input1DerivedFunction.setText(PreferencesManager.getD1fx());
+    input2DerivedFunction.setText(PreferencesManager.getD2fx());
+    inputX0.setText(PreferencesManager.getX0());
+    inputTol.setText(PreferencesManager.getTolerance());
+    inputMaxIterations.setText(PreferencesManager.getMaxIterations());
+  }
+  
+  private void storeDataFromFields() {
+    PreferencesManager.saveFx(inputFunction.getText().toString());
+    PreferencesManager.saveD1fx(input1DerivedFunction.getText().toString());
+    PreferencesManager.saveD2fx(input2DerivedFunction.getText().toString());
+    PreferencesManager.saveX0(inputX0.getText().toString());
+    PreferencesManager.saveTolerance(inputTol.getText().toString());
+    PreferencesManager
+      .saveMaxIterations(inputMaxIterations.getText().toString());
   }
 
   @Override
@@ -169,6 +191,8 @@ public class MultipleRootsActivity extends Activity {
       input2DerivedFunction.requestFocus();
       return;
     }
+    
+    storeDataFromFields();
     
     Intent resultsIntent = new Intent(MultipleRootsActivity.this,
         ResultsActivity.class);

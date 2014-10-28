@@ -5,6 +5,7 @@ import co.edu.eafit.dis.numerical.R.layout;
 import co.edu.eafit.dis.numerical.R.menu;
 import co.edu.eafit.dis.numerical.methods.FixedPoint;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
+import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -50,7 +51,26 @@ public class FixedPointActivity extends Activity {
       public void onClick(View v) {
         calculate();
       }
-    });   
+    });
+    fillFieldsWithStoredData();
+  }
+  
+  private void fillFieldsWithStoredData() {
+    PreferencesManager.setup(this);
+    inputFunction.setText(PreferencesManager.getFx());
+    inputGfunction.setText(PreferencesManager.getGx());
+    inputXa.setText(PreferencesManager.getXa());
+    inputTol.setText(PreferencesManager.getTolerance());
+    inputMaxIterations.setText(PreferencesManager.getMaxIterations());
+  }
+  
+  private void storeDataFromFields() {
+    PreferencesManager.saveFx(inputFunction.getText().toString());
+    PreferencesManager.saveGx(inputGfunction.getText().toString());
+    PreferencesManager.saveXa(inputXa.getText().toString());
+    PreferencesManager.saveTolerance(inputTol.getText().toString());
+    PreferencesManager
+      .saveMaxIterations(inputMaxIterations.getText().toString());
   }
 
   @Override
@@ -149,6 +169,8 @@ public class FixedPointActivity extends Activity {
       inputGfunction.requestFocus();
       return;
     }
+    
+    storeDataFromFields();
     
     Intent resultsIntent = new Intent(FixedPointActivity.this,
         ResultsActivity.class);
