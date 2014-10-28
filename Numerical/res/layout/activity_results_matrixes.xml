@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+	  
+    <TextView
+      android:id="@+id/table_results_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:layout_centerHorizontal="true"
+      android:textColor="@color/blue_section_title"
+      android:textSize="20sp"
+      android:text="@string/title_activity_results_matrixes"
+      android:textStyle="bold" />
+    
+    <TextView
+      android:id="@+id/method_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/table_results_title"
+      android:layout_centerHorizontal="true"
+      android:text="@string/title_activity_gaussian_elim_without"
+      android:textColor="@color/gray_method_title"
+      android:textSize="17sp" />
+    
+    <LinearLayout
+    	android:id="@+id/matrixes_layout"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@+id/method_title"
+    	android:layout_above="@+id/stages_texts_layout"
+    	android:layout_margin="5dp"
+    	android:orientation="vertical"
+    	android:gravity="center">
+    	
+    	<LinearLayout
+    		android:id="@+id/result_matrix_group"
+    		android:layout_width="match_parent"
+    		android:layout_height="0dp"
+    		android:layout_weight="1"
+    		android:layout_marginBottom="3dp" 
+    		android:gravity="center"
+    		android:orientation="vertical" >
+    		
+	    	<TextView
+	    		android:id="@+id/result_matrix_title"
+	    		android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	    		android:text="@string/text_results_matrix_title"
+	    		android:textStyle="bold" />
+	    	
+	    	<ScrollView
+	        android:id="@+id/vertical_scroll_matrix"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" 
+	            android:gravity="center">
+	
+	            <HorizontalScrollView
+	                android:id="@+id/horizontal_scroll_matrix"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content" >
+	
+	                <LinearLayout
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="match_parent"
+	                    android:orientation="horizontal" >
+	
+	                    <TableLayout
+	                        android:id="@+id/results_matrix"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="match_parent" >
+	                    </TableLayout>
+	                </LinearLayout>
+	            </HorizontalScrollView>
+	        </LinearLayout>
+	      </ScrollView>
+	    </LinearLayout>
+      
+    	<LinearLayout
+        android:id="@+id/result_lower_matrix_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
+        android:orientation="vertical">
+	    	
+	    	<TextView
+	        android:id="@+id/result_lower_matrix_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/text_results_matrix_lower_title"
+	        android:textStyle="bold" />
+	    	
+		    <ScrollView
+	        android:id="@+id/vertical_scroll_lower_matrix"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" 
+	            android:gravity="center">
+	
+	            <HorizontalScrollView
+	                android:id="@+id/horizontal_scroll_lower_matrix"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content" >
+	
+	                <LinearLayout
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="match_parent"
+	                    android:orientation="horizontal" >
+	
+	                    <TableLayout
+	                        android:id="@+id/results_lower_matrix"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="match_parent" >
+	                    </TableLayout>
+	                </LinearLayout>
+	            </HorizontalScrollView>
+	        </LinearLayout>
+		    </ScrollView>
+		  </LinearLayout>
+	    
+    	<LinearLayout
+        android:id="@+id/result_upper_matrix_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:orientation="vertical">
+		    
+		    <TextView
+	        android:id="@+id/result_upper_matrix_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/text_results_matrix_upper_title"
+	        android:textStyle="bold" />
+		    
+		    <ScrollView
+	        android:id="@+id/vertical_scroll_upper_matrix"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" 
+	            android:gravity="center">
+	
+	            <HorizontalScrollView
+	                android:id="@+id/horizontal_scroll_upper_matrix"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content" >
+	
+	                <LinearLayout
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="match_parent"
+	                    android:orientation="horizontal" >
+	
+	                    <TableLayout
+	                        android:id="@+id/results_upper_matrix"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="match_parent" >
+	                    </TableLayout>
+	                </LinearLayout>
+	            </HorizontalScrollView>
+	        </LinearLayout>
+	      </ScrollView>
+	    </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/stages_texts_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stages_buttons_layout"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+        	android:id="@+id/current_stage_text"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/text_results_matrixes_current_stage"
+        	android:layout_marginRight="5dp"
+        	android:textColor="@color/dark_red_current_stage_results" />
+        
+        <TextView
+          android:id="@+id/current_stage"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/dark_red_current_stage_results"/>
+        
+      </LinearLayout>
+
+    <LinearLayout
+    	android:id="@+id/stages_buttons_layout"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentBottom="true"
+    	android:gravity="center"
+    	android:layout_marginBottom="5dp">
+    	
+    	<Button
+        android:id="@+id/prev_stage_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/text_results_matrixes_prev_stage"
+        android:onClick="decreaseStage" />
+
+      
+      <Button
+        android:id="@+id/next_stage_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/text_results_matrixes_next_stage" 
+        android:onClick="increaseStage"/>
+        
+    </LinearLayout>
+
+</RelativeLayout>

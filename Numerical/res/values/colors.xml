@@ -5,4 +5,5 @@
     <color name="light_blue_table_results_row">#C2E0FF</color>
     <color name="light_gray_table_results_row">#DFDFDF</color>
     <color name="header_table_results_row">#FFBD5C</color>
+    <color name="dark_red_current_stage_results">#990000</color>
 </resources>

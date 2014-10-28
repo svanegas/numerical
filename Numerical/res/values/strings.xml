@@ -11,10 +11,15 @@
     <string name="title_activity_fixed_point">Fixed Point</string>
     <string name="title_activity_secant">Secant</string>
     <string name="title_activity_multiple_roots">Multiple Roots</string>
+    <string name="title_activity_gaussian_elim_without">Gaussian Elimination (Without pivoting)</string>
+    <string name="title_activity_gaussian_elim_partial">Gaussian Elimination (Partial pivoting)</string>
+    <string name="title_activity_gaussian_elim_total">Gaussian Elimination (Total pivoting)</string>
     <string name="title_action_bar_methods">Methods</string>
     <string name="title_activity_results_table">Table Results</string>
+    <string name="title_activity_results_matrixes">Matrix Results</string>
     <string name="title_activity_results">Results</string>
     <string name="section_one_variable_equations">One Variable Equations</string>
+    <string name="title_activity_gaussian_elimination">Gaussian Elimination</string>
 
     <!-- Errors / Exceptions -->
     <string name="invalid_function_exception">The function %1$s is invalid</string>
@@ -22,6 +27,8 @@
     <string name="error_ivalid_interval">The interval is invalid</string>
     <string name="error_unsolvable_function">The function %1$s is unsolvable</string>
     <string name="error_table_results_empty">The table of results is empty</string>
+    <string name="error_matrixes_results_empty">The matrixes of results is empty</string>
+    <string name="error_matrixes_failed_setup">Couldn\'t fill matrix the stage</string>
     <string name="error_table_results_exceeded_columns">The row is full, you cannot add more columns</string>
 
     <!-- General -->
@@ -56,10 +63,23 @@
     <!-- Multiple roots strings -->
     <string name="text_hint_input_2_derived_function">Enter f \'\'(x)</string>
 
-    <!-- Results -->
+    <!-- Gaussian elimination strings -->
+    <string name="text_without_pivot">Without pivot</string>
+    <string name="text_parcial_pivot">Parcial pivot</string>
+    <string name="text_total_pivot">Total pivot</string>
+    <string name="text_select_a_method">Select a method:</string>
+
+    <string-array name="gaussian_array">
+        <item>Without pivot</item>
+        <item>Parcial pivot</item>
+        <item>Total pivot</item>
+    </string-array>
+
+    <!-- Iterative Results -->
     <string name="text_button_show_table">Show results table</string>
     <string name="text_key_results">results_text</string>
     <string name="text_key_method_name">method_name</string>
+    <string name="text_key_method_type">method_type</string>
     <string name="text_results_table_absolute_error">Absolute Error</string>
     <string name="text_results_table_relative_error">Relative Error</string>
     <string name="text_results_table_iteration">Iteration</string>
@@ -79,4 +99,12 @@
     <string name="text_results_table_fx0_value">f(X0)</string>
     <string name="text_results_table_x1_value">X1 value</string>
     <string name="text_results_table_fx1_value">f(X1)</string>
+    
+    <!-- Matrix Results -->
+    <string name="text_results_matrix_title">Ab matrix (Ab)</string>
+    <string name="text_results_matrix_lower_title">Lower matrix (L)</string>
+    <string name="text_results_matrix_upper_title">Upper matrix (U)</string>
+    <string name="text_results_matrixes_next_stage">Next Stage</string>
+    <string name="text_results_matrixes_prev_stage">Previous Stage</string>
+    <string name="text_results_matrixes_current_stage">Current Stage:</string>
 </resources>
