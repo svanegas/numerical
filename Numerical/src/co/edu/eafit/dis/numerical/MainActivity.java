@@ -52,8 +52,13 @@ public class MainActivity extends Activity {
     opciones[6] = getResources()
         .getString(R.string.title_activity_multiple_roots);
     opciones[7] = getResources()
+<<<<<<< HEAD
         .getString(R.string.title_activity_gaussian_elimination);
 
+=======
+            .getString(R.string.title_activity_gaussian_elimination);
+    
+>>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
     // Declarar adapter y eventos al hacer click
     drawer.setAdapter(new ArrayAdapter<String> (
                       this,

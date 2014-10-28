@@ -60,6 +60,7 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".views.GaussianEliminationActivity"
             android:label="@string/title_activity_gaussian_elimination" >
         </activity>
@@ -69,6 +70,11 @@
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="portrait">
         </activity>
+=======
+            android:name="co.edu.eafit.dis.numerical.views.GaussianEliminationActivity"
+            android:label="@string/title_activity_gaussian_elimination" >
+        </activity>
+>>>>>>> 82cefd72a17143854e2f2919429c8b7a19397e32
     </application>
 
 </manifest>
