@@ -29,6 +29,9 @@ public class GaussianEliminationActivity extends Activity {
 		gaussianSpinner = (Spinner) findViewById(R.id.gaussian_spinner);
 		gaussianElimination = new GaussianElimination();
 		
+	    //Activar el botón de ir atrás en el action bar
+	    getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		// Create an ArrayAdapter using the string array and a default spinner layout
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
 		        R.array.gaussian_array, android.R.layout.simple_spinner_item);
@@ -64,10 +67,13 @@ public class GaussianEliminationActivity extends Activity {
 	       
 	       switch (methodSelection) {
 			case 0:
-				gaussianElimination.calculeSimpleGaussianElimiation(4, matrix);	
+				gaussianElimination.calculateSimpleGaussianElimiation(4, matrix);	
 				break;
 			case 1:
-				gaussianElimination.calculeGaussianEliminationWithoutPivot(4, matrix);				
+				gaussianElimination.calculateGaussianEliminationParcialPivoting(4, matrix);				
+				break;
+			case 2:
+				gaussianElimination.calculateGaussianEliminationTotalPivoting(4, matrix);				
 				break;
 			default:
 				break;
@@ -76,5 +82,16 @@ public class GaussianEliminationActivity extends Activity {
 	       
 
 	}
+	
+	  @Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	      case android.R.id.home:
+	        finish();
+	        return true;
+	      default:
+	        return super.onOptionsItemSelected(item);
+	    }
+	  }
 	
 }
