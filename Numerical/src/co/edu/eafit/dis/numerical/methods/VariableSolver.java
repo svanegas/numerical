@@ -31,4 +31,12 @@ public class VariableSolver {
         }
         return x;
     }
+    
+    public static double norma(double[]x, double[]x0, int n){
+        double maximun = Double.NEGATIVE_INFINITY;
+        double norma = 0;      
+        for(int i=1;i<n;i++)maximun = Math.max((x[i-1] - x0[i-1]), maximun);
+        norma = maximun;
+        return norma;
+    }
 }
