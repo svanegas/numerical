@@ -19,6 +19,7 @@
     <string name="title_activity_results_matrixes">Matrix Results</string>
     <string name="title_activity_results">Results</string>
     <string name="section_one_variable_equations">One Variable Equations</string>
+    <string name="section_systems_of_linear_equations">Systems of Linear Equations</string>
     <string name="title_activity_gaussian_elimination">Gaussian Elimination</string>
 
     <!-- Errors / Exceptions -->
@@ -64,15 +65,22 @@
     <string name="text_hint_input_2_derived_function">Enter f \'\'(x)</string>
 
     <!-- Gaussian elimination strings -->
-    <string name="text_without_pivot">Without pivot</string>
-    <string name="text_parcial_pivot">Parcial pivot</string>
-    <string name="text_total_pivot">Total pivot</string>
-    <string name="text_select_a_method">Select a method:</string>
+    <string name="text_without_pivot">Without pivoting</string>
+    <string name="text_parcial_pivot">Partial pivoting</string>
+    <string name="text_total_pivot">Total pivoting</string>
+    <string name="text_select_a_method">Select a method</string>
+    <string name="text_input_a_matrix">A matrix</string>
+    <string name="text_input_b_vector">b vector</string>
+    <string name="text_key_matrix_size">matrix_size</string>
+    <string name="text_number_unknowns">Enter number of unknowns</string>
+    <string name="text_continue_button">Continue</string>
+    <string name="text_hint_input_matrix_index">A[%1$d][%2$d]</string>
+    <string name="text_hint_input_vector_index">b[%1$d]</string>
 
     <string-array name="gaussian_array">
-        <item>Without pivot</item>
-        <item>Parcial pivot</item>
-        <item>Total pivot</item>
+        <item>Without pivoting</item>
+        <item>Partial pivoting</item>
+        <item>Total pivoting</item>
     </string-array>
 
     <!-- Iterative Results -->

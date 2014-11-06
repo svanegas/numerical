@@ -1,40 +1,172 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  tools:context="${relativePackage}.${activityClass}" >
+  android:layout_height="match_parent" >
 
-   <LinearLayout
-    android:layout_width="match_parent"
+  <TextView
+    android:id="@+id/section_title"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center" >
-    
-    <TextView
-        android:id="@+id/textView_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"   
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"     
-        android:text="@string/text_select_a_method" />
+    android:layout_marginTop="10dp"
+    android:layout_centerHorizontal="true"
+    android:textColor="@color/blue_section_title"
+    android:textSize="20sp"
+    android:text="@string/section_systems_of_linear_equations"
+    android:textStyle="bold" />
+  
+  <TextView
+    android:id="@+id/method_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/section_title"
+    android:layout_centerHorizontal="true"
+    android:text="@string/title_activity_gaussian_elimination"
+    android:textColor="@color/gray_method_title"
+    android:textSize="17sp" />
+
+  <TextView
+    android:id="@+id/textView_select"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="15dp"
+    android:layout_below="@+id/method_title"
+    android:layout_centerHorizontal="true"
+    android:textSize="20sp"
+    android:text="@string/text_select_a_method" />
 
   <Spinner
-      android:id="@+id/gaussian_spinner"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"      
-      android:layout_marginBottom="20dp" />
-  
-    <Button
-        android:id="@+id/calculate_button"
+    android:id="@+id/gaussian_spinner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/textView_select"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp" />
+
+  <LinearLayout
+    android:id="@+id/matrix_input_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/gaussian_spinner"
+    android:layout_above="@+id/calculate_buttons_layout"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:gravity="center">
+    
+    <LinearLayout
+      android:id="@+id/input_matrix_group"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="3"
+      android:layout_marginBottom="3dp" 
+      android:gravity="center"
+      android:orientation="vertical" >
+
+      <TextView
+        android:id="@+id/input_matrix_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="onClick"
-        android:text="@string/text_calculate_button" />
-
-  </LinearLayout>
+        android:text="@string/text_input_a_matrix"
+        android:textStyle="bold" />
+        
+      <ScrollView
+        android:id="@+id/vertical_scroll_matrix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
   
-</ScrollView>
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical" 
+          android:gravity="center">
+
+          <HorizontalScrollView
+            android:id="@+id/horizontal_scroll_matrix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:orientation="horizontal" >
+
+              <TableLayout
+                android:id="@+id/input_matrix_table"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+              </TableLayout>
+            </LinearLayout>
+          </HorizontalScrollView>
+        </LinearLayout>
+      </ScrollView>
+    </LinearLayout>
+    
+    <LinearLayout
+      android:id="@+id/input_vector_group"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:layout_marginTop="3dp"
+      android:layout_marginBottom="3dp"
+      android:gravity="center"
+      android:orientation="vertical">
+      
+      <TextView
+        android:id="@+id/input_vector_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_input_b_vector"
+        android:textStyle="bold" />
+      
+      <ScrollView
+        android:id="@+id/vertical_scroll_vector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:gravity="center">
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scroll_vector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <TableLayout
+                        android:id="@+id/input_vector_table"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" >
+                    </TableLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+      </ScrollView>
+    </LinearLayout>
+  </LinearLayout>
+      
+  <LinearLayout
+    android:id="@+id/calculate_buttons_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:gravity="center"
+    android:layout_marginBottom="5dp">
+    
+    <Button
+      android:id="@+id/calculate_button"
+      style="?android:attr/buttonStyleSmall"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/text_calculate_button" 
+      android:onClick="calculate"/>
+        
+  </LinearLayout>
+</RelativeLayout>

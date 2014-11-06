@@ -16,4 +16,15 @@ public class InputChecker {
       return false;
     }
   }
+  
+  public static boolean isInt(String s) {
+    try {
+      int i = Integer.parseInt(s);
+      return true;
+    }
+    catch (NumberFormatException e) {
+      Log.e(TAG, "Could not convert from string " + s + " to int");
+      return false;
+    }
+  }
 }

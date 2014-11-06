@@ -4,18 +4,27 @@ import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.R.id;
 import co.edu.eafit.dis.numerical.R.layout;
 import co.edu.eafit.dis.numerical.methods.GaussianElimination;
+import co.edu.eafit.dis.numerical.utils.InputChecker;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.Toast;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 
 public class GaussianEliminationActivity extends Activity {
 
@@ -25,6 +34,14 @@ public class GaussianEliminationActivity extends Activity {
   private GaussianElimination gaussianElimination;
   private Spinner gaussianSpinner;
   private int methodSelection;
+  private TableLayout inputMatrix;
+  private TableLayout inputVector;
+  
+  /* Contenidos */
+  private int matrixSize;
+  private EditText [][] inputMatrixEdits;
+  private EditText [] inputVectorEdits;
+  private double [][] matrix;
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +78,17 @@ public class GaussianEliminationActivity extends Activity {
         //Do nothing, just another required interface callback
       }
     }); // (optional)
+
+    inputMatrix = (TableLayout) findViewById(R.id.input_matrix_table);
+    inputVector = (TableLayout) findViewById(R.id.input_vector_table);
+
+    matrixSize = getIntent().getExtras()
+        .getInt(getResources().getString(R.string.text_key_matrix_size));
+    inputMatrixEdits = new EditText[matrixSize][matrixSize];
+    inputVectorEdits = new EditText[matrixSize];
+    matrix = new double[matrixSize][matrixSize + 1];
+    setUpViewWithInputMatrix(matrixSize);
+    setUpViewWithInputVector(matrixSize);
   }
   
   @Override
@@ -74,12 +102,125 @@ public class GaussianEliminationActivity extends Activity {
     }
   }
   
-
-  public void onClick(View view){
-    double[][] matrix = {{  1,  6,  -2,  3,  12},
+  private void setUpViewWithInputMatrix(int matrixSize) {
+    inputMatrix.removeAllViews();
+    for (int i = 0; i < matrixSize; ++i) {
+      TableRow row = new TableRow(GaussianEliminationActivity.this);
+      row.setLayoutParams(new TableRow
+          .LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                        TableRow.LayoutParams.WRAP_CONTENT));
+      for (int j = 0; j < matrixSize; ++j) {
+        inputMatrixEdits[i][j] = new EditText(GaussianEliminationActivity.this);
+        inputMatrixEdits[i][j].setInputType(InputType.TYPE_CLASS_NUMBER |
+                                InputType.TYPE_NUMBER_FLAG_DECIMAL | 
+                                InputType.TYPE_NUMBER_FLAG_SIGNED);
+        inputMatrixEdits[i][j].setLayoutParams(new TableRow.LayoutParams(
+                                TableRow.LayoutParams.WRAP_CONTENT,
+                                TableRow.LayoutParams.WRAP_CONTENT));
+        inputMatrixEdits[i][j].setGravity(Gravity.CENTER);
+        inputMatrixEdits[i][j].setHint(getResources()
+            .getString(R.string.text_hint_input_matrix_index, i, j));
+        if (j == 0) { //Si es la columna inicial entonces se añade una barra
+          EditText separator = new EditText(GaussianEliminationActivity.this);
+          separator.setLayoutParams(new TableRow.LayoutParams(1,
+                                                 LayoutParams.WRAP_CONTENT));
+          separator.setEnabled(false);
+          separator.setBackgroundColor(Color.BLACK);
+          row.addView(separator);
+        }
+        inputMatrixEdits[i][j].setTextColor(Color.BLACK);
+        row.addView(inputMatrixEdits[i][j]);
+        EditText separator = new EditText(GaussianEliminationActivity.this);
+        separator.setLayoutParams(new TableRow.LayoutParams(1,
+                                               LayoutParams.WRAP_CONTENT));
+        separator.setEnabled(false);
+        separator.setBackgroundColor(Color.BLACK);
+        row.addView(separator);
+      }
+      inputMatrix.addView(row);
+    }
+  }
+  
+  private void setUpViewWithInputVector(int matrixSize) {
+    inputVector.removeAllViews();
+    TableRow row = new TableRow(GaussianEliminationActivity.this);
+    row.setLayoutParams(new TableRow
+        .LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                      TableRow.LayoutParams.WRAP_CONTENT));
+    for (int j = 0; j < matrixSize; ++j) {
+      inputVectorEdits[j] = new EditText(GaussianEliminationActivity.this);
+      inputVectorEdits[j].setInputType(InputType.TYPE_CLASS_NUMBER |
+                              InputType.TYPE_NUMBER_FLAG_DECIMAL | 
+                              InputType.TYPE_NUMBER_FLAG_SIGNED);
+      inputVectorEdits[j].setLayoutParams(new TableRow.LayoutParams(
+                              TableRow.LayoutParams.WRAP_CONTENT,
+                              TableRow.LayoutParams.WRAP_CONTENT));
+      inputVectorEdits[j].setGravity(Gravity.CENTER);
+      inputVectorEdits[j].setHint(getResources()
+          .getString(R.string.text_hint_input_vector_index, j));
+      if (j == 0) { //Si es la columna inicial entonces se añade una barra
+        EditText separator = new EditText(GaussianEliminationActivity.this);
+        separator.setLayoutParams(new TableRow.LayoutParams(1,
+                                               LayoutParams.WRAP_CONTENT));
+        separator.setEnabled(false);
+        separator.setBackgroundColor(Color.BLACK);
+        row.addView(separator);
+      }
+      inputVectorEdits[j].setTextColor(Color.BLACK);
+      row.addView(inputVectorEdits[j]);
+      EditText separator = new EditText(GaussianEliminationActivity.this);
+      separator.setLayoutParams(new TableRow.LayoutParams(1,
+                                             LayoutParams.WRAP_CONTENT));
+      separator.setEnabled(false);
+      separator.setBackgroundColor(Color.BLACK);
+      row.addView(separator);
+    }
+    inputVector.addView(row);
+  }
+  
+  public void calculate(View view) {
+    boolean allCorrect = true;
+    for (int i = 0; i < matrixSize; ++i) {
+      for (int j = 0; j < matrixSize; ++j) {
+        String inputText = inputMatrixEdits[i][j].getText().toString().trim();
+        if (inputText.isEmpty()) {
+          inputMatrixEdits[i][j].setError(getResources()
+              .getString(R.string.input_required_error));
+          allCorrect = false;
+        }
+        else if (!InputChecker.isDouble(inputText)){
+          inputMatrixEdits[i][j].setError(getResources()
+              .getString(R.string.not_a_number_error));
+          allCorrect = false;
+        }
+        else {
+          matrix[i][j] = Double.valueOf(inputText);
+        }
+      }
+    }
+    for (int j = 0; j < matrixSize; ++j) {
+      String inputText = inputVectorEdits[j].getText().toString().trim();
+      if (inputText.isEmpty()) {
+        inputVectorEdits[j].setError(getResources()
+            .getString(R.string.input_required_error));
+        allCorrect = false;
+      }
+      else if (!InputChecker.isDouble(inputText)){
+        inputVectorEdits[j].setError(getResources()
+            .getString(R.string.not_a_number_error));
+        allCorrect = false;
+      }
+      else {
+        matrix[j][matrixSize] = Double.valueOf(inputText);
+      }
+    }
+    
+    if (!allCorrect) return;
+    Log.i(TAG, matrix.toString());
+    /*double[][] matrix = {{  1,  6,  -2,  3,  12},
                          { 14, 15,   2, -5,  32},
                          {  3,  4, -23,  2, -24},
-                         {  1, -3,  -2, 16,  14}};
+                         {  1, -3,  -2, 16,  14}};*/
     Intent resultsIntent;
     String methodName;
     String methodNameKey = getResources()

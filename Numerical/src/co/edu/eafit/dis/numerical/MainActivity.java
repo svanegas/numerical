@@ -101,9 +101,9 @@ public class MainActivity extends Activity {
                                 MultipleRootsActivity.class);
             MainActivity.this.startActivity(intent);
             break;
-          case 7:  //Posición 7 en el vector opciones es Raíces Múltiples
+          case 7:  //Posición 7 en el vector opciones es Eliminación Gaussiana
               intent = new Intent(MainActivity.this,
-                                  GaussianEliminationActivity.class);
+                                  GaussianUnknownsActivity.class);
               MainActivity.this.startActivity(intent);
               break;            
           default:
