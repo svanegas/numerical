@@ -30,6 +30,7 @@
     <string name="error_table_results_empty">The table of results is empty</string>
     <string name="error_matrixes_results_empty">The matrixes of results is empty</string>
     <string name="error_matrixes_failed_setup">Couldn\'t fill matrix the stage</string>
+    <string name="error_matrixes_failed_initialize">Couldn\'t initialize the results in steps</string>
     <string name="error_table_results_exceeded_columns">The row is full, you cannot add more columns</string>
 
     <!-- General -->
@@ -88,6 +89,7 @@
     <string name="text_key_results">results_text</string>
     <string name="text_key_method_name">method_name</string>
     <string name="text_key_method_type">method_type</string>
+    <string name="text_key_gaussian_method_type">gaussian_method_type</string>
     <string name="text_results_table_absolute_error">Absolute Error</string>
     <string name="text_results_table_relative_error">Relative Error</string>
     <string name="text_results_table_iteration">Iteration</string>

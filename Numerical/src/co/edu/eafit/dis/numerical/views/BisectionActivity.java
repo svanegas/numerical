@@ -15,35 +15,35 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class BisectionActivity extends Activity {
-  
-  //Lógica
+
+  // Lógica
   private Bisection bisection;
-  
+
   // Vista
   private EditText inputFunction;
   private EditText inputXi;
   private EditText inputXs;
   private EditText inputTol;
   private EditText inputMaxIterations;
-  private Button calculateButton; 
-  
+  private Button calculateButton;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_bisection);
-    
-    //Activar el botón de ir atrás en el action bar
+
+    // Activar el botón de ir atrás en el action bar
     getActionBar().setDisplayHomeAsUpEnabled(true);
-    
+
     bisection = new Bisection(this);
-    
+
     inputFunction = (EditText) findViewById(R.id.input_function);
     inputXi = (EditText) findViewById(R.id.input_xi);
     inputXs = (EditText) findViewById(R.id.input_xs);
     inputTol = (EditText) findViewById(R.id.input_tol);
     inputMaxIterations = (EditText) findViewById(R.id.input_max_iterations);
     calculateButton = (Button) findViewById(R.id.calculate_button);
-    
+
     calculateButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -52,7 +52,7 @@ public class BisectionActivity extends Activity {
     });
     fillFieldsWithStoredData();
   }
-  
+
   private void fillFieldsWithStoredData() {
     PreferencesManager.setup(this);
     inputFunction.setText(PreferencesManager.getFx());
@@ -61,16 +61,16 @@ public class BisectionActivity extends Activity {
     inputTol.setText(PreferencesManager.getTolerance());
     inputMaxIterations.setText(PreferencesManager.getMaxIterations());
   }
-  
+
   private void storeDataFromFields() {
     PreferencesManager.saveFx(inputFunction.getText().toString());
     PreferencesManager.saveX0(inputXi.getText().toString());
     PreferencesManager.saveXs(inputXs.getText().toString());
     PreferencesManager.saveTolerance(inputTol.getText().toString());
-    PreferencesManager
-      .saveMaxIterations(inputMaxIterations.getText().toString());
+    PreferencesManager.saveMaxIterations(inputMaxIterations.getText()
+        .toString());
   }
-  
+
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
@@ -81,23 +81,22 @@ public class BisectionActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
   }
-  
-  
+
   private void calculate() {
     inputMaxIterations.setError(null);
     inputTol.setError(null);
     inputXi.setError(null);
     inputXs.setError(null);
     inputFunction.setError(null);
-    
-    //Revisar si los datos ingresados están completos, se revisa desde el
-    //final hasta el inicial, para obtener el focus en el campo inválido
-    //de más arriba.
-    String fieldRequired = getResources()
-            .getString(R.string.input_required_error);
+
+    // Revisar si los datos ingresados están completos, se revisa desde el
+    // final hasta el inicial, para obtener el focus en el campo inválido
+    // de más arriba.
+    String fieldRequired = getResources().getString(
+        R.string.input_required_error);
     boolean fieldsCompleted = true;
-    
-    //Revisar si los campos están vacíos
+
+    // Revisar si los campos están vacíos
     if (inputMaxIterations.getText().toString().trim().isEmpty()) {
       inputMaxIterations.setError(fieldRequired);
       inputMaxIterations.requestFocus();
@@ -117,18 +116,18 @@ public class BisectionActivity extends Activity {
       inputXs.setError(fieldRequired);
       inputXs.requestFocus();
       fieldsCompleted = false;
-    }   
+    }
     if (inputFunction.getText().toString().trim().isEmpty()) {
       inputFunction.setError(fieldRequired);
       inputFunction.requestFocus();
       fieldsCompleted = false;
     }
-    if (!fieldsCompleted) return;
-    
-    
-    //Revisar que los que deberían ser números si lo sean
-    String notANumberError = getResources()
-            .getString(R.string.not_a_number_error);
+    if (!fieldsCompleted)
+      return;
+
+    // Revisar que los que deberían ser números si lo sean
+    String notANumberError = getResources().getString(
+        R.string.not_a_number_error);
     boolean correctFields = true;
     if (!InputChecker.isDouble(inputXi.getText().toString())) {
       inputXi.setError(notANumberError);
@@ -139,27 +138,28 @@ public class BisectionActivity extends Activity {
       inputXs.setError(notANumberError);
       inputXs.requestFocus();
       correctFields = false;
-    }   
+    }
     if (!InputChecker.isDouble(inputTol.getText().toString())) {
       inputTol.setError(notANumberError);
       inputTol.requestFocus();
       correctFields = false;
     }
-    if (!correctFields) return;
-    
-    //Obtener valores de los inputs
+    if (!correctFields)
+      return;
+
+    // Obtener valores de los inputs
     String function = inputFunction.getText().toString();
     String xiText = inputXi.getText().toString();
     String xsText = inputXs.getText().toString();
     String tolText = inputTol.getText().toString();
-    int maxIterations = Integer.parseInt(inputMaxIterations
-                    .getText().toString());
-    
+    int maxIterations = Integer.parseInt(inputMaxIterations.getText()
+        .toString());
+
     double xi = Double.valueOf(xiText);
     double xs = Double.valueOf(xsText);
     double tol = Double.valueOf(tolText);
-    
-    //Try para revisar si la función está bien escrita
+
+    // Try para revisar si la función está bien escrita
     try {
       bisection.setFunction(function);
     } catch (Exception ex) {
@@ -167,41 +167,43 @@ public class BisectionActivity extends Activity {
       inputFunction.requestFocus();
       return;
     }
-    
-    //Datos correctos, guardarlos en PreferencesManager
+
+    // Datos correctos, guardarlos en PreferencesManager
     storeDataFromFields();
-    
+
     Intent resultsIntent = new Intent(BisectionActivity.this,
         ResultsActivity.class);
-    String methodNameKey = getResources()
-        .getString(R.string.text_key_method_name);
-    String methodName = getResources()
-        .getString(R.string.title_activity_bisection);
+    String methodNameKey = getResources().getString(
+        R.string.text_key_method_name);
+    String methodName = getResources().getString(
+        R.string.title_activity_bisection);
     String resultsKey = getResources().getString(R.string.text_key_results);
+    String methodTypeKey = getResources().getString(
+        R.string.text_key_method_type);
     String resultsText;
-    //Intentar evaluar con los datos recogidos
+    // Intentar evaluar con los datos recogidos
     try {
-      double [] result = bisection.evaluate(xi, xs, tol, maxIterations);
+      double[] result = bisection.evaluate(xi, xs, tol, maxIterations);
       if (result[1] == -1) {
-        //Se encontró una raíz exacta
-        String rootFound = getString(R.string.root_found, result[0]); 
-        //Toast.makeText(this, rootFound, Toast.LENGTH_SHORT).show();
+        // Se encontró una raíz exacta
+        String rootFound = getString(R.string.root_found, result[0]);
+        // Toast.makeText(this, rootFound, Toast.LENGTH_SHORT).show();
         resultsText = rootFound;
-      }
-      else {
-        //Se encontró una raíz con una tolerancia
-        String intervalFound = getString(R.string.root_found_tol,
-                                         result[0],
-                                         tolText); 
-        //Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
+      } else {
+        // Se encontró una raíz con una tolerancia
+        String intervalFound = getString(R.string.root_found_tol, result[0],
+            tolText);
+        // Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
         resultsText = intervalFound;
       }
     } catch (Exception e) {
-      //Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+      // Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
       resultsText = e.getMessage();
     }
     resultsIntent.putExtra(methodNameKey, methodName);
     resultsIntent.putExtra(resultsKey, resultsText);
+    resultsIntent.putExtra(methodTypeKey,
+        ResultsActivity.ONE_VARIABLE_EQUATIONS);
     BisectionActivity.this.startActivity(resultsIntent);
   }
 }

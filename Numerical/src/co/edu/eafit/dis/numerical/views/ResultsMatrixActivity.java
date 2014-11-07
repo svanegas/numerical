@@ -22,9 +22,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class ResultsMatrixActivity extends Activity {
-  
+
   private static final String TAG = ResultsMatrixActivity.class.getSimpleName();
-  
+
   public static final int ELIMINATION_TYPE = 1;
   public static final int FACTORIZATION_TYPE = 2;
   private TextView methodTitle;
@@ -32,46 +32,44 @@ public class ResultsMatrixActivity extends Activity {
   private TableLayout resultsLowerMatrix;
   private TableLayout resultsUpperMatrix;
   private int methodType;
-  
+
   private LinearLayout resultMatrixGroup;
   private LinearLayout resultLowerMatrixGroup;
   private LinearLayout resultUpperMatrixGroup;
-  
+
   private Button nextButton;
   private Button prevButton;
-  
+
   private TextView currentStage;
   private int currentViewingStage;
   private int numberOfStages;
-  
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_results_matrixes);
-    
-    //Activar el botón de ir atrás en el action bar
+
+    // Activar el botón de ir atrás en el action bar
     getActionBar().setDisplayHomeAsUpEnabled(true);
-    
+
     numberOfStages = ResultsMatrix.getStagesMatrixes().size();
-    
+
     methodTitle = (TextView) findViewById(R.id.method_title);
     resultsMatrix = (TableLayout) findViewById(R.id.results_matrix);
     resultsLowerMatrix = (TableLayout) findViewById(R.id.results_lower_matrix);
     resultsUpperMatrix = (TableLayout) findViewById(R.id.results_upper_matrix);
     resultMatrixGroup = (LinearLayout) findViewById(R.id.result_matrix_group);
-    resultLowerMatrixGroup = (LinearLayout) 
-         findViewById(R.id.result_lower_matrix_group);
-    resultUpperMatrixGroup = (LinearLayout) 
-        findViewById(R.id.result_upper_matrix_group);
+    resultLowerMatrixGroup = (LinearLayout) findViewById(R.id.result_lower_matrix_group);
+    resultUpperMatrixGroup = (LinearLayout) findViewById(R.id.result_upper_matrix_group);
     currentStage = (TextView) findViewById(R.id.current_stage);
     prevButton = (Button) findViewById(R.id.prev_stage_button);
     nextButton = (Button) findViewById(R.id.next_stage_button);
-    
-    String methodName = getIntent().getExtras().getString(getResources()
-          .getString(R.string.text_key_method_name));
-    int methodType = getIntent().getExtras().getInt(getResources()
-          .getString(R.string.text_key_method_type));
-    
+
+    String methodName = getIntent().getExtras().getString(
+        getResources().getString(R.string.text_key_method_name));
+    int methodType = getIntent().getExtras().getInt(
+        getResources().getString(R.string.text_key_gaussian_method_type));
+
     setUpFields(methodName, methodType);
     String[][] firstStage;
     try {
@@ -79,13 +77,12 @@ public class ResultsMatrixActivity extends Activity {
       fillMatrix(firstStage.length, firstStage[0].length, firstStage,
           resultsMatrix);
     } catch (Exception e) {
-      Log.e(TAG, getResources()
-          .getString(R.string.error_matrixes_failed_setup) + ": " + 
-          e.getMessage());
+      Log.e(TAG, getResources().getString(R.string.error_matrixes_failed_setup)
+          + ": " + e.getMessage());
     }
     updateStage(0);
   }
-  
+
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
@@ -96,7 +93,7 @@ public class ResultsMatrixActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
   }
-  
+
   public void setUpFields(String methodName, int methodType) {
     this.methodType = methodType;
     methodTitle.setText(methodName);
@@ -104,49 +101,49 @@ public class ResultsMatrixActivity extends Activity {
       resultMatrixGroup.setVisibility(View.VISIBLE);
       resultLowerMatrixGroup.setVisibility(View.GONE);
       resultUpperMatrixGroup.setVisibility(View.GONE);
-    }
-    else {
+    } else {
       resultMatrixGroup.setVisibility(View.GONE);
       resultLowerMatrixGroup.setVisibility(View.VISIBLE);
       resultUpperMatrixGroup.setVisibility(View.VISIBLE);
     }
   }
-  
+
   public void fillMatrix(final int n, final int m, final String[][] matrix,
       TableLayout matrixLayout) {
     matrixLayout.removeAllViews();
     for (int i = 0; i < n; i++) {
       TableRow row = new TableRow(ResultsMatrixActivity.this);
-      row.setLayoutParams(new TableRow
-                          .LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                                        TableRow.LayoutParams.WRAP_CONTENT));
+      row.setLayoutParams(new TableRow.LayoutParams(
+          TableRow.LayoutParams.WRAP_CONTENT,
+          TableRow.LayoutParams.WRAP_CONTENT));
       for (int j = 0; j < m; j++) {
         EditText edit = new EditText(ResultsMatrixActivity.this);
-        edit.setInputType(InputType.TYPE_CLASS_NUMBER |
-                          InputType.TYPE_NUMBER_FLAG_DECIMAL | 
-                          InputType.TYPE_NUMBER_FLAG_SIGNED);
+        edit.setInputType(InputType.TYPE_CLASS_NUMBER
+            | InputType.TYPE_NUMBER_FLAG_DECIMAL
+            | InputType.TYPE_NUMBER_FLAG_SIGNED);
         edit.setLayoutParams(new TableRow.LayoutParams(
-                              TableRow.LayoutParams.WRAP_CONTENT,
-                              TableRow.LayoutParams.WRAP_CONTENT));
+            TableRow.LayoutParams.WRAP_CONTENT,
+            TableRow.LayoutParams.WRAP_CONTENT));
         edit.setGravity(Gravity.CENTER);
-        
+
         edit.setText(matrix[i][j]);
         edit.setKeyListener(null);
         if (i == 0) {
-          edit.setBackgroundColor(getResources()
-              .getColor(R.color.header_table_results_row));
+          edit.setBackgroundColor(getResources().getColor(
+              R.color.header_table_results_row));
           edit.setTypeface(edit.getTypeface(), Typeface.BOLD);
+        } else {
+          if (i % 2 == 0)
+            edit.setBackgroundColor(getResources().getColor(
+                R.color.light_blue_table_results_row));
+          else
+            edit.setBackgroundColor(getResources().getColor(
+                R.color.light_gray_table_results_row));
         }
-        else {
-          if (i % 2 == 0) edit.setBackgroundColor(getResources()
-                            .getColor(R.color.light_blue_table_results_row));
-          else edit.setBackgroundColor(getResources()
-                            .getColor(R.color.light_gray_table_results_row));
-        }
-        if (j == 0) { //Si es la columna inicial entonces se añade una barra
+        if (j == 0) { // Si es la columna inicial entonces se añade una barra
           EditText separator = new EditText(ResultsMatrixActivity.this);
           separator.setLayoutParams(new TableRow.LayoutParams(1,
-                                                 LayoutParams.WRAP_CONTENT));
+              LayoutParams.WRAP_CONTENT));
           separator.setEnabled(false);
           separator.setBackgroundColor(Color.BLACK);
           row.addView(separator);
@@ -156,7 +153,7 @@ public class ResultsMatrixActivity extends Activity {
         row.addView(edit);
         EditText separator = new EditText(ResultsMatrixActivity.this);
         separator.setLayoutParams(new TableRow.LayoutParams(1,
-                                               LayoutParams.WRAP_CONTENT));
+            LayoutParams.WRAP_CONTENT));
         separator.setEnabled(false);
         separator.setBackgroundColor(Color.BLACK);
         row.addView(separator);
@@ -164,56 +161,55 @@ public class ResultsMatrixActivity extends Activity {
       matrixLayout.addView(row);
     }
   }
-  
+
   private void updateStage(int stage) {
-    if (stage < 0 || stage > numberOfStages) return;
+    if (stage < 0 || stage > numberOfStages)
+      return;
     currentViewingStage = stage;
     currentStage.setText(String.valueOf(currentViewingStage));
     updateButtons();
   }
-  
+
   public void increaseStage(View v) {
     int oldCurrentViewingStage = currentViewingStage;
     currentViewingStage = Math.min(currentViewingStage + 1, numberOfStages - 1);
-    if (oldCurrentViewingStage == currentViewingStage) return;
-    String [][] nextMatrix;
+    if (oldCurrentViewingStage == currentViewingStage)
+      return;
+    String[][] nextMatrix;
     try {
-      nextMatrix = ResultsMatrix
-          .getStringMatrix(currentViewingStage);
+      nextMatrix = ResultsMatrix.getStringMatrix(currentViewingStage);
       if (methodType == ELIMINATION_TYPE) {
         fillMatrix(nextMatrix.length, nextMatrix[0].length, nextMatrix,
-                   resultsMatrix);
+            resultsMatrix);
       }
       currentStage.setText(String.valueOf(currentViewingStage));
     } catch (Exception e) {
-      Log.e(TAG, getResources()
-          .getString(R.string.error_matrixes_failed_setup) + ": " + 
-          e.getMessage());
+      Log.e(TAG, getResources().getString(R.string.error_matrixes_failed_setup)
+          + ": " + e.getMessage());
     }
     updateButtons();
   }
-  
+
   public void decreaseStage(View v) {
     int oldCurrentViewingStage = currentViewingStage;
     currentViewingStage = Math.max(currentViewingStage - 1, 0);
-    if (oldCurrentViewingStage == currentViewingStage) return;
-    String [][] nextMatrix;
+    if (oldCurrentViewingStage == currentViewingStage)
+      return;
+    String[][] nextMatrix;
     try {
-      nextMatrix = ResultsMatrix
-          .getStringMatrix(currentViewingStage);
+      nextMatrix = ResultsMatrix.getStringMatrix(currentViewingStage);
       if (methodType == ELIMINATION_TYPE) {
         fillMatrix(nextMatrix.length, nextMatrix[0].length, nextMatrix,
-                   resultsMatrix);
+            resultsMatrix);
       }
       currentStage.setText(String.valueOf(currentViewingStage));
     } catch (Exception e) {
-      Log.e(TAG, getResources()
-          .getString(R.string.error_matrixes_failed_setup) + ": " + 
-          e.getMessage());
+      Log.e(TAG, getResources().getString(R.string.error_matrixes_failed_setup)
+          + ": " + e.getMessage());
     }
     updateButtons();
   }
-  
+
   private void updateButtons() {
     nextButton.setEnabled(currentViewingStage != numberOfStages - 1);
     prevButton.setEnabled(currentViewingStage != 0);

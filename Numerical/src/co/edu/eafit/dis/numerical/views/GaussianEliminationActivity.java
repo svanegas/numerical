@@ -96,11 +96,11 @@ public class GaussianEliminationActivity extends Activity {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
-    case android.R.id.home:
-      finish();
-      return true;
-    default:
-      return super.onOptionsItemSelected(item);
+      case android.R.id.home:
+        finish();
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
     }
   }
 
@@ -215,73 +215,90 @@ public class GaussianEliminationActivity extends Activity {
         matrix[j][matrixSize] = Double.valueOf(inputText);
       }
     }
-
     if (!allCorrect)
       return;
     Intent resultsIntent;
-    String methodName;
+    String methodName, resultText;
     String methodNameKey = getResources().getString(
         R.string.text_key_method_name);
     String methodTypeKey = getResources().getString(
         R.string.text_key_method_type);
+    String methodResult = getResources().getString(R.string.text_key_results);
     double[] solution;
     switch (methodSelection) {
-    case 0:
-      solution = gaussianElimination.calculateSimpleGaussianElimiation(4,
-          matrix);
-      resultsIntent = new Intent(GaussianEliminationActivity.this,
-          ResultsMatrixActivity.class);
-      methodName = getResources().getString(
-          R.string.title_activity_gaussian_elim_without);
-      // String resultsKey =
-      // getResources().getString(R.string.text_key_results);
-      // String resultsText;
-      resultsIntent.putExtra(methodNameKey, methodName);
-      // resultsIntent.putExtra(resultsKey, resultsText);
-      resultsIntent.putExtra(methodTypeKey,
-          ResultsMatrixActivity.ELIMINATION_TYPE);
-      GaussianEliminationActivity.this.startActivity(resultsIntent);
-      break;
-    case 1:
-      solution = gaussianElimination
-          .calculateGaussianEliminationPartialPivoting(4, matrix);
-      resultsIntent = new Intent(GaussianEliminationActivity.this,
-          ResultsMatrixActivity.class);
-      methodNameKey = getResources().getString(R.string.text_key_method_name);
-      methodName = getResources().getString(
-          R.string.title_activity_gaussian_elim_partial);
-      // String resultsKey =
-      // getResources().getString(R.string.text_key_results);
-      // String resultsText;
-      resultsIntent.putExtra(methodNameKey, methodName);
-      // resultsIntent.putExtra(resultsKey, resultsText);
-      resultsIntent.putExtra(methodTypeKey,
-          ResultsMatrixActivity.ELIMINATION_TYPE);
-      GaussianEliminationActivity.this.startActivity(resultsIntent);
-      break;
-    case 2:
-      solution = gaussianElimination.calculateGaussianEliminationTotalPivoting(
-          4, matrix);
-      resultsIntent = new Intent(GaussianEliminationActivity.this,
-          ResultsMatrixActivity.class);
-      methodNameKey = getResources().getString(R.string.text_key_method_name);
-      methodName = getResources().getString(
-          R.string.title_activity_gaussian_elim_total);
-      // String resultsKey =
-      // getResources().getString(R.string.text_key_results);
-      // String resultsText;
-      resultsIntent.putExtra(methodNameKey, methodName);
-      // resultsIntent.putExtra(resultsKey, resultsText);
-      resultsIntent.putExtra(methodTypeKey,
-          ResultsMatrixActivity.ELIMINATION_TYPE);
-      GaussianEliminationActivity.this.startActivity(resultsIntent);
-      break;
-    default:
-      solution = new double[0];
-      break;
+      case 0:
+        methodName = getResources().getString(
+            R.string.title_activity_gaussian_elim_without);
+        try {
+          solution = gaussianElimination.calculateSimpleGaussianElimiation(
+              matrixSize, matrix);
+          resultsIntent = new Intent(GaussianEliminationActivity.this,
+              ResultsActivity.class);
+          resultText = gaussianElimination.getStringSolution(solution);
+          resultsIntent.putExtra(methodNameKey, methodName);
+          resultsIntent.putExtra(methodTypeKey,
+              ResultsActivity.SYSTEMS_OF_EQUATIONS);
+          resultsIntent.putExtra(methodResult, resultText);
+        } catch (Exception e) {
+          resultsIntent = new Intent(GaussianEliminationActivity.this,
+              ResultsActivity.class);
+          resultsIntent.putExtra(methodNameKey, methodName);
+          resultsIntent.putExtra(methodTypeKey,
+              ResultsActivity.SYSTEMS_OF_EQUATIONS);
+          // TODO Cambiar este error por String de XML
+          resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+        }
+        break;
+      case 1:
+        methodName = getResources().getString(
+            R.string.title_activity_gaussian_elim_partial);
+        try {
+          solution = gaussianElimination
+              .calculateGaussianEliminationPartialPivoting(matrixSize, matrix);
+          resultsIntent = new Intent(GaussianEliminationActivity.this,
+              ResultsActivity.class);
+          resultText = gaussianElimination.getStringSolution(solution);
+          resultsIntent.putExtra(methodNameKey, methodName);
+          resultsIntent.putExtra(methodTypeKey,
+              ResultsActivity.SYSTEMS_OF_EQUATIONS);
+          resultsIntent.putExtra(methodResult, resultText);
+        } catch (Exception e) {
+          resultsIntent = new Intent(GaussianEliminationActivity.this,
+              ResultsActivity.class);
+          resultsIntent.putExtra(methodNameKey, methodName);
+          resultsIntent.putExtra(methodTypeKey,
+              ResultsActivity.SYSTEMS_OF_EQUATIONS);
+          // TODO Cambiar este error por String de XML
+          resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+        }
+        break;
+      case 2:
+        methodName = getResources().getString(
+            R.string.title_activity_gaussian_elim_total);
+        try {
+          solution = gaussianElimination
+              .calculateGaussianEliminationTotalPivoting(matrixSize, matrix);
+          resultsIntent = new Intent(GaussianEliminationActivity.this,
+              ResultsActivity.class);
+          resultText = gaussianElimination.getStringSolution(solution);
+          resultsIntent.putExtra(methodNameKey, methodName);
+          resultsIntent.putExtra(methodTypeKey,
+              ResultsActivity.SYSTEMS_OF_EQUATIONS);
+          resultsIntent.putExtra(methodResult, resultText);
+        } catch (Exception e) {
+          resultsIntent = new Intent(GaussianEliminationActivity.this,
+              ResultsActivity.class);
+          resultsIntent.putExtra(methodNameKey, methodName);
+          resultsIntent.putExtra(methodTypeKey,
+              ResultsActivity.SYSTEMS_OF_EQUATIONS);
+          // TODO Cambiar este error por String de XML
+          resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+        }
+        break;
+      default:
+        resultsIntent = new Intent();
+        break;
     }
-    for (int i = 0; i < solution.length; ++i) {
-      Log.i(TAG, "X" + (i + 1) + " = " + solution[i]);
-    }
+    GaussianEliminationActivity.this.startActivity(resultsIntent);
   }
 }
