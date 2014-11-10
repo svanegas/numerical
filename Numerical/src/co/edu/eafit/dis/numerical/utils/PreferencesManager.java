@@ -27,8 +27,10 @@ public class PreferencesManager {
   private static final String FUNCTION_XA = "xa";
   private static final String FUNCTION_TOLERANCE = "tolerance";
   private static final String FUNCTION_ROW = "row#";
+  private static final String FUNCTION_VECTOR = "vector";
   private static final String MATRIX_ROWS_SIZE = "rows";
   private static final String MATRIX_COLUMNS_SIZE = "columns";
+  private static final String VECTOR_SIZE = "size";
 
   public static void setup(Context context) {
     sp = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -36,10 +38,13 @@ public class PreferencesManager {
   }
 
   // --- Put methods ---
-
-  public static void setMatrix(String[][] matrix) {   
+  // Guarda los datos de la matriz que viene por parámetro en strings separados
+  // por comas.
+  public static void setMatrix(String[][] matrix) {
     int rows = matrix.length;
     int columns = matrix[0].length;
+    // Guarda el tamaño de la matriz para saber de que tamaño crear la que se
+    // devuelve
     spEditor.putInt(MATRIX_ROWS_SIZE, rows).commit();
     spEditor.putInt(MATRIX_COLUMNS_SIZE, columns).commit();
     for (int i = 0; i < matrix.length; i++) {
@@ -55,19 +60,17 @@ public class PreferencesManager {
     }
   }
 
-  public static String[][] getMatrix(){
-    String[][] matrix = new String[sp.getInt(MATRIX_ROWS_SIZE,0)]
-        [sp.getInt(MATRIX_COLUMNS_SIZE, 0)];    
-    for (int i = 0; i < matrix.length; i++) {
-      String key = FUNCTION_ROW + i;
-      String[] rows = sp.getString(key, null).split(",");
-      for (int j = 0; j < matrix[0].length; j++) {
-        matrix[i][j] = rows[j];        
-      }
+  public static void setVector(String[] vector) {
+    spEditor.putInt(VECTOR_SIZE, vector.length).commit();
+    String temp = "";
+    for (int i = 0; i < vector.length; i++) {
+      temp += vector[i];
+      if (i != vector.length - 1)
+        temp += ",";
     }
-    return matrix;
+    spEditor.putString(FUNCTION_VECTOR, temp).commit();
   }
-  
+
   public static void saveFx(String function) {
     spEditor.putString(FUNCTION_FX, function).commit();
   }
@@ -113,6 +116,28 @@ public class PreferencesManager {
   }
 
   // --- Fetch methods ---
+
+  // Devuelve una matriz de strings con los valores de una matriz previamente
+  // guardada separando cada valor por comas
+  public static String[][] getMatrix() {
+    String[][] matrix = new String[sp.getInt(MATRIX_ROWS_SIZE, 0)][sp.getInt(
+        MATRIX_COLUMNS_SIZE, 0)];
+    for (int i = 0; i < matrix.length; i++) {
+      String key = FUNCTION_ROW + i;
+      String[] rows = sp.getString(key, null).split(",");
+      for (int j = 0; j < matrix[0].length; j++) {
+        matrix[i][j] = rows[j];
+      }
+    }
+    return matrix;
+  }
+
+  public static String[] getVector(){
+    String[] vector = new String[sp.getInt(VECTOR_SIZE, 0)];
+    vector = sp.getString(FUNCTION_VECTOR, null).split(",");    
+    return vector;      
+  }
+  
   public static String getFx() {
     return sp.getString(FUNCTION_FX, null);
   }

@@ -188,7 +188,7 @@ public class GaussianEliminationActivity extends Activity {
     }
     inputVector.addView(row);
   }
-
+//Llena los espacios de los editText con los datos de la matriz guardada
   private void fillFieldsWithStoredData() {
     PreferencesManager.setup(this);
     String[][] tempMatrix = PreferencesManager.getMatrix();
@@ -197,8 +197,13 @@ public class GaussianEliminationActivity extends Activity {
         inputMatrixEdits[i][j].setText(tempMatrix[i][j]);
       }      
     }
+    
+    String[] tempVector = PreferencesManager.getVector();
+    for (int i = 0; i < tempVector.length; i++) {      
+      inputVectorEdits[i].setText(tempVector[i]);
+    }
   }
-  
+  //Guarda los datos de la matriz en SharedPreferences
   private void storeDataFromFields(){
     String[][] tempMatrix = new String[inputMatrixEdits.length]
         [inputMatrixEdits[0].length];
@@ -208,6 +213,12 @@ public class GaussianEliminationActivity extends Activity {
       }
     }
     PreferencesManager.setMatrix(tempMatrix);
+    
+    String[] tempVector = new String[inputVectorEdits.length];
+    for (int i = 0; i < tempVector.length; i++) {
+      tempVector[i] = inputVectorEdits[i].getText().toString().trim();      
+    }
+    PreferencesManager.setVector(tempVector);
   }
   
   public void calculate(View view) {
