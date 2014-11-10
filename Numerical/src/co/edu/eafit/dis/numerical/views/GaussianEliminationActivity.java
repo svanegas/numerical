@@ -94,8 +94,8 @@ public class GaussianEliminationActivity extends Activity {
     matrix = new double[matrixSize][matrixSize + 1];
     setUpViewWithInputMatrix(matrixSize);
     setUpViewWithInputVector(matrixSize);
-    
-    //Carga los datos
+
+    // Carga los datos
     fillFieldsWithStoredData();
   }
 
@@ -188,39 +188,56 @@ public class GaussianEliminationActivity extends Activity {
     }
     inputVector.addView(row);
   }
-//Llena los espacios de los editText con los datos de la matriz guardada
+
+  // Llena los espacios de los editText con los datos de la matriz guardada
   private void fillFieldsWithStoredData() {
     PreferencesManager.setup(this);
     String[][] tempMatrix = PreferencesManager.getMatrix();
-    for (int i = 0; i < tempMatrix.length; i++) {
-      for (int j = 0; j < tempMatrix[0].length; j++) {        
-        inputMatrixEdits[i][j].setText(tempMatrix[i][j]);
-      }      
+
+    if (inputMatrixEdits.length < tempMatrix.length) {
+      for (int i = 0; i < inputMatrixEdits.length; i++) {
+        for (int j = 0; j < inputMatrixEdits[0].length; j++) {
+          inputMatrixEdits[i][j].setText(tempMatrix[i][j]);
+        }
+      }
+    } else {
+      for (int i = 0; i < tempMatrix.length; i++) {
+        for (int j = 0; j < tempMatrix[0].length; j++) {
+          inputMatrixEdits[i][j].setText(tempMatrix[i][j]);
+        }
+      }
     }
-    
+
     String[] tempVector = PreferencesManager.getVector();
-    for (int i = 0; i < tempVector.length; i++) {      
-      inputVectorEdits[i].setText(tempVector[i]);
+
+    if (inputVectorEdits.length < tempVector.length) {
+      for (int i = 0; i < inputVectorEdits.length; i++) {
+        inputVectorEdits[i].setText(tempVector[i]);
+      }
+    } else {
+      for (int i = 0; i < tempVector.length; i++) {
+        inputVectorEdits[i].setText(tempVector[i]);
+      }
     }
   }
-  //Guarda los datos de la matriz en SharedPreferences
-  private void storeDataFromFields(){
-    String[][] tempMatrix = new String[inputMatrixEdits.length]
-        [inputMatrixEdits[0].length];
-    for (int i = 0; i < inputMatrixEdits.length; i++) {      
-      for (int j = 0; j < inputMatrixEdits[0].length; j++) {        
+
+  // Guarda los datos de la matriz en SharedPreferences
+  private void storeDataFromFields() {
+    String[][] tempMatrix = new String[inputMatrixEdits.length][inputMatrixEdits[0].length];
+    for (int i = 0; i < tempMatrix.length; i++) {
+      for (int j = 0; j < tempMatrix[0].length; j++) {
         tempMatrix[i][j] = inputMatrixEdits[i][j].getText().toString().trim();
       }
     }
     PreferencesManager.setMatrix(tempMatrix);
-    
-    String[] tempVector = new String[inputVectorEdits.length];
-    for (int i = 0; i < tempVector.length; i++) {
-      tempVector[i] = inputVectorEdits[i].getText().toString().trim();      
-    }
-    PreferencesManager.setVector(tempVector);
+
+     String[] tempVector = new String[inputVectorEdits.length];
+     for (int i = 0; i < tempVector.length; i++) {
+     tempVector[i] = inputVectorEdits[i].getText().toString().trim();
+     }
+     PreferencesManager.setVector(tempVector);
   }
-  
+
   public void calculate(View view) {
     boolean allCorrect = true;
     for (int i = 0; i < matrixSize; ++i) {
@@ -339,7 +356,7 @@ public class GaussianEliminationActivity extends Activity {
     }
     // Datos correctos, guardarlos en PreferencesManager
     storeDataFromFields();
-    
+
     GaussianEliminationActivity.this.startActivity(resultsIntent);
   }
 }
