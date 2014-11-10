@@ -1,10 +1,13 @@
 package co.edu.eafit.dis.numerical.views;
 
+import java.util.Iterator;
+
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.R.id;
 import co.edu.eafit.dis.numerical.R.layout;
 import co.edu.eafit.dis.numerical.methods.GaussianElimination;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
+import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -91,6 +94,8 @@ public class GaussianEliminationActivity extends Activity {
     matrix = new double[matrixSize][matrixSize + 1];
     setUpViewWithInputMatrix(matrixSize);
     setUpViewWithInputVector(matrixSize);
+    
+    fillFieldsWithStoredData();
   }
 
   @Override
@@ -183,6 +188,27 @@ public class GaussianEliminationActivity extends Activity {
     inputVector.addView(row);
   }
 
+  private void fillFieldsWithStoredData() {
+    PreferencesManager.setup(this);
+    String[][] tempMatrix = PreferencesManager.getMatrix();
+    for (int i = 0; i < tempMatrix.length; i++) {
+      for (int j = 0; j < tempMatrix[0].length; j++) {        
+        inputMatrixEdits[i][j].setText(tempMatrix[i][j]);
+      }      
+    }
+  }
+  
+  private void storeDataFromFields(){
+    String[][] tempMatrix = new String[inputMatrixEdits.length]
+        [inputMatrixEdits[0].length];
+    for (int i = 0; i < inputMatrixEdits.length; i++) {      
+      for (int j = 0; j < inputMatrixEdits[0].length; j++) {        
+        tempMatrix[i][j] = inputMatrixEdits[i][j].getText().toString().trim();
+      }
+    }
+    PreferencesManager.setMatrix(tempMatrix);
+  }
+  
   public void calculate(View view) {
     boolean allCorrect = true;
     for (int i = 0; i < matrixSize; ++i) {
@@ -299,6 +325,9 @@ public class GaussianEliminationActivity extends Activity {
         resultsIntent = new Intent();
         break;
     }
+    // Datos correctos, guardarlos en PreferencesManager
+    storeDataFromFields();
+    
     GaussianEliminationActivity.this.startActivity(resultsIntent);
   }
 }
