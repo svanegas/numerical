@@ -95,8 +95,13 @@ public class GaussianEliminationActivity extends Activity {
     setUpViewWithInputMatrix(matrixSize);
     setUpViewWithInputVector(matrixSize);
 
-    // Carga los datos
-    fillFieldsWithStoredData();
+    
+    try {
+   // Carga los datos
+      fillFieldsWithStoredData(); 
+    } catch (NullPointerException e) {
+      // TODO: handle exception
+    }       
   }
 
   @Override
