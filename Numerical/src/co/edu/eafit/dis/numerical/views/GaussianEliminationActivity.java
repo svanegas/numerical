@@ -207,7 +207,7 @@ public class GaussianEliminationActivity extends Activity {
         }
       }
     }
-    //Lo mismo para los vectores
+    //Lo mismo para los vectores!!
     String[] tempVector = PreferencesManager.getVector();
 
     if (inputVectorEdits.length < tempVector.length) {
