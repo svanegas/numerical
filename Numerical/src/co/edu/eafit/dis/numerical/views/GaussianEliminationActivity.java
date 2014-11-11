@@ -230,12 +230,12 @@ public class GaussianEliminationActivity extends Activity {
       }
     }
     PreferencesManager.setMatrix(tempMatrix);
-
-     String[] tempVector = new String[inputVectorEdits.length];
-     for (int i = 0; i < tempVector.length; i++) {
-     tempVector[i] = inputVectorEdits[i].getText().toString().trim();
-     }
-     PreferencesManager.setVector(tempVector);
+    // Lo mismo para los vectores
+    String[] tempVector = new String[inputVectorEdits.length];
+    for (int i = 0; i < tempVector.length; i++) {
+      tempVector[i] = inputVectorEdits[i].getText().toString().trim();
+    }
+    PreferencesManager.setVector(tempVector);
   }
 
   public void calculate(View view) {
