@@ -21,6 +21,8 @@
     <string name="section_one_variable_equations">One Variable Equations</string>
     <string name="section_systems_of_linear_equations">Systems of Linear Equations</string>
     <string name="title_activity_gaussian_elimination">Gaussian Elimination</string>
+    <string name="text_key_subsection_name">sub_section</string>
+    <string name="title_activity_lu_factorization">LU Factorization</string>
 
     <!-- Errors / Exceptions -->
     <string name="invalid_function_exception">The function %1$s is invalid</string>
@@ -51,17 +53,17 @@
     <!-- Bisection strings -->
     <string name="text_hint_input_xi">Enter lower value (xi)</string>
     <string name="text_hint_input_xs">Enter higher value (xs)</string>
-    
+
     <!-- Fixed Point strings -->
     <string name="text_hint_input_gx_function">Enter g(x)</string>
     <string name="text_hint_input_xa">Enter initial value (xa)</string>
-    
+
     <!-- Newton strings -->
     <string name="text_hint_input_derived_function">Enter f \'(x)</string>
-    
+
     <!-- Secant strings -->
     <string name="text_hint_input_x1">Enter initial value (x1)</string>
-    
+
     <!-- Multiple roots strings -->
     <string name="text_hint_input_2_derived_function">Enter f \'\'(x)</string>
 
@@ -82,6 +84,17 @@
         <item>Without pivoting</item>
         <item>Partial pivoting</item>
         <item>Total pivoting</item>
+    </string-array>
+    
+    <!-- LU Factorization strings -->
+    <string name="text_crout">Crout factorization</string>
+    <string name="text_doolittle">Doolittle factorization</string>
+    <string name="text_cholesky">Cholesky factorization</string>
+    
+    <string-array name="lu_factorization_array">
+        <item>Crout</item>
+        <item>Doolittle</item>
+        <item>Cholesky</item>
     </string-array>
 
     <!-- Iterative Results -->
@@ -109,7 +122,7 @@
     <string name="text_results_table_fx0_value">f(X0)</string>
     <string name="text_results_table_x1_value">X1 value</string>
     <string name="text_results_table_fx1_value">f(X1)</string>
-    
+
     <!-- Matrix Results -->
     <string name="text_results_matrix_title">Ab matrix (Ab)</string>
     <string name="text_results_matrix_lower_title">Lower matrix (L)</string>
@@ -117,4 +130,5 @@
     <string name="text_results_matrixes_next_stage">Next Stage</string>
     <string name="text_results_matrixes_prev_stage">Previous Stage</string>
     <string name="text_results_matrixes_current_stage">Current Stage:</string>
+
 </resources>

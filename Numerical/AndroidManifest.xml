@@ -60,7 +60,7 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".views.GaussianEliminationActivity"
+            android:name=".views.MatrixInputActivity"
             android:label="@string/title_activity_gaussian_elimination" >
         </activity>
         <activity
@@ -70,7 +70,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".views.GaussianUnknownsActivity"
+            android:name=".views.MatrixUnknownsActivity"
             android:label="@string/title_activity_gaussian_elimination" >
         </activity>
     </application>

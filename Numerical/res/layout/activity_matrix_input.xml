@@ -19,7 +19,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/method_title"
+            android:id="@+id/subsection_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_activity_gaussian_elimination"
@@ -116,7 +116,7 @@
             android:textSize="20sp" />
 
         <Spinner
-            android:id="@+id/gaussian_spinner"
+            android:id="@+id/method_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"

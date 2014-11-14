@@ -228,12 +228,4 @@ public class GaussianElimination {
     }
     return resultMatrix;
   }
-
-  public String getStringSolution(double[] solution) {
-    String result = "";
-    for (int i = 0; i < solution.length; i++) {
-      result += "X" + (i + 1) + " = " + solution[i] + "\n";
-    }
-    return result;
-  }
 }
