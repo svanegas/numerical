@@ -12,12 +12,16 @@ public class ResultsMatrix {
   private static final String TAG = ResultsMatrix.class.getSimpleName();
   
   private static Context c;
-  private static ArrayList <String [][]> stages;
+  private static ArrayList <String [][]> stagesA;
+  private static ArrayList <String [][]> stagesL;
+  private static ArrayList <String [][]> stagesU;
   private static int size;
   private static ResultsMatrix instance;
   
   private ResultsMatrix() {
-    stages = new ArrayList<String [][]>();
+    stagesA = new ArrayList<String [][]>();
+    stagesL = new ArrayList<String [][]>();
+    stagesU = new ArrayList<String [][]>();
   }
   
   public static ResultsMatrix getInstance() {
@@ -30,13 +34,22 @@ public class ResultsMatrix {
     ResultsMatrix.size = size;
   }
   
-  public static void addStage(String [][] stage) {
-    stages.add(stage);
-    Log.i(TAG, "Agrego un nuevo stage, ya tiene " + stages.size());
+  public static void addStageMatrix(String [][] stageA) {
+    stagesA.add(stageA);
+  }
+  
+  public static void addLowerStage(String [][] stageL) {
+    stagesL.add(stageL);
+  }
+  
+  public static void addUpperStage(String [][] stageU) {
+    stagesU.add(stageU);
   }
   
   public static void clearStages() {
-    stages.clear();
+    stagesA.clear();
+    stagesL.clear();
+    stagesU.clear();
   }
   
   public static void setContext(Context c) {
@@ -48,12 +61,32 @@ public class ResultsMatrix {
   }
   
   public static ArrayList <String [][]> getStagesMatrixes() {
-    return stages;
+    return stagesA;
+  }
+  
+  public static ArrayList <String [][]> getStagesLower() {
+    return stagesL;
+  }
+  
+  public static ArrayList <String [][]> getStagesUpper() {
+    return stagesU;
   }
   
   public static String [][] getStringMatrix(int stageNumber) throws Exception {
-    if (stages.isEmpty()) throw new Exception(c.getResources()
+    if (stagesA.isEmpty()) throw new Exception(c.getResources()
         .getString(R.string.error_matrixes_results_empty));
-    return stages.get(stageNumber);
+    return stagesA.get(stageNumber);
+  }
+  
+  public static String [][] getStringLower(int stageNumber) throws Exception {
+    if (stagesL.isEmpty()) throw new Exception(c.getResources()
+        .getString(R.string.error_matrixes_results_empty));
+    return stagesL.get(stageNumber);
+  }
+  
+  public static String [][] getStringUpper(int stageNumber) throws Exception {
+    if (stagesU.isEmpty()) throw new Exception(c.getResources()
+        .getString(R.string.error_matrixes_results_empty));
+    return stagesU.get(stageNumber);
   }
 }

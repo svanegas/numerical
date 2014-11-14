@@ -41,6 +41,42 @@ public class VariableSolver {
     return norma;
   }
 
+  public static String[][] getStringMatrix(double[][] matrix) {
+    int n = matrix.length;
+    int m = matrix[0].length;
+    String[][] resultMatrix = new String[n + 1][m];
+    for (int j = 0; j < m; ++j) {
+      if (j < m - 1)
+        resultMatrix[0][j] = "X" + (j + 1);
+      else
+        resultMatrix[0][j] = "b";
+    }
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < m; ++j) {
+        resultMatrix[i + 1][j] = String.valueOf(matrix[i][j]);
+      }
+    }
+    return resultMatrix;
+  }
+  
+  public static String[][] getStringMatrix(double[][] matrix, int[] marks) {
+    int n = matrix.length;
+    int m = matrix[0].length;
+    String[][] resultMatrix = new String[n + 1][m];
+    for (int j = 0; j < m; ++j) {
+      if (j < m - 1)
+        resultMatrix[0][j] = "X" + marks[j];
+      else
+        resultMatrix[0][j] = "b";
+    }
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < m; ++j) {
+        resultMatrix[i + 1][j] = String.valueOf(matrix[i][j]);
+      }
+    }
+    return resultMatrix;
+  }
+  
   public static String getStringSolution(double[] solution) {
     String result = "";
     for (int i = 0; i < solution.length; i++) {

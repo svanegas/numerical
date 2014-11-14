@@ -62,10 +62,11 @@ public class ResultsActivity extends Activity {
             ResultsTableActivity.class);
         break;
       case SYSTEMS_OF_EQUATIONS:
+        int gaussianType = getIntent().getExtras().getInt(
+            getResources().getString(R.string.text_key_gaussian_method_type));
         resultsTableIntent = new Intent(ResultsActivity.this,
             ResultsMatrixActivity.class);
-        resultsTableIntent.putExtra(gaussianMethodTypeKey,
-            ResultsMatrixActivity.ELIMINATION_TYPE);
+        resultsTableIntent.putExtra(gaussianMethodTypeKey, gaussianType);
         break;
       case ITERATIVE_METHODS:
         resultsTableIntent = new Intent(ResultsActivity.this,

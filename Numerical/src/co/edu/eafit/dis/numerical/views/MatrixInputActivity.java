@@ -330,16 +330,19 @@ public class MatrixInputActivity extends Activity {
     if (!isInputValid())
       return;
 
-    Intent resultsIntent;
-    String methodName, resultText;
+    String methodName = null, resultText = null;
+    int gaussianType = -1;
     String methodNameKey = getResources().getString(
         R.string.text_key_method_name);
     String methodTypeKey = getResources().getString(
         R.string.text_key_method_type);
+    String gaussianTypeKey = getResources().getString(
+        R.string.text_key_gaussian_method_type);
     String methodResult = getResources().getString(R.string.text_key_results);
     double[] solution;
     if (methodType == ResultsMatrixActivity.ELIMINATION_TYPE) {
       gaussianElimination = new GaussianElimination(this);
+      gaussianType = ResultsMatrixActivity.ELIMINATION_TYPE;
       switch (methodSelection) {
         case 0:
           methodName = getResources().getString(
@@ -347,21 +350,10 @@ public class MatrixInputActivity extends Activity {
           try {
             solution = gaussianElimination.calculateSimpleGaussianElimiation(
                 matrixSize, matrix);
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
             resultText = VariableSolver.getStringSolution(solution);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
-            resultsIntent.putExtra(methodResult, resultText);
           } catch (Exception e) {
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
             // TODO Cambiar este error por String de XML
-            resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+            resultText = "ERROR TEMPORAL";
           }
           break;
         case 1:
@@ -370,21 +362,10 @@ public class MatrixInputActivity extends Activity {
           try {
             solution = gaussianElimination
                 .calculateGaussianEliminationPartialPivoting(matrixSize, matrix);
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
             resultText = VariableSolver.getStringSolution(solution);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
-            resultsIntent.putExtra(methodResult, resultText);
           } catch (Exception e) {
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
             // TODO Cambiar este error por String de XML
-            resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+            resultText = "ERROR TEMPORAL";
           }
           break;
         case 2:
@@ -393,107 +374,63 @@ public class MatrixInputActivity extends Activity {
           try {
             solution = gaussianElimination
                 .calculateGaussianEliminationTotalPivoting(matrixSize, matrix);
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
             resultText = VariableSolver.getStringSolution(solution);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
-            resultsIntent.putExtra(methodResult, resultText);
           } catch (Exception e) {
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
             // TODO Cambiar este error por String de XML
-            resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+            resultText = "ERROR TEMPORAL";;
           }
-          break;
-        default:
-          resultsIntent = new Intent();
           break;
       }
     }
-
+    
     else if (methodType == ResultsMatrixActivity.FACTORIZATION_TYPE) {
       luFactorization = new LUFactorization(this);
+      gaussianType = ResultsMatrixActivity.FACTORIZATION_TYPE;
       switch (methodSelection) {
         case 0:
           methodName = getResources().getString(R.string.text_crout);
           try {
-            solution = luFactorization.calculateCrout(matrixSize, matrix,
-                vector);
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultText = VariableSolver.getStringSolution(solution);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
-            resultsIntent.putExtra(methodResult, resultText);
+            solution = luFactorization.calculateCrout(matrixSize,
+                matrix, vector);
+            resultText = VariableSolver.getStringSolution(solution);;
           } catch (Exception e) {
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
             // TODO Cambiar este error por String de XML
-            resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+            resultText = "ERROR TEMPORAL";
           }
           break;
         case 1:
           methodName = getResources().getString(R.string.text_doolittle);
           try {
-            solution = luFactorization.calculateDoolittle(matrixSize, matrix,
-                vector);
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultText = VariableSolver.getStringSolution(solution);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
-            resultsIntent.putExtra(methodResult, resultText);
+            solution = luFactorization.calculateDoolittle(matrixSize,
+                matrix, vector);
+            resultText = VariableSolver.getStringSolution(solution);;
           } catch (Exception e) {
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
             // TODO Cambiar este error por String de XML
-            resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+            resultText = "ERROR TEMPORAL";
           }
           break;
         case 2:
           methodName = getResources().getString(R.string.text_cholesky);
           try {
-            solution = luFactorization.calculateCholesky(matrixSize, matrix,
-                vector);
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultText = VariableSolver.getStringSolution(solution);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
-            resultsIntent.putExtra(methodResult, resultText);
+            solution = luFactorization.calculateCholesky(matrixSize,
+                matrix, vector);
+            resultText = VariableSolver.getStringSolution(solution);;
           } catch (Exception e) {
-            resultsIntent = new Intent(MatrixInputActivity.this,
-                ResultsActivity.class);
-            resultsIntent.putExtra(methodNameKey, methodName);
-            resultsIntent.putExtra(methodTypeKey,
-                ResultsActivity.SYSTEMS_OF_EQUATIONS);
             // TODO Cambiar este error por String de XML
-            resultsIntent.putExtra(methodResult, "ERROR TEMPORAL");
+            resultText = "ERROR TEMPORAL";
           }
-          break;
-        default:
-          resultsIntent = new Intent();
           break;
       }
     }
+    Intent resultsIntent;
+    resultsIntent = new Intent(MatrixInputActivity.this,
+        ResultsActivity.class);
+    resultsIntent.putExtra(methodNameKey, methodName);
+    resultsIntent.putExtra(methodTypeKey,
+        ResultsActivity.SYSTEMS_OF_EQUATIONS);
+    resultsIntent.putExtra(gaussianTypeKey, gaussianType);
+    resultsIntent.putExtra(methodResult, resultText);
     
-    else {
-      resultsIntent = new Intent();
-    }
     // Datos correctos, guardarlos en PreferencesManager
     storeDataFromFields();
 

@@ -1,10 +1,6 @@
 package co.edu.eafit.dis.numerical.methods;
 
-import java.util.Collection;
-import java.util.Collections;
-
 import android.content.Context;
-import android.util.Log;
 
 public class GaussianElimination {
 
@@ -20,7 +16,7 @@ public class GaussianElimination {
       double[][] matrix) throws Exception {
     ResultsMatrix.setUpNewTable(c, matrixSize);
     ResultsMatrix.clearStages();
-    ResultsMatrix.addStage(getStringMatrix(matrix));
+    ResultsMatrix.addStageMatrix(VariableSolver.getStringMatrix(matrix));
     for (int k = 1; k <= matrixSize - 1; k++) {
       for (int i = k + 1; i <= matrixSize; i++) {
         double multiplier = matrix[i - 1][k - 1] / matrix[k - 1][k - 1];
@@ -30,7 +26,7 @@ public class GaussianElimination {
         }
       }
       // Acá se manda cada iteración de la matriz para mostrar
-      ResultsMatrix.addStage(getStringMatrix(matrix));
+      ResultsMatrix.addStageMatrix(VariableSolver.getStringMatrix(matrix));
     }
     return getSolution(matrix, matrixSize);
   }
@@ -39,7 +35,7 @@ public class GaussianElimination {
       double[][] matrix) {
     ResultsMatrix.setUpNewTable(c, matrixSize);
     ResultsMatrix.clearStages();
-    ResultsMatrix.addStage(getStringMatrix(matrix));
+    ResultsMatrix.addStageMatrix(VariableSolver.getStringMatrix(matrix));
     for (int k = 1; k < matrixSize; k++) {
       matrix = calculatePartialPivoting(matrix, matrixSize, k);
       for (int i = k + 1; i < matrixSize + 1; i++) {
@@ -50,7 +46,7 @@ public class GaussianElimination {
         }
       }
       // Acá se manda cada iteración de la matriz para mostrar
-      ResultsMatrix.addStage(getStringMatrix(matrix));
+      ResultsMatrix.addStageMatrix(VariableSolver.getStringMatrix(matrix));
     }
     return getSolution(matrix, matrixSize);
   }
@@ -84,7 +80,7 @@ public class GaussianElimination {
     // Se muestra matriz
     ResultsMatrix.setUpNewTable(c, matrixSize);
     ResultsMatrix.clearStages();
-    ResultsMatrix.addStage(getStringMatrix(matrix, mark));
+    ResultsMatrix.addStageMatrix(VariableSolver.getStringMatrix(matrix, mark));
     for (int k = 1; k < matrixSize; k++) {
       matrix = calculateTotalPivoting(matrix, mark, matrixSize, k);
       for (int i = k + 1; i < matrixSize + 1; i++) {
@@ -95,7 +91,7 @@ public class GaussianElimination {
         }
       }
       // Acá se manda cada iteración de la matriz para mostrar
-      ResultsMatrix.addStage(getStringMatrix(matrix, mark));
+      ResultsMatrix.addStageMatrix(VariableSolver.getStringMatrix(matrix, mark));
     }
     return getSolution(matrix, mark, matrixSize);
   }
@@ -191,41 +187,5 @@ public class GaussianElimination {
     }
     double[] solution = VariableSolver.regresiveSustitution(AMatrix, bVector);
     return solution;
-  }
-
-  private String[][] getStringMatrix(double[][] matrix, int[] marks) {
-    int n = matrix.length;
-    int m = matrix[0].length;
-    String[][] resultMatrix = new String[n + 1][m];
-    for (int j = 0; j < m; ++j) {
-      if (j < m - 1)
-        resultMatrix[0][j] = "X" + marks[j];
-      else
-        resultMatrix[0][j] = "b";
-    }
-    for (int i = 0; i < n; ++i) {
-      for (int j = 0; j < m; ++j) {
-        resultMatrix[i + 1][j] = String.valueOf(matrix[i][j]);
-      }
-    }
-    return resultMatrix;
-  }
-
-  private String[][] getStringMatrix(double[][] matrix) {
-    int n = matrix.length;
-    int m = matrix[0].length;
-    String[][] resultMatrix = new String[n + 1][m];
-    for (int j = 0; j < m; ++j) {
-      if (j < m - 1)
-        resultMatrix[0][j] = "X" + (j + 1);
-      else
-        resultMatrix[0][j] = "b";
-    }
-    for (int i = 0; i < n; ++i) {
-      for (int j = 0; j < m; ++j) {
-        resultMatrix[i + 1][j] = String.valueOf(matrix[i][j]);
-      }
-    }
-    return resultMatrix;
   }
 }

@@ -52,8 +52,6 @@ public class ResultsMatrixActivity extends Activity {
     // Activar el botón de ir atrás en el action bar
     getActionBar().setDisplayHomeAsUpEnabled(true);
 
-    numberOfStages = ResultsMatrix.getStagesMatrixes().size();
-
     methodTitle = (TextView) findViewById(R.id.method_title);
     resultsMatrix = (TableLayout) findViewById(R.id.results_matrix);
     resultsLowerMatrix = (TableLayout) findViewById(R.id.results_lower_matrix);
@@ -71,11 +69,23 @@ public class ResultsMatrixActivity extends Activity {
         getResources().getString(R.string.text_key_gaussian_method_type));
 
     setUpFields(methodName, methodType);
-    String[][] firstStage;
+
     try {
-      firstStage = ResultsMatrix.getStringMatrix(0);
-      fillMatrix(firstStage.length, firstStage[0].length, firstStage,
-          resultsMatrix);
+      if (methodType == ResultsMatrixActivity.ELIMINATION_TYPE) {
+        numberOfStages = ResultsMatrix.getStagesMatrixes().size();
+        String[][] firstStage = ResultsMatrix.getStringMatrix(0);
+        fillMatrix(firstStage.length, firstStage[0].length, firstStage,
+            resultsMatrix);
+      } else if (methodType == ResultsMatrixActivity.FACTORIZATION_TYPE) {
+        numberOfStages = ResultsMatrix.getStagesLower().size();
+        String[][] firstStageL = ResultsMatrix.getStringLower(0);
+        fillMatrix(firstStageL.length, firstStageL[0].length, firstStageL,
+            resultsLowerMatrix);
+
+        String[][] firstStageU = ResultsMatrix.getStringUpper(0);
+        fillMatrix(firstStageU.length, firstStageU[0].length, firstStageU,
+            resultsUpperMatrix);
+      }
     } catch (Exception e) {
       Log.e(TAG, getResources().getString(R.string.error_matrixes_failed_setup)
           + ": " + e.getMessage());
@@ -175,12 +185,23 @@ public class ResultsMatrixActivity extends Activity {
     currentViewingStage = Math.min(currentViewingStage + 1, numberOfStages - 1);
     if (oldCurrentViewingStage == currentViewingStage)
       return;
-    String[][] nextMatrix;
+
     try {
-      nextMatrix = ResultsMatrix.getStringMatrix(currentViewingStage);
       if (methodType == ELIMINATION_TYPE) {
+        String[][] nextMatrix = ResultsMatrix
+            .getStringMatrix(currentViewingStage);
         fillMatrix(nextMatrix.length, nextMatrix[0].length, nextMatrix,
             resultsMatrix);
+      } else if (methodType == FACTORIZATION_TYPE) {
+        String[][] nextMatrixLower = ResultsMatrix
+            .getStringLower(currentViewingStage);
+        fillMatrix(nextMatrixLower.length, nextMatrixLower[0].length,
+            nextMatrixLower, resultsLowerMatrix);
+
+        String[][] nextMatrixUpper = ResultsMatrix
+            .getStringUpper(currentViewingStage);
+        fillMatrix(nextMatrixUpper.length, nextMatrixUpper[0].length,
+            nextMatrixUpper, resultsUpperMatrix);
       }
       currentStage.setText(String.valueOf(currentViewingStage));
     } catch (Exception e) {
@@ -195,12 +216,22 @@ public class ResultsMatrixActivity extends Activity {
     currentViewingStage = Math.max(currentViewingStage - 1, 0);
     if (oldCurrentViewingStage == currentViewingStage)
       return;
-    String[][] nextMatrix;
     try {
-      nextMatrix = ResultsMatrix.getStringMatrix(currentViewingStage);
       if (methodType == ELIMINATION_TYPE) {
+        String[][] nextMatrix = ResultsMatrix
+            .getStringMatrix(currentViewingStage);
         fillMatrix(nextMatrix.length, nextMatrix[0].length, nextMatrix,
             resultsMatrix);
+      } else if (methodType == FACTORIZATION_TYPE) {
+        String[][] nextMatrixLower = ResultsMatrix
+            .getStringLower(currentViewingStage);
+        fillMatrix(nextMatrixLower.length, nextMatrixLower[0].length,
+            nextMatrixLower, resultsLowerMatrix);
+
+        String[][] nextMatrixUpper = ResultsMatrix
+            .getStringUpper(currentViewingStage);
+        fillMatrix(nextMatrixUpper.length, nextMatrixUpper[0].length,
+            nextMatrixUpper, resultsUpperMatrix);
       }
       currentStage.setText(String.valueOf(currentViewingStage));
     } catch (Exception e) {
