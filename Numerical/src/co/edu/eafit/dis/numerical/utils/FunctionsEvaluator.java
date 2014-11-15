@@ -11,40 +11,39 @@ import de.congrace.exp4j.ExpressionBuilder;
  * la ejecución del programa.
  */
 public class FunctionsEvaluator {
-  
+
   private static final String TAG = FunctionsEvaluator.class.getName();
-  
-  private static Context c; 
+
+  private static Context c;
   private static FunctionsEvaluator instance = null;
   private static Calculable cal;
-  
-  protected FunctionsEvaluator () {
+
+  protected FunctionsEvaluator() {
   }
-  
+
   public static FunctionsEvaluator getInstance(Context c) {
-    if (instance == null) instance = new FunctionsEvaluator();
+    if (instance == null)
+      instance = new FunctionsEvaluator();
     instance.setContext(c);
     return instance;
   }
-  
+
   public void setFunction(String function) throws Exception {
     try {
-      cal = new ExpressionBuilder(function)
-                  .withVariableNames("x").build();
+      cal = new ExpressionBuilder(function).withVariableNames("x").build();
     } catch (Exception e) {
-      Log.e(TAG, "Cannot instantiate Calculator with the function: "
-          + function);
+      Log.e(TAG, "Cannot instantiate Calculator with the function: " + function);
       String message = c.getString(R.string.invalid_function_exception,
-                     function); 
+          function);
       throw new Exception(message);
     }
   }
-  
+
   public double calculate(double xValue) {
     cal.setVariable("x", xValue);
     return cal.calculate();
   }
-  
+
   public void setContext(Context c) {
     this.c = c;
   }

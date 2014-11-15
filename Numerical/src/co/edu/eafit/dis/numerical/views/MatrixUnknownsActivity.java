@@ -70,11 +70,14 @@ public class MatrixUnknownsActivity extends Activity {
         R.string.title_activity_lu_factorization))) {
       intent.putExtra(getResources().getString(R.string.text_key_method_type),
           ResultsMatrixActivity.FACTORIZATION_TYPE);
-    }
-    else if (subSectionName.equals(getResources().getString(
+    } else if (subSectionName.equals(getResources().getString(
         R.string.title_activity_gaussian_elimination))) {
       intent.putExtra(getResources().getString(R.string.text_key_method_type),
           ResultsMatrixActivity.ELIMINATION_TYPE);
+    } else if (subSectionName.equals(getResources().getString(
+        R.string.title_activity_iterative_methods))) {
+      intent.putExtra(getResources().getString(R.string.text_key_method_type),
+          ResultsActivity.ITERATIVE_METHODS);
     }
     MatrixUnknownsActivity.this.startActivity(intent);
   }

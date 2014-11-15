@@ -32,8 +32,8 @@
             android:id="@+id/unknowns_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_marginTop="50dp"
+            android:gravity="center"
             android:orientation="vertical" >
 
             <EditText
@@ -57,4 +57,5 @@
                 android:text="@string/text_continue_button" />
         </LinearLayout>
     </LinearLayout>
+
 </ScrollView>

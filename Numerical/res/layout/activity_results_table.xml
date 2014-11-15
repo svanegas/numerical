@@ -6,39 +6,39 @@
     android:orientation="vertical" >
 
     <TextView
-      android:id="@+id/table_results_title"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:layout_marginTop="10dp"
-      android:textColor="@color/blue_section_title"
-      android:textSize="20sp"
-      android:text="@string/title_activity_results_table"
-      android:textStyle="bold" />
-    
+        android:id="@+id/table_results_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/title_activity_results_table"
+        android:textColor="@color/blue_section_title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <TextView
-      android:id="@+id/method_title"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:textColor="@color/gray_method_title"
-      android:text="@string/title_activity_bisection"
-      android:textSize="17sp"
-      android:layout_marginBottom="10dp" />
-    
+        android:id="@+id/method_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:text="@string/title_activity_bisection"
+        android:textColor="@color/gray_method_title"
+        android:textSize="17sp" />
+
     <ScrollView
         android:id="@+id/vertical_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp" >
+        android:layout_marginRight="10dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" 
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical" >
 
             <HorizontalScrollView
                 android:id="@+id/horizontal_scroll"
@@ -59,4 +59,5 @@
             </HorizontalScrollView>
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

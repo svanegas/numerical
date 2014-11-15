@@ -27,6 +27,7 @@ public class ResultsMatrixActivity extends Activity {
 
   public static final int ELIMINATION_TYPE = 1;
   public static final int FACTORIZATION_TYPE = 2;
+  public static final int ITERATIVE_TYPE = 3;
   private TextView methodTitle;
   private TableLayout resultsMatrix;
   private TableLayout resultsLowerMatrix;
@@ -143,6 +144,17 @@ public class ResultsMatrixActivity extends Activity {
               R.color.header_table_results_row));
           edit.setTypeface(edit.getTypeface(), Typeface.BOLD);
         } else {
+          double val = Double.parseDouble(matrix[i][j]);
+          if (val == Double.POSITIVE_INFINITY
+              || val == Double.NEGATIVE_INFINITY) {
+            if (matrixLayout == resultsLowerMatrix) {
+              edit.setText(getResources().getString(
+                  R.string.text_lower_unresolved_element, i, j + 1));
+            } else if (matrixLayout == resultsUpperMatrix) {
+              edit.setText(getResources().getString(
+                  R.string.text_upper_unresolved_element, i, j + 1));
+            }
+          }
           if (i % 2 == 0)
             edit.setBackgroundColor(getResources().getColor(
                 R.color.light_blue_table_results_row));

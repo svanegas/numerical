@@ -4,6 +4,7 @@ import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.R.layout;
 import co.edu.eafit.dis.numerical.R.menu;
 import co.edu.eafit.dis.numerical.methods.FixedPoint;
+import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
 import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.os.Bundle;
@@ -135,7 +136,10 @@ public class FixedPointActivity extends Activity {
       inputXa.requestFocus();
       correctFields = false;
     }
-    if (!InputChecker.isDouble(inputTol.getText().toString())) {
+    FunctionsEvaluator evaluator = FunctionsEvaluator.getInstance(this);
+    try {
+      evaluator.setFunction(inputTol.getText().toString().trim());
+    } catch (Exception e1) {
       inputTol.setError(notANumberError);
       inputTol.requestFocus();
       correctFields = false;
@@ -152,7 +156,8 @@ public class FixedPointActivity extends Activity {
         .toString());
 
     double xa = Double.valueOf(xaText);
-    double tol = Double.valueOf(tolText);
+    // double tol = Double.valueOf(tolText);
+    double tol = evaluator.calculate(1.0);
 
     // Try para revisar si la función está bien escrita
     try {
@@ -195,7 +200,7 @@ public class FixedPointActivity extends Activity {
       } else {
         // Se encontró una raíz con una tolerancia
         String intervalFound = getString(R.string.root_found_tol, result[0],
-            tolText);
+            tol);
         // Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
         resultsText = intervalFound;
       }

@@ -33,11 +33,14 @@ public class VariableSolver {
   }
 
   public static double norma(double[] x, double[] x0, int n) {
-    double maximun = Double.NEGATIVE_INFINITY;
+    double mayor = Double.NEGATIVE_INFINITY;
     double norma = 0;
-    for (int i = 1; i < n; i++)
-      maximun = Math.max((x[i - 1] - x0[i - 1]), maximun);
-    norma = maximun;
+    for (int i = 1; i < n; i++) {
+      if (Math.abs(x[i - 1] - x0[i - 1]) > mayor) {
+        mayor = Math.abs(x[i - 1] - x0[i - 1]);
+      }
+    }
+    norma = mayor;
     return norma;
   }
 
@@ -46,7 +49,7 @@ public class VariableSolver {
     int m = matrix[0].length;
     String[][] resultMatrix = new String[n + 1][m];
     for (int j = 0; j < m; ++j) {
-      if (j < m - 1)
+      if (j < n)
         resultMatrix[0][j] = "X" + (j + 1);
       else
         resultMatrix[0][j] = "b";
@@ -58,13 +61,13 @@ public class VariableSolver {
     }
     return resultMatrix;
   }
-  
+
   public static String[][] getStringMatrix(double[][] matrix, int[] marks) {
     int n = matrix.length;
     int m = matrix[0].length;
     String[][] resultMatrix = new String[n + 1][m];
     for (int j = 0; j < m; ++j) {
-      if (j < m - 1)
+      if (j < n)
         resultMatrix[0][j] = "X" + marks[j];
       else
         resultMatrix[0][j] = "b";
@@ -76,7 +79,7 @@ public class VariableSolver {
     }
     return resultMatrix;
   }
-  
+
   public static String getStringSolution(double[] solution) {
     String result = "";
     for (int i = 0; i < solution.length; i++) {

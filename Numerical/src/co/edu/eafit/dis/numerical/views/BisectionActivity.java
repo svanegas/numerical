@@ -3,6 +3,8 @@ package co.edu.eafit.dis.numerical.views;
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.Bisection;
 import co.edu.eafit.dis.numerical.methods.IncrementalSearch;
+import co.edu.eafit.dis.numerical.methods.VariableSolver;
+import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
 import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.app.Activity;
@@ -139,11 +141,20 @@ public class BisectionActivity extends Activity {
       inputXs.requestFocus();
       correctFields = false;
     }
-    if (!InputChecker.isDouble(inputTol.getText().toString())) {
+
+    FunctionsEvaluator evaluator = FunctionsEvaluator.getInstance(this);
+    try {
+      evaluator.setFunction(inputTol.getText().toString().trim());
+    } catch (Exception e1) {
       inputTol.setError(notANumberError);
       inputTol.requestFocus();
       correctFields = false;
     }
+    /*
+     * if (!InputChecker.isDouble(inputTol.getText().toString())) {
+     * inputTol.setError(notANumberError); inputTol.requestFocus();
+     * correctFields = false; }
+     */
     if (!correctFields)
       return;
 
@@ -157,7 +168,8 @@ public class BisectionActivity extends Activity {
 
     double xi = Double.valueOf(xiText);
     double xs = Double.valueOf(xsText);
-    double tol = Double.valueOf(tolText);
+    // double tol = Double.valueOf(tolText);
+    double tol = evaluator.calculate(1.0);
 
     // Try para revisar si la función está bien escrita
     try {
@@ -192,7 +204,7 @@ public class BisectionActivity extends Activity {
       } else {
         // Se encontró una raíz con una tolerancia
         String intervalFound = getString(R.string.root_found_tol, result[0],
-            tolText);
+            tol);
         // Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
         resultsText = intervalFound;
       }

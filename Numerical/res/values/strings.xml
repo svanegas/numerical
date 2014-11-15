@@ -21,8 +21,9 @@
     <string name="section_one_variable_equations">One Variable Equations</string>
     <string name="section_systems_of_linear_equations">Systems of Linear Equations</string>
     <string name="title_activity_gaussian_elimination">Gaussian Elimination</string>
-    <string name="text_key_subsection_name">sub_section</string>
     <string name="title_activity_lu_factorization">LU Factorization</string>
+    <string name="title_activity_iterative_methods">Iterative Methods</string>
+    <string name="text_key_subsection_name">sub_section</string>
 
     <!-- Errors / Exceptions -->
     <string name="invalid_function_exception">The function %1$s is invalid</string>
@@ -38,13 +39,17 @@
     <!-- General -->
     <string name="root_found">A root was found in %1$10E</string>
     <string name="interval_root_found">A root exists in interval [%1$10E; %2$10E]</string>
-    <string name="root_found_tol">%1$10E is an aproximation to root with tolerance %2$s</string>
+    <string name="root_found_tol">%1$10E is an aproximation to root with tolerance %2$1.4E</string>
     <string name="input_required_error">This field is required</string>
     <string name="not_a_number_error">This field must be a number</string>
     <string name="text_hint_input_max_iterations">Enter iterations</string>
     <string name="text_hint_input_function">Enter f(x)</string>
     <string name="text_hint_input_tol">Enter tolerance e.g.5E-6</string>
+    <string name="text_hint_input_alpha">Enter alpha if necessary</string>
     <string name="text_calculate_button">Calculate</string>
+    <string name="text_number_unknowns">Enter number of unknowns</string>
+    <string name="text_key_matrix_size">matrix_size</string>
+    <string name="text_header_x">X%1$d</string>
 
     <!-- Incremental search strings -->
     <string name="text_hint_input_x0">Enter initial value (x0)</string>
@@ -74,8 +79,6 @@
     <string name="text_select_a_method">Select a method</string>
     <string name="text_input_a_matrix">A matrix</string>
     <string name="text_input_b_vector">b vector</string>
-    <string name="text_key_matrix_size">matrix_size</string>
-    <string name="text_number_unknowns">Enter number of unknowns</string>
     <string name="text_continue_button">Continue</string>
     <string name="text_hint_input_matrix_index">A[%1$d][%2$d]</string>
     <string name="text_hint_input_vector_index">b[%1$d]</string>
@@ -85,16 +88,29 @@
         <item>Partial pivoting</item>
         <item>Total pivoting</item>
     </string-array>
-    
+
     <!-- LU Factorization strings -->
     <string name="text_crout">Crout factorization</string>
     <string name="text_doolittle">Doolittle factorization</string>
     <string name="text_cholesky">Cholesky factorization</string>
-    
+    <string name="text_lower_unresolved_element">L[%1$d][%2$d]</string>
+    <string name="text_upper_unresolved_element">U[%1$d][%2$d]</string>
+
     <string-array name="lu_factorization_array">
         <item>Crout</item>
         <item>Doolittle</item>
         <item>Cholesky</item>
+    </string-array>
+
+    <!-- Iterative Methods strings -->
+    <string name="text_jacobi">Jacobi method</string>
+    <string name="text_gauss_seidel">Gauss Seidel method</string>
+    <string name="text_header_initial_value">Enter initial values</string>
+    <string name="text_hint_initial_value">X%1$d[0]</string>
+
+    <string-array name="iterative_methods_array">
+        <item>Jacobi</item>
+        <item>Gauss Seidel</item>
     </string-array>
 
     <!-- Iterative Results -->
@@ -103,8 +119,10 @@
     <string name="text_key_method_name">method_name</string>
     <string name="text_key_method_type">method_type</string>
     <string name="text_key_gaussian_method_type">gaussian_method_type</string>
+    <string name="text_key_iterative_method_type">iterative_method_type</string>
     <string name="text_results_table_absolute_error">Absolute Error</string>
     <string name="text_results_table_relative_error">Relative Error</string>
+    <string name="text_results_table_absolute_dispersion">Absolute Dispersion</string>
     <string name="text_results_table_iteration">Iteration</string>
     <string name="text_results_table_x_value">X value</string>
     <string name="text_results_table_fx_value">f(X)</string>

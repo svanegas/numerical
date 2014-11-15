@@ -2,6 +2,7 @@ package co.edu.eafit.dis.numerical.views;
 
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.MultipleRoots;
+import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
 import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.os.Bundle;
@@ -145,7 +146,10 @@ public class MultipleRootsActivity extends Activity {
       inputX0.requestFocus();
       correctFields = false;
     }
-    if (!InputChecker.isDouble(inputTol.getText().toString())) {
+    FunctionsEvaluator evaluator = FunctionsEvaluator.getInstance(this);
+    try {
+      evaluator.setFunction(inputTol.getText().toString().trim());
+    } catch (Exception e1) {
       inputTol.setError(notANumberError);
       inputTol.requestFocus();
       correctFields = false;
@@ -163,7 +167,8 @@ public class MultipleRootsActivity extends Activity {
         .toString());
 
     double x0 = Double.valueOf(x0Text);
-    double tol = Double.valueOf(tolText);
+    // double tol = Double.valueOf(tolText);
+    double tol = evaluator.calculate(1.0);
 
     // Try para revisar si la función está bien escrita
     try {
@@ -215,7 +220,7 @@ public class MultipleRootsActivity extends Activity {
       } else {
         // Se encontró una raíz con una tolerancia
         String intervalFound = getString(R.string.root_found_tol, result[0],
-            tolText);
+            tol);
         // Toast.makeText(this, intervalFound, Toast.LENGTH_SHORT).show();
         resultsText = intervalFound;
       }

@@ -91,7 +91,8 @@ public class GaussianElimination {
         }
       }
       // Acá se manda cada iteración de la matriz para mostrar
-      ResultsMatrix.addStageMatrix(VariableSolver.getStringMatrix(matrix, mark));
+      ResultsMatrix
+          .addStageMatrix(VariableSolver.getStringMatrix(matrix, mark));
     }
     return getSolution(matrix, mark, matrixSize);
   }

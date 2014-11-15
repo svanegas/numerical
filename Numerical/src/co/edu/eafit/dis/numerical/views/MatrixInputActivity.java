@@ -7,6 +7,7 @@ import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.R.id;
 import co.edu.eafit.dis.numerical.R.layout;
 import co.edu.eafit.dis.numerical.methods.GaussianElimination;
+import co.edu.eafit.dis.numerical.methods.IterativeMethods;
 import co.edu.eafit.dis.numerical.methods.LUFactorization;
 import co.edu.eafit.dis.numerical.methods.VariableSolver;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
@@ -52,6 +53,7 @@ public class MatrixInputActivity extends Activity {
   /* Métodos */
   private GaussianElimination gaussianElimination;
   private LUFactorization luFactorization;
+  private IterativeMethods iterativeMethods;
 
   /* Contenidos */
   private int matrixSize;
@@ -88,6 +90,11 @@ public class MatrixInputActivity extends Activity {
       case ResultsMatrixActivity.FACTORIZATION_TYPE:
         adapter = ArrayAdapter.createFromResource(this,
             R.array.lu_factorization_array,
+            android.R.layout.simple_spinner_item);
+        break;
+      case ResultsActivity.ITERATIVE_METHODS:
+        adapter = ArrayAdapter.createFromResource(this,
+            R.array.iterative_methods_array,
             android.R.layout.simple_spinner_item);
         break;
       default:
@@ -288,8 +295,13 @@ public class MatrixInputActivity extends Activity {
         matrix = new double[matrixSize][matrixSize];
         vector = new double[matrixSize];
         break;
+      case ResultsActivity.ITERATIVE_METHODS:
+        matrix = new double[matrixSize][matrixSize];
+        vector = new double[matrixSize];
+        break;
     }
     boolean allCorrect = true;
+
     for (int i = 0; i < matrixSize; ++i) {
       for (int j = 0; j < matrixSize; ++j) {
         String inputText = inputMatrixEdits[i][j].getText().toString().trim();
@@ -321,6 +333,8 @@ public class MatrixInputActivity extends Activity {
           matrix[j][matrixSize] = Double.valueOf(inputText);
         if (methodType == ResultsMatrixActivity.FACTORIZATION_TYPE)
           vector[j] = Double.valueOf(inputText);
+        if (methodType == ResultsActivity.ITERATIVE_METHODS)
+          vector[j] = Double.valueOf(inputText);
       }
     }
     return allCorrect;
@@ -331,15 +345,21 @@ public class MatrixInputActivity extends Activity {
       return;
 
     String methodName = null, resultText = null;
-    int gaussianType = -1;
+    int gaussianType = -1, iterativeType = -1;
     String methodNameKey = getResources().getString(
         R.string.text_key_method_name);
     String methodTypeKey = getResources().getString(
         R.string.text_key_method_type);
     String gaussianTypeKey = getResources().getString(
         R.string.text_key_gaussian_method_type);
+    String iterativeTypeKey = getResources().getString(
+        R.string.text_key_iterative_method_type);
+    String matrixSizeKey = getResources().getString(
+        R.string.text_key_matrix_size);
     String methodResult = getResources().getString(R.string.text_key_results);
     double[] solution;
+
+    Intent resultsIntent = null;
     if (methodType == ResultsMatrixActivity.ELIMINATION_TYPE) {
       gaussianElimination = new GaussianElimination(this);
       gaussianType = ResultsMatrixActivity.ELIMINATION_TYPE;
@@ -377,12 +397,16 @@ public class MatrixInputActivity extends Activity {
             resultText = VariableSolver.getStringSolution(solution);
           } catch (Exception e) {
             // TODO Cambiar este error por String de XML
-            resultText = "ERROR TEMPORAL";;
+            resultText = "ERROR TEMPORAL";
           }
           break;
       }
+      resultsIntent = new Intent(MatrixInputActivity.this,
+          ResultsActivity.class);
+      resultsIntent.putExtra(gaussianTypeKey, gaussianType);
+      resultsIntent.putExtra(methodResult, resultText);
     }
-    
+
     else if (methodType == ResultsMatrixActivity.FACTORIZATION_TYPE) {
       luFactorization = new LUFactorization(this);
       gaussianType = ResultsMatrixActivity.FACTORIZATION_TYPE;
@@ -390,9 +414,9 @@ public class MatrixInputActivity extends Activity {
         case 0:
           methodName = getResources().getString(R.string.text_crout);
           try {
-            solution = luFactorization.calculateCrout(matrixSize,
-                matrix, vector);
-            resultText = VariableSolver.getStringSolution(solution);;
+            solution = luFactorization.calculateCrout(matrixSize, matrix,
+                vector);
+            resultText = VariableSolver.getStringSolution(solution);
           } catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
@@ -401,9 +425,9 @@ public class MatrixInputActivity extends Activity {
         case 1:
           methodName = getResources().getString(R.string.text_doolittle);
           try {
-            solution = luFactorization.calculateDoolittle(matrixSize,
-                matrix, vector);
-            resultText = VariableSolver.getStringSolution(solution);;
+            solution = luFactorization.calculateDoolittle(matrixSize, matrix,
+                vector);
+            resultText = VariableSolver.getStringSolution(solution);
           } catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
@@ -412,25 +436,57 @@ public class MatrixInputActivity extends Activity {
         case 2:
           methodName = getResources().getString(R.string.text_cholesky);
           try {
-            solution = luFactorization.calculateCholesky(matrixSize,
-                matrix, vector);
-            resultText = VariableSolver.getStringSolution(solution);;
+            solution = luFactorization.calculateCholesky(matrixSize, matrix,
+                vector);
+            resultText = VariableSolver.getStringSolution(solution);
           } catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }
           break;
       }
+      resultsIntent = new Intent(MatrixInputActivity.this,
+          ResultsActivity.class);
+      resultsIntent.putExtra(gaussianTypeKey, gaussianType);
+      resultsIntent.putExtra(methodResult, resultText);
     }
-    Intent resultsIntent;
-    resultsIntent = new Intent(MatrixInputActivity.this,
-        ResultsActivity.class);
+
+    else if (methodType == ResultsActivity.ITERATIVE_METHODS) {
+      iterativeMethods = new IterativeMethods(this);
+      IterativeMethods.matrix = matrix;
+      IterativeMethods.vector = vector;
+      switch (methodSelection) {
+        case 0:
+          methodName = getResources().getString(R.string.text_jacobi);
+          iterativeType = IterativeMethodsActivity.JACOBI_METHOD;
+          try {
+            resultsIntent = new Intent(MatrixInputActivity.this,
+                IterativeMethodsActivity.class);
+            resultsIntent.putExtra(iterativeTypeKey, iterativeType);
+          } catch (Exception e) {
+            // TODO Cambiar este error por String de XML
+            resultText = "ERROR TEMPORAL";
+          }
+          break;
+        case 1:
+          methodName = getResources().getString(R.string.text_gauss_seidel);
+          iterativeType = IterativeMethodsActivity.GAUSS_SEIDEL_METHOD;
+          try {
+            resultsIntent = new Intent(MatrixInputActivity.this,
+                IterativeMethodsActivity.class);
+            resultsIntent.putExtra(iterativeTypeKey, iterativeType);
+          } catch (Exception e) {
+            // TODO Cambiar este error por String de XML
+            resultText = "ERROR TEMPORAL";
+          }
+          break;
+      }
+      resultsIntent.putExtra(matrixSizeKey, matrixSize);
+    }
+
     resultsIntent.putExtra(methodNameKey, methodName);
-    resultsIntent.putExtra(methodTypeKey,
-        ResultsActivity.SYSTEMS_OF_EQUATIONS);
-    resultsIntent.putExtra(gaussianTypeKey, gaussianType);
-    resultsIntent.putExtra(methodResult, resultText);
-    
+    resultsIntent.putExtra(methodTypeKey, ResultsActivity.SYSTEMS_OF_EQUATIONS);
+
     // Datos correctos, guardarlos en PreferencesManager
     storeDataFromFields();
 

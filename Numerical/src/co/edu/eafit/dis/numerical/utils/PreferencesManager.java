@@ -28,6 +28,7 @@ public class PreferencesManager {
   private static final String FUNCTION_TOLERANCE = "tolerance";
   private static final String FUNCTION_ROW = "row#";
   private static final String FUNCTION_VECTOR = "vector";
+  private static final String FUNCTION_INITIAL_VECTOR = "initial_vector";
   private static final String MATRIX_ROWS_SIZE = "rows";
   private static final String MATRIX_COLUMNS_SIZE = "columns";
   private static final String VECTOR_SIZE = "size";
@@ -69,6 +70,17 @@ public class PreferencesManager {
         temp += ",";
     }
     spEditor.putString(FUNCTION_VECTOR, temp).commit();
+  }
+
+  public static void setInitialVector(String[] initialVector) {
+    spEditor.putInt(VECTOR_SIZE, initialVector.length).commit();
+    String temp = "";
+    for (int i = 0; i < initialVector.length; i++) {
+      temp += initialVector[i];
+      if (i != initialVector.length - 1)
+        temp += ",";
+    }
+    spEditor.putString(FUNCTION_INITIAL_VECTOR, temp).commit();
   }
 
   public static void saveFx(String function) {
@@ -132,12 +144,24 @@ public class PreferencesManager {
     return matrix;
   }
 
-  public static String[] getVector(){
+  public static String[] getVector() {
+    String stringVector = sp.getString(FUNCTION_VECTOR, null);
     String[] vector = new String[sp.getInt(VECTOR_SIZE, 0)];
-    vector = sp.getString(FUNCTION_VECTOR, null).split(",");    
-    return vector;      
+    if (stringVector == null)
+      return vector;
+    vector = sp.getString(FUNCTION_VECTOR, null).split(",");
+    return vector;
   }
-  
+
+  public static String[] getInitialVector() {
+    String stringVector = sp.getString(FUNCTION_INITIAL_VECTOR, null);
+    String[] vector = new String[sp.getInt(VECTOR_SIZE, 0)];
+    if (stringVector == null)
+      return vector;
+    vector = stringVector.split(",");
+    return vector;
+  }
+
   public static String getFx() {
     return sp.getString(FUNCTION_FX, null);
   }

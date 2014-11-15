@@ -3,6 +3,7 @@ package co.edu.eafit.dis.numerical.views;
 import co.edu.eafit.dis.numerical.MainActivity;
 import co.edu.eafit.dis.numerical.R;
 import co.edu.eafit.dis.numerical.methods.IncrementalSearch;
+import co.edu.eafit.dis.numerical.utils.FunctionsEvaluator;
 import co.edu.eafit.dis.numerical.utils.InputChecker;
 import co.edu.eafit.dis.numerical.utils.PreferencesManager;
 import android.app.Activity;
@@ -122,11 +123,6 @@ public class IncrementalSearchActivity extends Activity {
     if (!InputChecker.isDouble(inputX0.getText().toString())) {
       inputX0.setError(notANumberError);
       inputX0.requestFocus();
-      correctFields = false;
-    }
-    if (!InputChecker.isDouble(inputDelta.getText().toString())) {
-      inputDelta.setError(notANumberError);
-      inputDelta.requestFocus();
       correctFields = false;
     }
     if (!correctFields)

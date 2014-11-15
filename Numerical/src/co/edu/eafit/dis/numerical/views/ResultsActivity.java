@@ -70,7 +70,7 @@ public class ResultsActivity extends Activity {
         break;
       case ITERATIVE_METHODS:
         resultsTableIntent = new Intent(ResultsActivity.this,
-            ResultsMatrixActivity.class);
+            ResultsTableActivity.class);
         break;
       default:
         resultsTableIntent = new Intent();

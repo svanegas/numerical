@@ -24,54 +24,58 @@
         </activity>
         <activity
             android:name=".views.BisectionActivity"
-            android:label="@string/title_activity_bisection" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.NewtonActivity"
-            android:label="@string/title_activity_newton" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.IncrementalSearchActivity"
-            android:label="@string/title_activity_incremental_search" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.FalsePositionActivity"
-            android:label="@string/title_activity_false_position" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.FixedPointActivity"
-            android:label="@string/title_activity_fixed_point" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.SecantActivity"
-            android:label="@string/title_activity_secant" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.MultipleRootsActivity"
-            android:label="@string/title_activity_multiple_roots" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.ResultsActivity"
-            android:label="@string/title_activity_results" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.ResultsTableActivity"
-            android:label="@string/title_activity_results_table"
+            android:label="@string/app_name"
             android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".views.MatrixInputActivity"
-            android:label="@string/title_activity_gaussian_elimination" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".views.ResultsMatrixActivity"
-            android:label="@string/title_activity_results_matrixes" 
+            android:label="@string/app_name" 
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".views.MatrixUnknownsActivity"
-            android:label="@string/title_activity_gaussian_elimination" >
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.IterativeMethodsActivity"
+            android:label="@string/app_name" >
         </activity>
     </application>
 
