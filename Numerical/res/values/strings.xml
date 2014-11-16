@@ -20,10 +20,11 @@
     <string name="title_activity_results">Results</string>
     <string name="section_one_variable_equations">One Variable Equations</string>
     <string name="section_systems_of_linear_equations">Systems of Linear Equations</string>
+    <string name="section_interpolation">Interpolation</string>
     <string name="title_activity_gaussian_elimination">Gaussian Elimination</string>
     <string name="title_activity_lu_factorization">LU Factorization</string>
     <string name="title_activity_iterative_methods">Iterative Methods</string>
-    <string name="text_key_subsection_name">sub_section</string>
+    <string name="title_activity_interpolation">Interpolation</string>
 
     <!-- Errors / Exceptions -->
     <string name="invalid_function_exception">The function %1$s is invalid</string>
@@ -48,7 +49,9 @@
     <string name="text_hint_input_alpha">Enter alpha if necessary</string>
     <string name="text_calculate_button">Calculate</string>
     <string name="text_number_unknowns">Enter number of unknowns</string>
+    <string name="text_number_points">Enter number of points</string>
     <string name="text_key_matrix_size">matrix_size</string>
+    <string name="text_key_subsection_name">sub_section</string>
     <string name="text_header_x">X%1$d</string>
 
     <!-- Incremental search strings -->
@@ -111,6 +114,29 @@
     <string-array name="iterative_methods_array">
         <item>Jacobi</item>
         <item>Gauss Seidel</item>
+    </string-array>
+
+    <!-- Interpolation strings -->
+    <string name="text_header_xi">Xi</string>
+    <string name="text_header_y">Y%1$d</string>
+    <string name="text_header_point_x">x</string>
+    <string name="text_header_point_y">y</string>
+    <string name="text_header_fxi">f(xi)</string>
+    <string name="text_input_points">Enter points to interpolate</string>
+    <string name="text_header_divided_difference">%1$d° Div. diff.</string>
+    <string name="text_newton_interpolation">Newton Interpolation</string>
+    <string name="text_lagrange_interpolation">Lagrange Interpolation</string>
+    <string name="text_neville_interpolation">Neville Interpolation</string>
+    <string name="text_key_interpolation_method_type">interpolation_method</string>
+    <string name="text_input_value_to_evaluate">Value to evaluate</string>
+    <string name="text_hint_enter_value_to_evaluate">Enter value to evaluate</string>
+    <string name="text_evaluator_open">f(</string>
+    <string name="text_evaluator_close">) =</string>
+
+    <string-array name="interpolation_methods_array">
+        <item>Newton</item>
+        <item>Lagrange</item>
+        <item>Neville</item>
     </string-array>
 
     <!-- Iterative Results -->

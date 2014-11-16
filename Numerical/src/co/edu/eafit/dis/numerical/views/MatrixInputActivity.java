@@ -135,12 +135,7 @@ public class MatrixInputActivity extends Activity {
     setUpViewWithInputMatrix(matrixSize);
     setUpViewWithInputVector(matrixSize);
 
-    try {
-      // Carga los datos
-      fillFieldsWithStoredData();
-    } catch (NullPointerException e) {
-      // TODO: handle exception
-    }
+    fillFieldsWithStoredData();
   }
 
   @Override
@@ -242,30 +237,18 @@ public class MatrixInputActivity extends Activity {
     PreferencesManager.setup(this);
     String[][] tempMatrix = PreferencesManager.getMatrix();
 
-    if (inputMatrixEdits.length < tempMatrix.length) {
-      for (int i = 0; i < inputMatrixEdits.length; i++) {
-        for (int j = 0; j < inputMatrixEdits[0].length; j++) {
-          inputMatrixEdits[i][j].setText(tempMatrix[i][j]);
-        }
-      }
-    } else {
-      for (int i = 0; i < tempMatrix.length; i++) {
-        for (int j = 0; j < tempMatrix[0].length; j++) {
-          inputMatrixEdits[i][j].setText(tempMatrix[i][j]);
-        }
+    for (int i = 0; i < Math.min(inputMatrixEdits.length, tempMatrix.length); ++i) {
+      for (int j = 0; j < Math.min(inputMatrixEdits[0].length,
+          tempMatrix[i].length); ++j) {
+        inputMatrixEdits[i][j].setText(tempMatrix[i][j]);
       }
     }
+
     // Lo mismo para los vectores!!
     String[] tempVector = PreferencesManager.getVector();
 
-    if (inputVectorEdits.length < tempVector.length) {
-      for (int i = 0; i < inputVectorEdits.length; i++) {
-        inputVectorEdits[i].setText(tempVector[i]);
-      }
-    } else {
-      for (int i = 0; i < tempVector.length; i++) {
-        inputVectorEdits[i].setText(tempVector[i]);
-      }
+    for (int i = 0; i < Math.min(inputVectorEdits.length, tempVector.length); ++i) {
+      inputVectorEdits[i].setText(tempVector[i]);
     }
   }
 
@@ -309,11 +292,13 @@ public class MatrixInputActivity extends Activity {
           inputMatrixEdits[i][j].setError(getResources().getString(
               R.string.input_required_error));
           allCorrect = false;
-        } else if (!InputChecker.isDouble(inputText)) {
+        }
+        else if (!InputChecker.isDouble(inputText)) {
           inputMatrixEdits[i][j].setError(getResources().getString(
               R.string.not_a_number_error));
           allCorrect = false;
-        } else {
+        }
+        else {
           matrix[i][j] = Double.valueOf(inputText);
         }
       }
@@ -324,25 +309,26 @@ public class MatrixInputActivity extends Activity {
         inputVectorEdits[j].setError(getResources().getString(
             R.string.input_required_error));
         allCorrect = false;
-      } else if (!InputChecker.isDouble(inputText)) {
+      }
+      else if (!InputChecker.isDouble(inputText)) {
         inputVectorEdits[j].setError(getResources().getString(
             R.string.not_a_number_error));
         allCorrect = false;
-      } else {
-        if (methodType == ResultsMatrixActivity.ELIMINATION_TYPE)
-          matrix[j][matrixSize] = Double.valueOf(inputText);
-        if (methodType == ResultsMatrixActivity.FACTORIZATION_TYPE)
-          vector[j] = Double.valueOf(inputText);
-        if (methodType == ResultsActivity.ITERATIVE_METHODS)
-          vector[j] = Double.valueOf(inputText);
+      }
+      else {
+        if (methodType == ResultsMatrixActivity.ELIMINATION_TYPE) matrix[j][matrixSize] = Double
+            .valueOf(inputText);
+        if (methodType == ResultsMatrixActivity.FACTORIZATION_TYPE) vector[j] = Double
+            .valueOf(inputText);
+        if (methodType == ResultsActivity.ITERATIVE_METHODS) vector[j] = Double
+            .valueOf(inputText);
       }
     }
     return allCorrect;
   }
 
   public void calculate(View view) {
-    if (!isInputValid())
-      return;
+    if (!isInputValid()) return;
 
     String methodName = null, resultText = null;
     int gaussianType = -1, iterativeType = -1;
@@ -371,7 +357,8 @@ public class MatrixInputActivity extends Activity {
             solution = gaussianElimination.calculateSimpleGaussianElimiation(
                 matrixSize, matrix);
             resultText = VariableSolver.getStringSolution(solution);
-          } catch (Exception e) {
+          }
+          catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }
@@ -383,7 +370,8 @@ public class MatrixInputActivity extends Activity {
             solution = gaussianElimination
                 .calculateGaussianEliminationPartialPivoting(matrixSize, matrix);
             resultText = VariableSolver.getStringSolution(solution);
-          } catch (Exception e) {
+          }
+          catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }
@@ -395,7 +383,8 @@ public class MatrixInputActivity extends Activity {
             solution = gaussianElimination
                 .calculateGaussianEliminationTotalPivoting(matrixSize, matrix);
             resultText = VariableSolver.getStringSolution(solution);
-          } catch (Exception e) {
+          }
+          catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }
@@ -417,7 +406,8 @@ public class MatrixInputActivity extends Activity {
             solution = luFactorization.calculateCrout(matrixSize, matrix,
                 vector);
             resultText = VariableSolver.getStringSolution(solution);
-          } catch (Exception e) {
+          }
+          catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }
@@ -428,7 +418,8 @@ public class MatrixInputActivity extends Activity {
             solution = luFactorization.calculateDoolittle(matrixSize, matrix,
                 vector);
             resultText = VariableSolver.getStringSolution(solution);
-          } catch (Exception e) {
+          }
+          catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }
@@ -439,7 +430,8 @@ public class MatrixInputActivity extends Activity {
             solution = luFactorization.calculateCholesky(matrixSize, matrix,
                 vector);
             resultText = VariableSolver.getStringSolution(solution);
-          } catch (Exception e) {
+          }
+          catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }
@@ -463,7 +455,8 @@ public class MatrixInputActivity extends Activity {
             resultsIntent = new Intent(MatrixInputActivity.this,
                 IterativeMethodsActivity.class);
             resultsIntent.putExtra(iterativeTypeKey, iterativeType);
-          } catch (Exception e) {
+          }
+          catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }
@@ -475,7 +468,8 @@ public class MatrixInputActivity extends Activity {
             resultsIntent = new Intent(MatrixInputActivity.this,
                 IterativeMethodsActivity.class);
             resultsIntent.putExtra(iterativeTypeKey, iterativeType);
-          } catch (Exception e) {
+          }
+          catch (Exception e) {
             // TODO Cambiar este error por String de XML
             resultText = "ERROR TEMPORAL";
           }

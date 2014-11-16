@@ -38,6 +38,10 @@ public class FunctionsEvaluator {
       throw new Exception(message);
     }
   }
+  
+  public String getFunction() {
+    return cal.getExpression().toString();
+  }
 
   public double calculate(double xValue) {
     cal.setVariable("x", xValue);
@@ -46,5 +50,11 @@ public class FunctionsEvaluator {
 
   public void setContext(Context c) {
     this.c = c;
+  }
+  
+  public String removeLineBreaks(String function) {
+    String result;
+    result = function.replace("\n", "").replace("\r", "");
+    return result;
   }
 }

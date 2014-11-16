@@ -48,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_results_matrix_title"
+                android:textColor="@color/black_input_header"
                 android:textStyle="bold" />
 
             <ScrollView
@@ -97,6 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_results_matrix_lower_title"
+                android:textColor="@color/black_input_header"
                 android:textStyle="bold" />
 
             <ScrollView
@@ -145,6 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_results_matrix_upper_title"
+                android:textColor="@color/black_input_header"
                 android:textStyle="bold" />
 
             <ScrollView

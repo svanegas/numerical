@@ -31,8 +31,10 @@
 
         <EditText
             android:id="@+id/input_function"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:ems="10"
             android:hint="@string/text_hint_input_function"
             android:singleLine="true" >
@@ -42,8 +44,10 @@
 
         <EditText
             android:id="@+id/input_1derived_function"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/text_hint_input_derived_function"
@@ -52,8 +56,10 @@
 
         <EditText
             android:id="@+id/input_2derived_function"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/text_hint_input_2_derived_function"
@@ -62,8 +68,10 @@
 
         <EditText
             android:id="@+id/input_x0"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/text_hint_input_x0"
@@ -72,8 +80,10 @@
 
         <EditText
             android:id="@+id/input_tol"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/text_hint_input_tol"
@@ -82,8 +92,10 @@
 
         <EditText
             android:id="@+id/input_max_iterations"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/text_hint_input_max_iterations"

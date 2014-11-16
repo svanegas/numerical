@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
     drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
     // Definir el arreglo de opciones
-    opciones = new String[10];
+    opciones = new String[11];
     opciones[0] = getResources().getString(
         R.string.title_activity_incremental_search);
     opciones[1] = getResources().getString(R.string.title_activity_bisection);
@@ -53,6 +53,8 @@ public class MainActivity extends Activity {
         R.string.title_activity_lu_factorization);
     opciones[9] = getResources().getString(
         R.string.title_activity_iterative_methods);
+    opciones[10] = getResources().getString(
+        R.string.title_activity_interpolation);
 
     // Declarar adapter y eventos al hacer click
     drawer.setAdapter(new ArrayAdapter<String>(this,
@@ -114,6 +116,14 @@ public class MainActivity extends Activity {
                 getResources().getString(R.string.text_key_subsection_name),
                 getResources().getString(
                     R.string.title_activity_iterative_methods));
+            MainActivity.this.startActivity(intent);
+            break;
+          case 10: // Posición 10 en el vector opciones es Interpolación
+            intent = new Intent(MainActivity.this, MatrixUnknownsActivity.class);
+            intent.putExtra(
+                getResources().getString(R.string.text_key_subsection_name),
+                getResources().getString(
+                    R.string.title_activity_interpolation));
             MainActivity.this.startActivity(intent);
             break;
           default:

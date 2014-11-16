@@ -13,6 +13,7 @@ import android.view.View;
 public class MatrixUnknownsActivity extends Activity {
 
   private EditText numberOfUnknowns;
+  private TextView sectionTitle;
   private TextView subsectionTextView;
   private String subSectionName;
 
@@ -28,7 +29,16 @@ public class MatrixUnknownsActivity extends Activity {
         getResources().getString(R.string.text_key_subsection_name));
 
     numberOfUnknowns = (EditText) findViewById(R.id.number_of_unkwnowns);
+    sectionTitle = (TextView) findViewById(R.id.section_title);
     subsectionTextView = (TextView) findViewById(R.id.subsection_title);
+
+    if (subSectionName.equals(getResources().getString(
+        R.string.title_activity_interpolation))) {
+      subsectionTextView.setText("");
+      sectionTitle.setText(subSectionName);
+      numberOfUnknowns.setHint(getResources().getString(
+          R.string.text_number_points));
+    }
     setUpView();
   }
 
@@ -44,6 +54,7 @@ public class MatrixUnknownsActivity extends Activity {
   }
 
   public void setUpView() {
+    if (subsectionTextView.getText().equals("")) return;
     subsectionTextView.setText(subSectionName);
   }
 
@@ -59,26 +70,40 @@ public class MatrixUnknownsActivity extends Activity {
           R.string.not_a_number_error));
       return;
     }
-    Intent intent = new Intent(MatrixUnknownsActivity.this,
-        MatrixInputActivity.class);
+    Intent intent = null;
+    if (subSectionName.equals(getResources().getString(
+        R.string.title_activity_lu_factorization))) {
+      intent = new Intent(MatrixUnknownsActivity.this,
+          MatrixInputActivity.class);
+      intent.putExtra(getResources().getString(R.string.text_key_method_type),
+          ResultsMatrixActivity.FACTORIZATION_TYPE);
+    }
+    else if (subSectionName.equals(getResources().getString(
+        R.string.title_activity_gaussian_elimination))) {
+      intent = new Intent(MatrixUnknownsActivity.this,
+          MatrixInputActivity.class);
+      intent.putExtra(getResources().getString(R.string.text_key_method_type),
+          ResultsMatrixActivity.ELIMINATION_TYPE);
+    }
+    else if (subSectionName.equals(getResources().getString(
+        R.string.title_activity_iterative_methods))) {
+      intent = new Intent(MatrixUnknownsActivity.this,
+          MatrixInputActivity.class);
+      intent.putExtra(getResources().getString(R.string.text_key_method_type),
+          ResultsActivity.ITERATIVE_METHODS);
+    }
+    else if (subSectionName.equals(getResources().getString(
+        R.string.title_activity_interpolation))) {
+      intent = new Intent(MatrixUnknownsActivity.this,
+          InterpolationActivity.class);
+      intent.putExtra(getResources().getString(R.string.text_key_method_type),
+          ResultsActivity.INTERPOLATION);
+    }
     intent.putExtra(getResources().getString(R.string.text_key_matrix_size),
         Integer.parseInt(numberOfUnknowns.getText().toString()));
     intent.putExtra(
         getResources().getString(R.string.text_key_subsection_name),
         subSectionName);
-    if (subSectionName.equals(getResources().getString(
-        R.string.title_activity_lu_factorization))) {
-      intent.putExtra(getResources().getString(R.string.text_key_method_type),
-          ResultsMatrixActivity.FACTORIZATION_TYPE);
-    } else if (subSectionName.equals(getResources().getString(
-        R.string.title_activity_gaussian_elimination))) {
-      intent.putExtra(getResources().getString(R.string.text_key_method_type),
-          ResultsMatrixActivity.ELIMINATION_TYPE);
-    } else if (subSectionName.equals(getResources().getString(
-        R.string.title_activity_iterative_methods))) {
-      intent.putExtra(getResources().getString(R.string.text_key_method_type),
-          ResultsActivity.ITERATIVE_METHODS);
-    }
     MatrixUnknownsActivity.this.startActivity(intent);
   }
 }

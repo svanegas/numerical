@@ -32,6 +32,8 @@ public class PreferencesManager {
   private static final String MATRIX_ROWS_SIZE = "rows";
   private static final String MATRIX_COLUMNS_SIZE = "columns";
   private static final String VECTOR_SIZE = "size";
+  private static final String POINTS_SIZE = "points_size";
+  private static final String POINTS_ROW = "point#";
 
   public static void setup(Context context) {
     sp = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -83,6 +85,22 @@ public class PreferencesManager {
     spEditor.putString(FUNCTION_INITIAL_VECTOR, temp).commit();
   }
 
+  public static void setPoints(String[][] points) {
+    int rows = points.length;
+    spEditor.putInt(POINTS_SIZE, rows).commit();
+    for (int i = 0; i < points.length; i++) {
+      String temp = "";
+      String key = POINTS_ROW + i;
+      for (int j = 0; j < points[i].length; j++) {
+        temp += points[i][j];
+        if (j != points[i].length - 1) {
+          temp += ",";
+        }
+      }
+      spEditor.putString(key, temp).commit();
+    }
+  }
+  
   public static void saveFx(String function) {
     spEditor.putString(FUNCTION_FX, function).commit();
   }
@@ -162,6 +180,18 @@ public class PreferencesManager {
     return vector;
   }
 
+  public static String[][] getInterpolationPoints() {
+    String[][] points = new String[sp.getInt(POINTS_SIZE, 0)][2];
+    for (int i = 0; i < points.length; i++) {
+      String key = POINTS_ROW + i;
+      String[] rows = sp.getString(key, null).split(",");
+      for (int j = 0; j < points[0].length; j++) {
+        points[i][j] = rows[j];
+      }
+    }
+    return points;
+  }
+  
   public static String getFx() {
     return sp.getString(FUNCTION_FX, null);
   }

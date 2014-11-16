@@ -35,7 +35,7 @@
             android:layout_marginTop="30dp"
             android:text="@string/text_header_initial_value"
             android:textColor="@color/black_input_header"
-            android:textSize="14sp" />
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:id="@+id/input_layout"
@@ -90,7 +90,8 @@
                 android:layout_margin="15dp"
                 android:ems="10"
                 android:hint="@string/text_hint_input_alpha"
-                android:singleLine="true" >
+                android:singleLine="true"
+                android:inputType="numberSigned|numberDecimal">
             </EditText>
 
             <Button

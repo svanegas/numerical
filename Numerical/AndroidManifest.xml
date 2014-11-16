@@ -77,6 +77,10 @@
             android:name=".views.IterativeMethodsActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".views.InterpolationActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

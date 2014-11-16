@@ -48,7 +48,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_input_a_matrix"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black_input_header" />
 
                 <HorizontalScrollView
                     android:id="@+id/horizontal_scroll_matrix"
@@ -84,7 +85,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_input_b_vector"
-                    android:textStyle="bold" />
+                    android:textStyle="bold" 
+                    android:textColor="@color/black_input_header"/>
 
                 <HorizontalScrollView
                     android:id="@+id/horizontal_scroll_vector"
@@ -110,10 +112,10 @@
             android:id="@+id/textView_select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_margin="15dp"
             android:text="@string/text_select_a_method"
-            android:textSize="20sp" />
+            android:textColor="@color/black_input_header"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/method_spinner"
