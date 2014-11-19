@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
     drawer = (ListView) findViewById(R.id.drawer);
     drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-    texto = (TextView) findViewById(R.id.texto);
+   // texto = (TextView) findViewById(R.id.texto);
     //texto.setText(getString(R.string.text_main_activity));
     
     // Definir el arreglo de opciones

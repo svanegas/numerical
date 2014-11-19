@@ -38,14 +38,13 @@ public final class R {
         public static final int current_stage=0x7f09004c;
         public static final int current_stage_text=0x7f09004b;
         public static final int drawer=0x7f09001f;
-        public static final int drawer_layout=0x7f09001d;
+        public static final int drawer_layout=0x7f09001c;
         public static final int evaluation_close_parenthesis=0x7f090036;
         public static final int evaluation_open_parenthesis=0x7f090035;
         public static final int evaluation_result=0x7f090037;
         public static final int evaluator_inner_layout=0x7f090034;
         public static final int evaluator_layout=0x7f090031;
         public static final int evaluator_title=0x7f090032;
-        public static final int global_layout=0x7f09001c;
         public static final int horizontal_scroll=0x7f090050;
         public static final int horizontal_scroll_evaluator=0x7f090033;
         public static final int horizontal_scroll_initial_values=0x7f090018;
@@ -108,6 +107,7 @@ public final class R {
         public static final int table_results_title=0x7f090039;
         public static final int textView_select=0x7f090012;
         public static final int texto=0x7f09001e;
+        public static final int texto_name=0x7f09001d;
         public static final int unknowns_layout=0x7f090029;
         public static final int value_to_evaluate=0x7f090011;
         public static final int value_to_evaluate_text=0x7f090010;
