@@ -174,5 +174,6 @@
     <string name="text_results_matrixes_next_stage">Next Stage</string>
     <string name="text_results_matrixes_prev_stage">Previous Stage</string>
     <string name="text_results_matrixes_current_stage">Current Stage:</string>
+    <string name="text_main_activity">Numerical es una aplicación desarrollada con el objetivo de resolver problemas por medio de métodos numéricos. Para hacer uso de la aplicación debe abrir el menú lateral izquierdo y seleccionar alguno de los métodos disponibles, escribir una función con sus respectivos parámetros según lo pida el método y finalmente calcular el resultado. La aplicación cuenta con un sistema de guardado de información por lo que no tendrá que escribir una función o una matriz varias veces sino que se guardará automáticamente el último ingreso y se mostrará en los métodos en donde pueda ser necesario está información. \nEsta aplicación fue desarrollada por los estudiantes:\nEsteban Foronda Sierra\nFelipe Tovar Ospina\nSantiago Vanegas Gil</string>
 
 </resources>

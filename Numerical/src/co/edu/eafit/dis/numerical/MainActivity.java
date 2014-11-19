@@ -8,11 +8,13 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
+import android.view.TextureView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -21,6 +23,7 @@ public class MainActivity extends Activity {
   private ListView drawer;
   private ActionBarDrawerToggle toggle;
   private static String[] opciones;
+  private TextView texto;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,9 @@ public class MainActivity extends Activity {
     drawer = (ListView) findViewById(R.id.drawer);
     drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+    texto = (TextView) findViewById(R.id.texto);
+    //texto.setText(getString(R.string.text_main_activity));
+    
     // Definir el arreglo de opciones
     opciones = new String[11];
     opciones[0] = getResources().getString(
