@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Numerical</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_bisection">Bisection</string>
+    <string name="title_activity_newton">Newton</string>
+    <string name="title_activity_incremental_search">Incremental Search</string>
+    <string name="title_activity_false_position">False Position</string>
+    <string name="title_activity_fixed_point">Fixed Point</string>
+    <string name="title_activity_secant">Secant</string>
+    <string name="title_activity_multiple_roots">Multiple Roots</string>
+    <string name="title_activity_gaussian_elim_without">Gaussian Elimination (Without pivoting)</string>
+    <string name="title_activity_gaussian_elim_partial">Gaussian Elimination (Partial pivoting)</string>
+    <string name="title_activity_gaussian_elim_total">Gaussian Elimination (Total pivoting)</string>
+    <string name="title_action_bar_methods">Methods</string>
+    <string name="title_activity_results_table">Table Results</string>
+    <string name="title_activity_results_matrixes">Matrix Results</string>
+    <string name="title_activity_results">Results</string>
+    <string name="section_one_variable_equations">One Variable Equations</string>
+    <string name="section_systems_of_linear_equations">Systems of Linear Equations</string>
+    <string name="section_interpolation">Interpolation</string>
+    <string name="title_activity_gaussian_elimination">Gaussian Elimination</string>
+    <string name="title_activity_lu_factorization">LU Factorization</string>
+    <string name="title_activity_iterative_methods">Iterative Methods</string>
+    <string name="title_activity_interpolation">Interpolation</string>
+
+    <!-- Errors / Exceptions -->
+    <string name="invalid_function_exception">The function %1$s is invalid</string>
+    <string name="error_exceeded_iterations">%1$s exceeded number of iterations</string>
+    <string name="error_ivalid_interval">The interval is invalid</string>
+    <string name="error_unsolvable_function">The function %1$s is unsolvable</string>
+    <string name="error_table_results_empty">The table of results is empty</string>
+    <string name="error_matrixes_results_empty">The matrixes of results is empty</string>
+    <string name="error_matrixes_failed_setup">Couldn\'t fill matrix the stage</string>
+    <string name="error_matrixes_failed_initialize">Couldn\'t initialize the results in steps</string>
+    <string name="error_table_results_exceeded_columns">The row is full, you cannot add more columns</string>
+
+    <!-- General -->
+    <string name="root_found">A root was found in %1$10E</string>
+    <string name="interval_root_found">A root exists in interval [%1$10E; %2$10E]</string>
+    <string name="root_found_tol">%1$10E is an aproximation to root with tolerance %2$1.4E</string>
+    <string name="input_required_error">This field is required</string>
+    <string name="not_a_number_error">This field must be a number</string>
+    <string name="text_hint_input_max_iterations">Enter iterations</string>
+    <string name="text_hint_input_function">Enter f(x)</string>
+    <string name="text_hint_input_tol">Enter tolerance e.g.5E-6</string>
+    <string name="text_hint_input_alpha">Enter alpha if necessary</string>
+    <string name="text_calculate_button">Calculate</string>
+    <string name="text_number_unknowns">Enter number of unknowns</string>
+    <string name="text_number_points">Enter number of points</string>
+    <string name="text_key_matrix_size">matrix_size</string>
+    <string name="text_key_subsection_name">sub_section</string>
+    <string name="text_header_x">X%1$d</string>
+
+    <!-- Incremental search strings -->
+    <string name="text_hint_input_x0">Enter initial value (x0)</string>
+    <string name="text_hint_input_delta">Enter delta value</string>
+
+    <!-- Bisection strings -->
+    <string name="text_hint_input_xi">Enter lower value (xi)</string>
+    <string name="text_hint_input_xs">Enter higher value (xs)</string>
+
+    <!-- Fixed Point strings -->
+    <string name="text_hint_input_gx_function">Enter g(x)</string>
+    <string name="text_hint_input_xa">Enter initial value (xa)</string>
+
+    <!-- Newton strings -->
+    <string name="text_hint_input_derived_function">Enter f \'(x)</string>
+
+    <!-- Secant strings -->
+    <string name="text_hint_input_x1">Enter initial value (x1)</string>
+
+    <!-- Multiple roots strings -->
+    <string name="text_hint_input_2_derived_function">Enter f \'\'(x)</string>
+
+    <!-- Gaussian elimination strings -->
+    <string name="text_without_pivot">Without pivoting</string>
+    <string name="text_parcial_pivot">Partial pivoting</string>
+    <string name="text_total_pivot">Total pivoting</string>
+    <string name="text_select_a_method">Select a method</string>
+    <string name="text_input_a_matrix">A matrix</string>
+    <string name="text_input_b_vector">b vector</string>
+    <string name="text_continue_button">Continue</string>
+    <string name="text_hint_input_matrix_index">A[%1$d][%2$d]</string>
+    <string name="text_hint_input_vector_index">b[%1$d]</string>
+
+    <string-array name="gaussian_array">
+        <item>Without pivoting</item>
+        <item>Partial pivoting</item>
+        <item>Total pivoting</item>
+    </string-array>
+
+    <!-- LU Factorization strings -->
+    <string name="text_crout">Crout factorization</string>
+    <string name="text_doolittle">Doolittle factorization</string>
+    <string name="text_cholesky">Cholesky factorization</string>
+    <string name="text_lower_unresolved_element">L[%1$d][%2$d]</string>
+    <string name="text_upper_unresolved_element">U[%1$d][%2$d]</string>
+
+    <string-array name="lu_factorization_array">
+        <item>Crout</item>
+        <item>Doolittle</item>
+        <item>Cholesky</item>
+    </string-array>
+
+    <!-- Iterative Methods strings -->
+    <string name="text_jacobi">Jacobi method</string>
+    <string name="text_gauss_seidel">Gauss Seidel method</string>
+    <string name="text_header_initial_value">Enter initial values</string>
+    <string name="text_hint_initial_value">X%1$d[0]</string>
+
+    <string-array name="iterative_methods_array">
+        <item>Jacobi</item>
+        <item>Gauss Seidel</item>
+    </string-array>
+
+    <!-- Interpolation strings -->
+    <string name="text_header_xi">Xi</string>
+    <string name="text_header_y">Y%1$d</string>
+    <string name="text_header_point_x">x</string>
+    <string name="text_header_point_y">y</string>
+    <string name="text_header_fxi">f(xi)</string>
+    <string name="text_input_points">Enter points to interpolate</string>
+    <string name="text_header_divided_difference">%1$d° Div. diff.</string>
+    <string name="text_newton_interpolation">Newton Interpolation</string>
+    <string name="text_lagrange_interpolation">Lagrange Interpolation</string>
+    <string name="text_neville_interpolation">Neville Interpolation</string>
+    <string name="text_key_interpolation_method_type">interpolation_method</string>
+    <string name="text_input_value_to_evaluate">Value to evaluate</string>
+    <string name="text_hint_enter_value_to_evaluate">Enter value to evaluate</string>
+    <string name="text_evaluator_open">f(</string>
+    <string name="text_evaluator_close">) =</string>
+
+    <string-array name="interpolation_methods_array">
+        <item>Newton</item>
+        <item>Lagrange</item>
+        <item>Neville</item>
+    </string-array>
+
+    <!-- Iterative Results -->
+    <string name="text_button_show_table">Show results table</string>
+    <string name="text_key_results">results_text</string>
+    <string name="text_key_method_name">method_name</string>
+    <string name="text_key_method_type">method_type</string>
+    <string name="text_key_gaussian_method_type">gaussian_method_type</string>
+    <string name="text_key_iterative_method_type">iterative_method_type</string>
+    <string name="text_results_table_absolute_error">Absolute Error</string>
+    <string name="text_results_table_relative_error">Relative Error</string>
+    <string name="text_results_table_absolute_dispersion">Absolute Dispersion</string>
+    <string name="text_results_table_iteration">Iteration</string>
+    <string name="text_results_table_x_value">X value</string>
+    <string name="text_results_table_fx_value">f(X)</string>
+    <string name="text_results_table_xi_value">Low value (Xi)</string>
+    <string name="text_results_table_fxi_value">f(Xi)</string>
+    <string name="text_results_table_xs_value">High value (Xs)</string>
+    <string name="text_results_table_fxs_value">f(Xs)</string>
+    <string name="text_results_table_xm_value">Middle value (Xm)</string>
+    <string name="text_results_table_fxm_value">f(Xm)</string>
+    <string name="text_results_table_xn_value">Xn</string>
+    <string name="text_results_table_fxn_value">f(Xn)</string>
+    <string name="text_results_table_dfxn_value">f \'(Xn)</string>
+    <string name="text_results_table_d2fxn_value">f \'\'(Xn)</string>
+    <string name="text_results_table_x0_value">X0 value</string>
+    <string name="text_results_table_fx0_value">f(X0)</string>
+    <string name="text_results_table_x1_value">X1 value</string>
+    <string name="text_results_table_fx1_value">f(X1)</string>
+
+    <!-- Matrix Results -->
+    <string name="text_results_matrix_title">Ab matrix (Ab)</string>
+    <string name="text_results_matrix_lower_title">Lower matrix (L)</string>
+    <string name="text_results_matrix_upper_title">Upper matrix (U)</string>
+    <string name="text_results_matrixes_next_stage">Next Stage</string>
+    <string name="text_results_matrixes_prev_stage">Previous Stage</string>
+    <string name="text_results_matrixes_current_stage">Current Stage:</string>
+    <string name="text_main_activity">Numerical is an app developed aiming to 
+    answer problems using numerical methods. To use the application please 
+    open the left menu and select a method. Then, write a function and its 
+    respectives parameters according to the method. Finally, press the 
+    button calculate and get the answer with its table of results. The 
+    application has an information save system so you dont need to write the
+    same function or a matrix several times because the system will save 
+    your last input and it will be shown in the methods where it can be 
+    useful.\n\nThis applicaction was developed by:\nEsteban Foronda Sierra\nFelipe Tovar Ospina\nSantiago Vanegas Gil</string>
+</resources>

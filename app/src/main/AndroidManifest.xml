@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.edu.eafit.dis.numerical"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.BisectionActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.NewtonActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.IncrementalSearchActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.FalsePositionActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.FixedPointActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.SecantActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.MultipleRootsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.ResultsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.ResultsTableActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".views.MatrixInputActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.ResultsMatrixActivity"
+            android:label="@string/app_name" 
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".views.MatrixUnknownsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.IterativeMethodsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.InterpolationActivity"
+            android:label="@string/app_name" >
+        </activity>
+    </application>
+
+</manifest>

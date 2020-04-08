@@ -1,0 +1,151 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="co.edu.eafit.dis.numerical"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:7:5-80:19
+12        android:allowBackup="true"
+12-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:8:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/559f7b84236c1478cb0f3639033de1f8/core-1.1.0/AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:extractNativeLibs="false"
+16        android:icon="@drawable/ic_launcher"
+16-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:9:9-45
+17        android:label="@string/app_name"
+17-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:10:9-41
+18        android:testOnly="true"
+19        android:theme="@style/AppTheme" >
+19-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:11:9-40
+20        <activity
+20-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:12:9-20:20
+21            android:name="co.edu.eafit.dis.numerical.MainActivity"
+21-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:13:13-41
+22            android:label="@string/app_name" >
+22-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:14:13-45
+23            <intent-filter>
+23-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:15:13-19:29
+24                <action android:name="android.intent.action.MAIN" />
+24-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:16:17-69
+24-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:16:25-66
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:18:17-77
+26-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:18:27-74
+27            </intent-filter>
+28        </activity>
+29        <activity
+29-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:21:9-24:20
+30            android:name="co.edu.eafit.dis.numerical.views.BisectionActivity"
+30-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:22:13-52
+31            android:label="@string/app_name" >
+31-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:23:13-45
+32        </activity>
+33        <activity
+33-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:25:9-28:20
+34            android:name="co.edu.eafit.dis.numerical.views.NewtonActivity"
+34-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:26:13-49
+35            android:label="@string/app_name" >
+35-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:27:13-45
+36        </activity>
+37        <activity
+37-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:29:9-32:20
+38            android:name="co.edu.eafit.dis.numerical.views.IncrementalSearchActivity"
+38-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:30:13-60
+39            android:label="@string/app_name" >
+39-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:31:13-45
+40        </activity>
+41        <activity
+41-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:33:9-36:20
+42            android:name="co.edu.eafit.dis.numerical.views.FalsePositionActivity"
+42-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:34:13-56
+43            android:label="@string/app_name" >
+43-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:35:13-45
+44        </activity>
+45        <activity
+45-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:37:9-40:20
+46            android:name="co.edu.eafit.dis.numerical.views.FixedPointActivity"
+46-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:38:13-53
+47            android:label="@string/app_name" >
+47-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:39:13-45
+48        </activity>
+49        <activity
+49-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:41:9-44:20
+50            android:name="co.edu.eafit.dis.numerical.views.SecantActivity"
+50-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:42:13-49
+51            android:label="@string/app_name" >
+51-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:43:13-45
+52        </activity>
+53        <activity
+53-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:45:9-48:20
+54            android:name="co.edu.eafit.dis.numerical.views.MultipleRootsActivity"
+54-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:46:13-56
+55            android:label="@string/app_name" >
+55-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:47:13-45
+56        </activity>
+57        <activity
+57-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:49:9-52:20
+58            android:name="co.edu.eafit.dis.numerical.views.ResultsActivity"
+58-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:50:13-50
+59            android:label="@string/app_name" >
+59-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:51:13-45
+60        </activity>
+61        <activity
+61-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:53:9-57:20
+62            android:name="co.edu.eafit.dis.numerical.views.ResultsTableActivity"
+62-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:54:13-55
+63            android:label="@string/app_name"
+63-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:55:13-45
+64            android:screenOrientation="landscape" >
+64-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:56:13-50
+65        </activity>
+66        <activity
+66-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:58:9-61:20
+67            android:name="co.edu.eafit.dis.numerical.views.MatrixInputActivity"
+67-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:59:13-54
+68            android:label="@string/app_name" >
+68-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:60:13-45
+69        </activity>
+70        <activity
+70-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:62:9-67:20
+71            android:name="co.edu.eafit.dis.numerical.views.ResultsMatrixActivity"
+71-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:63:13-56
+72            android:label="@string/app_name"
+72-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:64:13-45
+73            android:screenOrientation="portrait"
+73-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:66:13-49
+74            android:windowSoftInputMode="stateHidden" >
+74-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:65:13-54
+75        </activity>
+76        <activity
+76-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:68:9-71:20
+77            android:name="co.edu.eafit.dis.numerical.views.MatrixUnknownsActivity"
+77-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:69:13-57
+78            android:label="@string/app_name" >
+78-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:70:13-45
+79        </activity>
+80        <activity
+80-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:72:9-75:20
+81            android:name="co.edu.eafit.dis.numerical.views.IterativeMethodsActivity"
+81-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:73:13-59
+82            android:label="@string/app_name" >
+82-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:74:13-45
+83        </activity>
+84        <activity
+84-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:76:9-79:20
+85            android:name="co.edu.eafit.dis.numerical.views.InterpolationActivity"
+85-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:77:13-56
+86            android:label="@string/app_name" >
+86-->/Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:78:13-45
+87        </activity>
+88    </application>
+89
+90</manifest>

@@ -1,0 +1,219 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:2:1-82:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/ab1e93b0d32dac733c2814930cb4239c/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f68de07f0d8e02d8e6ea5e330977fce4/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/b1cdffae292d0f9897365b2d02c09779/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f7c25612295b4056bbde6adf6ce18b21/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f46ba17820adf4e6e8a8747275ee19c9/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/68974caf69033c5c8b7b8be8ad8b2748/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/6490e708df2029ea3c159b765a163aa3/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/09f85bbd7f9d96fbf614d65528096ba1/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/8838260982b9d2c5260ffdc57e8214a9/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/e79e610b64481f780b11114ee2a9a03b/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/559f7b84236c1478cb0f3639033de1f8/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/fbe30b65065587acf03115797a1a9e28/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/467e5cdebf4fa065606a71413ec193b9/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f11ece37eb98a45f9f317946d09b95ed/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/1651b7c547b30c9f315ea8b0c696c2b2/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/42b341563551cd8eb24bd69b8abec609/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/9ff65a1f676577d8c8bcb4d10a9bcac4/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/9fca12262ddc11acca1fc6d6f783381a/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/e36f23f42e9a2586de7515a84792dfbd/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/a50a0901d203568aefc55014517ab63b/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:2:1-82:12
+	package
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:3:5-41
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+application
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:7:5-80:19
+MERGED from [androidx.core:core:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/559f7b84236c1478cb0f3639033de1f8/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/559f7b84236c1478cb0f3639033de1f8/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/467e5cdebf4fa065606a71413ec193b9/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/467e5cdebf4fa065606a71413ec193b9/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/559f7b84236c1478cb0f3639033de1f8/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:10:9-41
+	android:icon
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:9:9-45
+	android:allowBackup
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:8:9-35
+	android:theme
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:11:9-40
+activity#co.edu.eafit.dis.numerical.MainActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:12:9-20:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:14:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:13:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:18:27-74
+activity#co.edu.eafit.dis.numerical.views.BisectionActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:21:9-24:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:23:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:22:13-52
+activity#co.edu.eafit.dis.numerical.views.NewtonActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:25:9-28:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:27:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:26:13-49
+activity#co.edu.eafit.dis.numerical.views.IncrementalSearchActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:29:9-32:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:31:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:30:13-60
+activity#co.edu.eafit.dis.numerical.views.FalsePositionActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:33:9-36:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:35:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:34:13-56
+activity#co.edu.eafit.dis.numerical.views.FixedPointActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:37:9-40:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:39:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:38:13-53
+activity#co.edu.eafit.dis.numerical.views.SecantActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:41:9-44:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:43:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:42:13-49
+activity#co.edu.eafit.dis.numerical.views.MultipleRootsActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:45:9-48:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:47:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:46:13-56
+activity#co.edu.eafit.dis.numerical.views.ResultsActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:49:9-52:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:51:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:50:13-50
+activity#co.edu.eafit.dis.numerical.views.ResultsTableActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:53:9-57:20
+	android:screenOrientation
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:56:13-50
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:55:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:54:13-55
+activity#co.edu.eafit.dis.numerical.views.MatrixInputActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:58:9-61:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:60:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:59:13-54
+activity#co.edu.eafit.dis.numerical.views.ResultsMatrixActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:62:9-67:20
+	android:screenOrientation
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:66:13-49
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:64:13-45
+	android:windowSoftInputMode
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:65:13-54
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:63:13-56
+activity#co.edu.eafit.dis.numerical.views.MatrixUnknownsActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:68:9-71:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:70:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:69:13-57
+activity#co.edu.eafit.dis.numerical.views.IterativeMethodsActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:72:9-75:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:74:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:73:13-59
+activity#co.edu.eafit.dis.numerical.views.InterpolationActivity
+ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:76:9-79:20
+	android:label
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:78:13-45
+	android:name
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml:77:13-56
+uses-sdk
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/ab1e93b0d32dac733c2814930cb4239c/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/ab1e93b0d32dac733c2814930cb4239c/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f68de07f0d8e02d8e6ea5e330977fce4/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f68de07f0d8e02d8e6ea5e330977fce4/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/b1cdffae292d0f9897365b2d02c09779/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/b1cdffae292d0f9897365b2d02c09779/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f7c25612295b4056bbde6adf6ce18b21/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f7c25612295b4056bbde6adf6ce18b21/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f46ba17820adf4e6e8a8747275ee19c9/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f46ba17820adf4e6e8a8747275ee19c9/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/68974caf69033c5c8b7b8be8ad8b2748/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/68974caf69033c5c8b7b8be8ad8b2748/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/6490e708df2029ea3c159b765a163aa3/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/6490e708df2029ea3c159b765a163aa3/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/09f85bbd7f9d96fbf614d65528096ba1/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/09f85bbd7f9d96fbf614d65528096ba1/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/8838260982b9d2c5260ffdc57e8214a9/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/8838260982b9d2c5260ffdc57e8214a9/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/e79e610b64481f780b11114ee2a9a03b/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/e79e610b64481f780b11114ee2a9a03b/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/559f7b84236c1478cb0f3639033de1f8/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/559f7b84236c1478cb0f3639033de1f8/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/fbe30b65065587acf03115797a1a9e28/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/fbe30b65065587acf03115797a1a9e28/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/467e5cdebf4fa065606a71413ec193b9/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/467e5cdebf4fa065606a71413ec193b9/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f11ece37eb98a45f9f317946d09b95ed/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/f11ece37eb98a45f9f317946d09b95ed/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/1651b7c547b30c9f315ea8b0c696c2b2/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/1651b7c547b30c9f315ea8b0c696c2b2/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/42b341563551cd8eb24bd69b8abec609/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/42b341563551cd8eb24bd69b8abec609/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/9ff65a1f676577d8c8bcb4d10a9bcac4/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/9ff65a1f676577d8c8bcb4d10a9bcac4/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/9fca12262ddc11acca1fc6d6f783381a/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/9fca12262ddc11acca1fc6d6f783381a/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/e36f23f42e9a2586de7515a84792dfbd/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/e36f23f42e9a2586de7515a84792dfbd/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/a50a0901d203568aefc55014517ab63b/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/svanegas/.gradle/caches/transforms-2/files-2.1/a50a0901d203568aefc55014517ab63b/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+		ADDED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/svanegas/Dev/as_numerical/app/src/main/AndroidManifest.xml

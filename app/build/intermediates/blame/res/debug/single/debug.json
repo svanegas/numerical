@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_matrix_input.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_matrix_input.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/menu_splash.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/menu/splash.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_drawer.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-hdpi/ic_drawer.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_secant.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_secant.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/menu_fixed_point.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/menu/fixed_point.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_results_matrixes.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_results_matrixes.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-mdpi_drawer_shadow.9.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-mdpi/drawer_shadow.9.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/menu_false_position.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/menu/false_position.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_results_table.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_results_table.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-hdpi_drawer_shadow.9.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-hdpi/drawer_shadow.9.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_interpolation.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_interpolation.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_iterative_methods.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_iterative_methods.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_drawer.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-mdpi/ic_drawer.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_drawer.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-xhdpi/ic_drawer.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_multiple_roots.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_multiple_roots.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_newton.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_newton.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_fixed_point.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_fixed_point.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/menu_bisection.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/menu/bisection.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_matrix_unknowns.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_matrix_unknowns.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_incremental_search.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_incremental_search.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_false_position.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_false_position.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/drawable-xhdpi_drawer_shadow.9.png.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/drawable-xhdpi/drawer_shadow.9.png"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_bisection.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_bisection.xml"
+    },
+    {
+        "merged": "/Users/svanegas/Dev/as_numerical/app/build/intermediates/res/merged/debug/layout_activity_results.xml.flat",
+        "source": "/Users/svanegas/Dev/as_numerical/app/src/main/res/layout/activity_results.xml"
+    }
+]
