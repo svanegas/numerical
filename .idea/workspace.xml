@@ -9,7 +9,89 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="700d0c72-05b0-494a-960a-717359feb25c" name="Default Changelist" comment="" />
+    <list default="true" id="700d0c72-05b0-494a-960a-717359feb25c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Numerical/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/gen/co/edu/eafit/dis/numerical/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/gen/co/edu/eafit/dis/numerical/R.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/ic_launcher-web.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/libs/android-support-v4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/libs/exp4j-0.3.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/proguard-project.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-hdpi/drawer_shadow.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-hdpi/ic_drawer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-mdpi/drawer_shadow.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-mdpi/ic_drawer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-xhdpi/drawer_shadow.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-xhdpi/ic_drawer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/drawable-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_bisection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_false_position.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_fixed_point.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_incremental_search.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_interpolation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_iterative_methods.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_matrix_input.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_matrix_unknowns.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_multiple_roots.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_newton.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_results.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_results_matrixes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_results_table.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/layout/activity_secant.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/menu/bisection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/menu/false_position.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/menu/fixed_point.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/menu/splash.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values-sw600dp/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values-sw720dp-land/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values-v11/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values-v14/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values-w820dp/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/Bisection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/FalsePosition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/FixedPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/GaussianElimination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/IncrementalSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/Interpolation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/IterativeMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/LUFactorization.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/MultipleRoots.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/Newton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/ResultsMatrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/ResultsTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/Secant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/methods/VariableSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/utils/FunctionsEvaluator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/utils/InputChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/utils/PreferencesManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/BisectionActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/FalsePositionActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/FixedPointActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/IncrementalSearchActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/InterpolationActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/IterativeMethodsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/MatrixInputActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/MatrixUnknownsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/MultipleRootsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/NewtonActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/ResultsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/ResultsMatrixActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/ResultsTableActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numerical/src/co/edu/eafit/dis/numerical/views/SecantActivity.java" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
